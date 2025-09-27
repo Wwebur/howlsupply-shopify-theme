@@ -1,0 +1,66 @@
+{% if section.blocks.size > 0 %}
+	<ul class="list dealers">
+		{% for block in section.blocks %}
+			<li>
+				{% if block.settings.dealer_name != blank %}
+					<span class="dealer-name">{{ block.settings.dealer_name }}</span>
+				{% endif %}
+
+				{% if block.settings.dealer_website != blank %}
+					<br/><span class="dealer-website"><a href="{{ block.settings.dealer_website }}" target="_blank" class="text-link">{{ block.settings.dealer_website | remove: "https://" | remove: "http://" | remove: "/" }}</a></span>
+				{% endif %}
+
+				{% if block.settings.dealer_address_line1 != blank %}
+					<br/><span class="dealer-address-line1">{{ block.settings.dealer_address_line1 }}</span>
+				{% endif %}
+
+				{% if block.settings.dealer_address_line2 != blank %}
+					<br/><span class="dealer-address-line2">{{ block.settings.dealer_address_line2 }}{% if block.settings.dealer_zip_code != blank %}&nbsp;<span class="dealer-zipcode">{{ block.settings.dealer_zip_code }}</span>{% endif %}</span>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Dealers",
+    "settings": [
+      
+    ],
+    "blocks": [
+      {
+        "type": "dealer",
+        "name": "Dealer",
+        "settings": [
+          {
+          	"type": "text",
+          	"id": "dealer_name",
+            "label": "Dealer Name"
+          },
+          {
+          	"type": "url",
+          	"id": "dealer_website",
+            "label": "Dealer Website"
+          },
+          {
+          	"type": "text",
+          	"id": "dealer_address_line1",
+            "label": "Dealer Address Line 1"
+          },
+          {
+          	"type": "text",
+          	"id": "dealer_address_line2",
+            "label": "Dealer Address Line 2"
+          },
+          {
+          	"type": "text",
+          	"id": "dealer_zip_code",
+            "label": "Dealer Zip Code"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

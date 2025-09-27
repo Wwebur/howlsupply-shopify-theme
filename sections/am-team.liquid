@@ -1,0 +1,69 @@
+{% if section.blocks.size > 0 %}
+  <div id="howl-am-team">
+    {% if section.settings.team_title != blank %}
+      <header>
+        <h2 class="h1">{{ section.settings.team_title }}</h2>
+      </header>
+    {% endif %}
+
+    <ul class="team-content">
+      {% for block in section.blocks %}
+        {% if block.settings.member_name != blank %}
+          <li class="team-member">
+            <div class="team-member--content">
+              {% if block.settings.thumbnail_image != blank %}
+                <img src="{{ block.settings.thumbnail_image | img_url: '100x80', crop: 'center' }}" class="member-thumbnail">
+              {% endif %}  
+
+              <div class="member-name">{{ block.settings.member_name }}</div>
+              {% if block.settings.instagram_label != blank and block.settings.instagram_link != blank %}
+                <div class="member-instagram">{% include 'insta-arrow' %}<a href="{{ block.settings.instagram_link }}">{{ block.settings.instagram_label }}</a></div>
+              {% endif %}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Am Team",
+  "settings": [
+    {
+      	"type": "text",
+      	"id": "team_title",
+      	"label": "Team Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "member",
+      "name": "Member",
+      "settings": [
+        {
+          "type": "text",
+          "id": "member_name",
+          "label": "Member Name"
+        },
+        {
+          "type": "text",
+          "id": "instagram_label",
+          "label": "Instagram Label"
+        },
+        {
+          "type": "url",
+          "id": "instagram_link",
+          "label": "Instagram Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "thumbnail_image",
+          "label": "Thumbnail Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

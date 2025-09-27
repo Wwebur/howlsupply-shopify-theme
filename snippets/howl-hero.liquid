@@ -1,0 +1,52 @@
+{%- capture hero_media -%}
+  <div class="hero__media {% if force_image_on_mobile %}remove-video-on-mobile{% endif %}">
+    <div class="hero__media-wrapper media-placeholder objfit">
+      {%- if image != blank -%}
+        {%- render 'srcset-image',
+          image: image,
+          fallback_width: 815,
+          class_modifier: 'howl-hero__media objfit',
+          loading: 'lazy',
+          image_mobile: image_mobile,
+          image_mobile_fallback_width: 815
+        -%}
+      {%- endif -%}
+    </div>
+  </div>
+{%- endcapture -%}
+
+{%- capture hero_content -%}
+  <div class="hero__content-wrapper" data-hero-content style="max-width:{{ max_width }}px">
+
+    {%- if subtitle != blank -%}
+      <p class="subtitle text-upper {% if smaller_subtitle %}smaller-subtitle{% endif %}">{{ subtitle }}</p>
+    {%- endif -%}
+    
+    {%- if title != blank -%}
+      <h1 class="times-title title-big title">{{ title }}</h1>
+    {%- endif -%}
+
+    {%- if button_label != blank and link != blank -%}
+      <a href="{{ link }}" class="btn btn-transparent btn-white">{{ button_label }}</a>
+    {%- endif -%}
+
+    {% if link != blank %}
+      <a href="{{ link }}" class="objfit hero-link"></a>
+    {% endif %}
+
+  </div>
+{%- endcapture -%}
+
+<section class="howl-hero hero--content-{{ text_color }} hero--content-mobile-{{ text_color_mobile }} hero--content-{{ text_position }}" data-component="hero">
+  <div class="hero__container {% if link != blank %}with-link{% endif %}">
+    <div class="hero__inner">
+
+      {{- hero_media -}}
+      
+      <div class="hero__content">
+        {{- hero_content -}}
+      </div>
+
+    </div>
+  </div>
+</section>

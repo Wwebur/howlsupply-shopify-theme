@@ -1,0 +1,438 @@
+<div itemscope itemtype="http://schema.org/Product" data-section-id="{{ section.id }}" data-section-type="product" data-history-state>
+
+  {% comment %}
+    Get first variant, or deep linked one
+  {% endcomment %}
+  {% assign current_variant = product.selected_or_first_available_variant %}
+
+  {% comment %}
+    Get first image
+  {% endcomment %}
+  {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
+  {% comment %}
+    Get the text and link for the back button
+  {% endcomment %}
+  {% assign back_url = '/' %}
+  {% assign back_text = 'products.product.back' | t %}
+  {% if collection %}
+    {% assign back_url = collection.url %}
+    {% assign back_text = collection.title %}
+  {% endif %}
+
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ featured_image | img_url: 'grande' }}">
+  <meta itemprop="name" content="{{ product.title }}{% if product.variants.size > 1 and product.selected_variant %} - {{ current_variant.title }}{% endif %}">
+
+  <div class="product grid grid--uniform grid--no-gutters" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+    {% assign first_image = featured_image %}
+
+    {% if product.images.size > 1 and section.settings.skip_first_product_image and first_image == product.featured_image %}
+      {% assign first_image = product.images[1] %}
+    {% endif %}
+
+    {% comment %}
+      Set variables for product image grid
+    {% endcomment %}
+    {% if section.settings.product_image_type == 'portrait' %}
+      {% if product.images.size == 1 %}
+        {% assign grid_item_width = '' %}
+      {% elsif product.images.size == 2 and section.settings.skip_first_product_image %}
+        {% assign grid_item_width = '' %}
+      {% else %}
+        {% assign grid_item_width = 'medium-up--one-half' %}
+      {% endif %}
+      {% assign is_portrait_image = true %}
+    {% else %}
+      {% assign grid_item_width = '' %}
+    {% endif %}
+<div class="product_content">
+    {% if product.images.size > 0 %}
+      <div class="product__photo grid__item {{ grid_item_width }} product-img-box">
+        <div class="product_rw">
+          
+                  <div class="featured_img">
+          {% for image in product.images %}
+            {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            <div id="currentImg" data-image-id="{{ image.id }}" class="product__photo--single product__photo--variant-wrapper
+            {% if product.images.size > 1 and section.settings.skip_first_product_image %}
+              fade-in
+              {% if forloop.first == true %} hide{% endif %}
+              {% if forloop.index != 2 %} hide{% endif %}
+            {% else %}
+              {% unless featured_image == image %} hide{% endunless %}
+            {% endif %}" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+              <img 
+                id="{{ product.id }}"   
+                class="product__photo--variant lazyload"
+                src="{{ image | img_url: '1024x' }}"
+               {% comment %} data-src="{{ img_url }}"{% endcomment %}
+                data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048, 4472]"
+                data-aspectratio="{{ image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ image.alt | escape }}">
+              
+            </div>
+          {% endfor %}
+
+          <noscript>
+            <img class="product__photo--variant" src="{{ first_image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
+          </noscript>
+          </div>
+ 
+                    
+          {% if product.images.size > 3 %}
+          <div class="img_slider">
+            <!--<span  class="nav next" onclick="fNext()")"><img src="https://cdn.shopify.com/s/files/1/1260/5185/files/arrow_up.png?2771051387871268609"></span>-->
+            <span  class="nav next" id="carousel-up"><img src="https://cdn.shopify.com/s/files/1/1260/5185/files/arrow_up.png?2771051387871268609"></span>
+            <div class="img_box">
+              <div class="slider" id="sld">
+                {% if product.images.size > 1 %}
+                  <ul class="box verticl-carousel">    
+                    {% for image in product.images %}
+                    
+                   		 <li data-thumb="{{ image | product_img_url: 'small' }}" data-image-id="{{ image.id }}">
+                           <a href="#" data-image="{{ image | product_img_url: '1024x1024' }}" data-image-id="{{ image.id }}" data-zoom-image="{{ image | product_img_url: 'master' }}">
+                             <img data-image-id="{{ image.id }}" src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}"></a>
+           
+                             </li>
+                    
+                      {% endfor %}
+                  </ul>
+                {% endif %} 
+              </div>
+              
+            </div>
+          <!--  <span  class="nav previous" onclick="fPrevious()"><img src="https://cdn.shopify.com/s/files/1/1260/5185/files/arrow_down.png?2771051387871268609"></span>-->
+           <span  class="nav previous" id="carousel-down"><img src="https://cdn.shopify.com/s/files/1/1260/5185/files/arrow_down.png?2771051387871268609"></span>
+          </div>
+          {% else %}
+          
+          
+          <div class="img_slider">
+            <div class="img_box box_thre">
+              <div class="slider" id="sld">
+                {% if product.images.size > 1 %}
+                
+                  <ul class="box">    
+                    {% for image in product.images %}
+                    
+                   		 <li data-thumb="{{ image | product_img_url: 'small' }}" data-image-id="{{ image.id }}">
+                           <a href="#" data-image="{{ image | product_img_url: '1024x1024' }}" data-image-id="{{ image.id }}" data-zoom-image="{{ image | product_img_url: 'master' }}">
+                             <img data-image-id="{{ image.id }}" src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}"></a>
+           
+                             </li>
+                    
+                      {% endfor %}
+                  </ul>
+                
+            
+                {% endif %} 
+              </div>
+              
+            </div>
+           </div>
+          {% endif %}
+          
+        </div>
+        {% if product.metafields.Videos.video %}
+        <div class="video">
+          	<iframe src="//player.vimeo.com/video/{{product.metafields.Videos.video}}?byline=0&portrait=0&badge=0" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+            
+            </div>
+        {% endif %}
+      </div>
+    
+<div class="product__details grid__item {{ grid_item_width }} product_details">
+      <div class="grid grid--no-gutters product__details-content">
+      <!--  <div class="grid__item {% if section.settings.product_form_width == 'large' %}medium-up--three-twelfths medium-up--push-one-fifth{% else %}large-up--two-twelfths large-up--push-two-twelfths medium-up--three-twelfths medium-up--push-one-twelfth{% endif %}">-->
+          {% if section.settings.show_vendor %}
+            <p class="product-item__vendor small--text-center">{{ product.vendor }}</p>
+          {% endif %}
+          <h2 itemprop="name">{{ product.title }}</h2>
+        {% assign price = current_variant.price | money_without_trailing_zeros %}
+            <p class="product__price">
+              <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+              <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+              {% if product.compare_at_price_max > product.price %}
+                <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                <span class="product__price--reg">{{ current_variant.compare_at_price | money_without_trailing_zeros }}</span>
+                <span class="product__price--sale">{{ 'products.general.now_price_html' | t: price: price }}</span>
+              {% else %}
+                <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                <span class="product__price--reg js-price">
+                  {{ price }}
+                </span>
+              {% endif %}
+            </p>
+          <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
+          {%- capture 'form_id' -%}AddToCartForm-{{ section.id }}{%- endcapture -%}
+          {%- capture 'form_class' -%}
+            product__form--add-to-cart{% if section.settings.product_form_width == 'large' %} product__form--full-width{% endif %}
+          {%- endcapture -%}
+            {% form 'product', product, id:form_id, class:form_class %}
+            {% comment %}
+              Select element hidden when JS initializes. Safeguard for JS-disabled.
+            {% endcomment %}
+        {% if product.available %}
+              <!--<button id="AddToCart-{{ section.id }}" type="submit" name="add" class="btn btn--add-to-cart{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}">
+                <span class="btn__text">{{ 'products.product.add_to_cart' | t }}</span>
+              </button>-->
+        <!-- <div class="product__quantity quantity-wrapper">
+                <label for="Quantity" class="product__quantity-label">{{ 'products.product.quantity' | t }}</label>
+                <input type="number" id="Quantity"
+                  class="quantity-input"
+                  name="quantity" value="1" min="1">
+              </div> -->
+           <!-- <div class="cart-quantity product__quantity quantity-wrapper">
+        <input type='button' value='-' class='qtyminus' field='Quantity' />
+        <input type="number" name="quantity" id="Quantity" class="quantity quantity-input" value="{{ item.quantity }}" />
+        <input type='button' value='+' class='qtyplus' field='Quantity' />
+    </div>-->
+        <div class="cart_button">
+          <div class="cart_btn_left">
+              <button id="AddToCart-{{ section.id }}" type="submit" name="add" class="btn btn--add-to-cart{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}">
+                <span class="btn__text">{{ 'products.product.add_to_cart' | t }}</span>
+              </button>
+          </div>
+          <div class="cart_rght">
+       <!--  <div class="product__quantity quantity-wrapper">
+                <label for="Quantity" class="product__quantity-label">{{ 'products.product.quantity' | t }}</label>
+                <input type="number" id="Quantity"
+                  class="quantity-input"
+                  name="quantity" value="1" min="1">
+              </div> -->
+            <div class="cart-quantity product__quantity quantity-wrapper">
+              <input type='button' value='-' class='qtyminus' field='Quantity' />
+              <input type="text" name="quantity" id="Quantity" class="quantity quantity-input" min="0" value="{{ item.quantity }}" />
+              <input type='button' value='+' class='qtyplus' field='Quantity' />
+    		</div>
+          </div>
+        </div>
+            {% else %}
+              <button type="button" class="btn btn--add-to-cart btn--disabled{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}" disabled="disabled">
+                {{ 'products.product.sold_out' | t }}
+              </button>
+            {% endif %}
+            {% if section.settings.enable_payment_button %}
+              {{ form | payment_button }}
+            {% endif %}
+
+        <div class="variant_selector" style="visibility: hidden;">
+            <select name="id" id="ProductSelect-{{ section.id }}">
+              {% for variant in product.variants %}
+                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} {% unless variant.available %} disabled="disabled" {% endunless %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {% if variant.available %}{{ variant.price | money_with_currency }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}</option>
+              {% endfor %}
+            </select>
+        </div>
+       
+<!-- swatch -->
+{% if product.available and product.variants.size > 1 %}
+{% for option in product.options %}
+{% include 'swatch' with option %}
+{% endfor %}
+{% endif %}
+<!-- end swatch -->
+ {% comment %}     
+     <!--   <div class="variant_selector">
+          <ul name="id" id="ProductSelect-{{ section.id }}">
+              {% for variant in product.variants %}
+                <li {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} {% unless variant.available %} disabled="disabled" {% endunless %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {% if variant.available %}{{ variant.price | money_with_currency }}-{{ variant.id }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}</li>
+              {% endfor %}
+            </ul>
+          <div name="id" id="ProductSelect-{{ section.id }}">
+                {% for option in product.options_with_values %}
+					<div>  
+					  {% for value in option.values %}
+						<input 
+						type="radio" 
+						name="{{option.name}}" 
+						value="{{ value | escape }}"
+						id="{{option.name | handleize}}-{{value | escape | handleize}}"
+						 {%if forloop.first%} checked="checked" {%endif%}>
+						<label for="{{option.name | handleize}}-{{value | escape | handleize}}" class="{{option.name | downcase}}">
+						  {{value}}{{ product.selected_variant.id }}
+						</label>
+					  {% endfor %}
+					</div>
+				  {% endfor %}
+            </div>
+         </div>-->
+		 <!--<div class="variant_selector">
+			<div id="ProductSelect-{{ section.id }}">
+			{% for variant in product.variants %}
+			<div>
+				<input {% if variant == product.selected_or_first_available_variant %} checked="checked" {% endif %} {% unless variant.available %} disabled="disabled" {% endunless %} type="radio" value="{{variant.id}}" data-sku="{{variant.sku}}" name="id" id="{{variant.id}}">
+				<label for="{{variant.id}}">{{variant.title}}</label>
+			</div>
+			{% endfor %}
+			</div>
+		 </div>-->
+     {% endcomment %}
+        
+            {% if section.settings.show_quantity_selector %}
+              <div class="product__quantity quantity-wrapper">
+                <label for="Quantity" class="product__quantity-label">{{ 'products.product.quantity' | t }}</label>
+                <input type="number" id="Quantity"
+                  class="quantity-input"
+                  name="quantity" value="1" min="1">
+              </div>
+            {% endif %}
+          {% endform %}
+        </div>
+       <!-- <div class="grid__item {% if section.settings.product_form_width == 'large' %}medium-up--four-twelfths medium-up--push-three-tenths{% else %}large-up--one-half large-up--push-three-twelfths medium-up--six-twelfths medium-up--push-two-twelfths{% endif %}">-->
+        <div class="grid grid--no-gutters product__details-content">
+          <div class="product-single__errors"></div>
+          <div class="product-single__description rte" itemprop="description">
+            {% for c in product.collections %}
+				{% if c.handle == "gloves-mittens" or c.handle == "bags" %}
+					<div class="collection_gloves">
+                       <button class="accordion">Description &nbsp; <span class="icon icon-plus" aria-hidden="true"></span><span class="icon icon-minus" aria-hidden="true"></span></button>
+                        <div class="panel">
+                            {{ product.description }}
+                        </div>
+                        <button class="accordion">Features &nbsp; <span class="icon icon-plus" aria-hidden="true"></span><span class="icon icon-minus" aria-hidden="true"></span></button>
+                        <div class="panel">
+                            {{product.metafields.Features.features}}
+                        </div>
+                        <button class="accordion">Sizing Information &nbsp; <span class="icon icon-plus" aria-hidden="true"></span><span class="icon icon-minus" aria-hidden="true"></span></button>
+                        <div class="panel">
+                            {{product.metafields.SizingInformation.sizing_info}}
+                        </div>
+            		</div>
+            	{% else %}
+            		<div class="collection_others">
+                       <button class="accordion">Description &nbsp; <span class="icon icon-plus" aria-hidden="true"></span><span class="icon icon-minus" aria-hidden="true"></span></button>
+                        <div class="panel">
+                            {{ product.description }}
+                        </div>
+                        <button class="accordion">Features &nbsp; <span class="icon icon-plus" aria-hidden="true"></span><span class="icon icon-minus" aria-hidden="true"></span></button>
+                        <div class="panel">
+                            {{product.metafields.Features.features}}
+                        </div>
+            		</div>
+            	{% endif %}
+            {% endfor %}
+           
+          </div>
+          {% if section.settings.social_sharing_products %}
+            {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+          {% endif %}
+        </div>
+    <!--  </div>-->
+    </div>
+    </div>
+      {% comment %}
+        Counting images shown on the page
+      {% endcomment %}
+      {% assign index = 1 %}
+
+      {% comment %}
+        If we have portrait images, we show two per row, so let's get a second image.
+        That image will be moved down below the description on mobile, hence why we'll use
+        `small--hide`. The image moved down is stored in the variable `duplicate_image`.
+      {% endcomment %}
+{% comment %}
+      {% if is_portrait_image %}
+        {% for image in product.images %}
+          {% unless image == first_image %}
+            {% unless section.settings.skip_first_product_image and image == product.featured_image %}
+              <div class="product__photo grid__item small--hide {{ grid_item_width }}">
+                <noscript>
+                  <img src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
+                </noscript>
+                {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                <div class="product__photo--single" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+                  <img class="lazyload"
+                    src="{{ image | img_url: '300x' }}"
+                    data-src="{{ img_url }}"
+                    data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048, 4472]"
+                    data-aspectratio="{{ image.aspect_ratio }}"
+                    data-sizes="auto"
+                    alt="{{ image.alt | escape }}">
+                </div>
+              </div>
+              {% assign index = index | plus: 1 %}
+              {% assign index_offset = forloop.index %}
+              {% assign duplicate_image = image %}
+              {% break %}
+            {% endunless %}
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+{% endcomment %}
+    {% endif %}
+
+    
+
+    {% comment %}
+      Show second product photo after description on mobile if
+      image setting style is 'portrait'
+    {% endcomment %}
+    {% comment %}
+    {% if is_portrait_image and product.images.size > 1 %}
+      <div class="product__photo grid__item medium-up--hide {{ grid_item_width }}">
+        <noscript>
+          <img src="{{ duplicate_image | img_url: '2048x2048' }}" alt="{{ duplicate_image.alt | escape }}">
+        </noscript>
+        {% assign img_url = duplicate_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+        <div class="product__photo--single" style="padding-top:{{ 1 | divided_by: duplicate_image.aspect_ratio | times: 100}}%;">
+          <img class="lazyload"
+            src="{{ duplicate_image | img_url: '300x' }}"
+            data-src="{{ img_url }}"
+            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048, 4472]"
+            data-aspectratio="{{ duplicate_image.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ duplicate_image.alt | escape }}">
+        </div>
+      </div>
+    {% endif %}
+{% endcomment %}
+    {% comment %}
+      Show other product images below product info if there's any left to show
+    {% endcomment %}
+    {% comment %}
+    {% if index < product.images.size %}
+      {% for image in product.images offset:index_offset %}
+        {% unless image == first_image %}
+          {% unless section.settings.skip_first_product_image and image == product.featured_image %}
+            <div class="product__photo grid__item {{ grid_item_width }}">
+              <noscript>
+                <img src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
+              </noscript>
+              {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+              <div class="product__photo--single" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+                <img class="lazyload"
+                  src="{{ image | img_url: '300x' }}"
+                  data-src="{{ img_url }}"
+                  data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048, 4472]"
+                  data-aspectratio="{{ image.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ image.alt | escape }}">
+              </div>
+            </div>
+          {% endunless %}
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+    {% endcomment %}
+  </div>
+  <div class="back-button grid">
+    <div class="grid__item"></div>
+      <a href="{{ back_url }}" class="btn back-button__link">
+        <span class="icon icon-arrow-left" aria-hidden="true"></span>
+        <span>{{ back_text }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+{% unless product == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+{% endunless %}
+

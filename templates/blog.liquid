@@ -1,0 +1,60 @@
+<!-- /templates/blog.liquid -->
+
+{% paginate blog.articles by 10 %}
+
+<div class="page-width page-container blog_page" itemscope itemtype="http://schema.org/Article">
+  <!--<header class="visually-hidden">
+    {% if current_tags %}
+      <h1>{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}</h1>
+    {% else %}
+      <h1>{{ blog.title }}</h1>
+    {% endif %}
+  </header>-->
+
+  {% for article in blog.articles %}
+    
+
+    {% comment %}
+      Use the excerpt if it exists or truncate the full article
+    {% endcomment %}
+    <div class="rte blog_content">
+      {% if article.image %}
+        <div class="blog_image">
+          <a href="{{ article.url }}">
+            {{ article | img_url: 'master' | img_tag: article.title }}
+          </a>
+        </div>
+      {% endif %}
+{% comment %}
+      {% if article.excerpt.size > 0 %}
+        {{ article.excerpt }}
+      {% else %}
+        <p>{{ article.content | truncatewords: 100 }}</p>
+      {% endif %}
+      {% endcomment %}
+      <div class="blog_details">
+        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+        <p>
+          Posted : <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+        </p>
+      </div>
+    </div>
+
+<!--    <p class="action-link">
+      <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} <span class="icon icon-arrow-right action-link__icon" aria-hidden="true"></span></a>
+    </p>-->
+{% comment %}
+    {% unless forloop.last %}
+      <hr class="hr--clear">
+    {% endunless %}
+{% endcomment %}
+  {% endfor %}
+
+  {% if paginate.pages > 1 %}
+    <hr class="hr--clear">
+
+    {% include 'pagination' %}
+  {% endif %}
+</div>
+
+{% endpaginate %}

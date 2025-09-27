@@ -1,0 +1,34 @@
+<section class="howl-team" data-component="team">
+  <div class="howl__container">
+    <div class="team__inner">
+      {% if section_title != blank %}
+      	<h2 class="section-title text-center">{{ section_title }}</h2>
+      {% endif %}
+      <div class="team__wrapper">
+				{% if blocks.size > 0 %}
+					{% for block in blocks %}
+						<div class="team-member">
+							<div class="media-wrapper">
+								{% if block.settings.member_image != blank %}
+									{%- render 'srcset-image',
+		                image: block.settings.member_image,
+		                fallback_width: 815,
+		                class_modifier: 'howl__media objfit',
+		                loading: 'lazy'
+		              -%}
+								{% endif %}
+							</div>
+							<div class="team-member__info">
+								{% if block.settings.member_name != blank %}
+									<h3>{{ block.settings.member_name }}</h3>
+								{% endif %}
+							</div>
+						</div>
+					{% endfor %}
+				{% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+

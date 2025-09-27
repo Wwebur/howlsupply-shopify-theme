@@ -1,0 +1,40 @@
+<section class="howl-fullwidth-image" data-component="fullwidth-image">
+  <div class="howl-wrapper">
+    <div class="fullwidth-image__inner">
+      {% if section_title != blank %}
+      	<h2 class="section-title text-center"><span>{{ section_title }}</span></h2>
+    	{% endif %}
+      <div class="fullwidth-image__wrapper">
+				{%- if image != blank -%}
+	        {%- render 'srcset-image',
+	          image: image,
+	          image_mobile: image_mobile,
+	          fallback_width: 2000,
+	          image_mobile_fallback_width: 815,
+	          class_modifier: 'howl-hero__media objfit',
+	          loading: 'lazy'
+	        -%}
+	      {%- endif -%}
+
+	      <div class="fullwidth-image__content">
+	        <div class="fullwidth-image__content-wrapper" data-hero-content style="max-width:{{ max_width }}px">
+			    
+				    {%- if content != blank -%}
+				      <h2 class="times-title title-big content">{{ content }}</h2>
+				    {%- endif -%}
+
+				    {% if link != blank %}
+				    	<a href="{{ link }}" class="btn btn-transparent btn-white">Shop Now</a>
+				    {% endif %}
+				  </div>
+	      </div>
+
+	      {% if link != blank %}
+	      	<a href="{{ link }}" class="fullwidth-image__link objfit"></a>
+	      {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+

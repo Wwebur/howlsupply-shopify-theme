@@ -1,0 +1,107 @@
+<!-- /templates/page.liquid -->
+
+<div class="page-width page-container">
+  <header>
+   <!-- <h1>{{ page.title }}</h1>-->
+  </header>
+  <div class="rte rte--indented-images frm_details">
+    <button class="accordion"><p class="nme">General</p><p class="nme"><span>Questions</span><span class="icon icon-plus" aria-hidden="true"></span><span class="icon icon-minus" aria-hidden="true"></span></p></button>
+<div class="panel">
+   <div class="contact-form form-vertical gen_que">
+    {% form 'contact' %}
+
+      {% if form.posted_successfully? %}
+        <p class="note form-success">
+          {{ 'contact.form.post_success' | t }}
+        </p>
+      {% endif %}
+
+      {{ form.errors | default_errors }}
+	<div class="grid">
+		<div class="grid_item medium-up--one-half">
+				<div class="cont">
+				  <label for="ContactFormName" class="label--hidden">Name</label>
+				  <input type="text" id="ContactFormName" name="contact[name]" placeholder="Enter Your Name Here" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" class="input-full">
+				</div>
+
+				<div class="contact-form__email cont">
+				  <label for="ContactFormEmail" class="label--hidden">Email</label>
+				  <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="Enter Your Email Here" autocorrect="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="input-full">
+				</div>
+
+				<div class="cont">
+				  <label for="ContactFormPhone" class="label--hidden">Phone</label>
+				  <input type="tel" id="ContactFormPhone" name="contact[phone]" placeholder="Enter Your Phone Here" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" class="input-full">
+				</div>
+      </div>
+		<div class="grid_item medium-up--one-half">
+				<div class="cont">
+					<label for="ContactFormMessage" class="label--hidden">Message</label>
+					<textarea id="ContactFormMessage" name="contact[body]" placeholder="Enter Your Message Here" rows="10" class="input-full">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+				</div>
+		</div>
+	</div>
+	<div class="frm_btn">
+      <input type="submit" class="btn" value="Submit">
+	</div>
+    {% endform %}
+  </div>
+</div>
+
+    <!-- <button class="accordion"><p class="nme">Potential</p><p class="nme"><span> Vendors</span><span class="icon icon-plus" aria-hidden="true"></span><span class="icon icon-minus" aria-hidden="true"></span></p></button>
+<div class="panel">
+   <div class="contact-form form-vertical ptn_ven">
+    {% form 'contact' %}
+
+      {% if form.posted_successfully? %}
+        <p class="note form-success">
+          {{ 'contact.form.post_success' | t }}
+        </p>
+      {% endif %}
+
+      {{ form.errors | default_errors }}
+	<div class="grid">
+		<div class="grid__item medium-up--one-half">
+				<div class="cont">
+					<label for="ContactFormStore" class="label--hidden">Store</label>
+					<input type="text" id="ContactFormStore" name="contact[store]" placeholder="Enter Your Store Here" class="input-full">
+				</div>
+
+				<div class="contact-form__email cont">
+					<label for="ContactFormEmail" class="label--hidden">Email</label>
+					<input type="email" id="ContactFormEmail" name="contact[email]" placeholder="Enter Your Email Here" autocorrect="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="input-full">
+				</div>
+
+				<div class="cont">
+					<label for="ContactFormPhone" class="label--hidden">Phone</label>
+					<input type="tel" id="ContactFormPhone" name="contact[phone]" placeholder="Enter Your Phone Here" pattern="[0-9\-]*" class="input-full">
+				</div>
+				
+				<div class="cont">
+					<label for="ContactFormLocation" class="label--hidden">Location</label>
+					<input type="tel" id="ContactFormLocation" name="contact[location]" placeholder="Enter Your Location Here" class="input-full">
+				</div>
+				
+				<div class="cont">
+					<label for="ContactFormBrands" class="label--hidden">Other Brands Carried</label>
+					<input type="text" id="ContactFormBrands" name="contact[brands]" placeholder="Enter Other Brands Carried" class="input-full">
+				</div>
+		</div>
+		<div class="grid__item medium-up--one-half">
+			<div class="cont">
+				<label for="ContactFormMessage" class="label--hidden">Message</label>
+				<textarea id="ContactFormMessage" name="contact[body]" placeholder="Enter Your Message Here" rows="20" class="input-full">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+			</div>
+		</div>
+	</div>
+	<div class="frm_btn">
+		<input type="submit" class="btn" value="Submit">
+	</div>
+    {% endform %}
+  </div>
+</div> -->
+<div class="frm_cntt">
+  {{page.content}}
+    </div>
+  </div>
+</div>

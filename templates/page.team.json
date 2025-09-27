@@ -1,0 +1,283 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "howl-hero": {
+      "type": "howl-hero",
+      "settings": {
+        "subtitle": "",
+        "title": "Howl Team",
+        "button_label": "",
+        "link": "",
+        "image": "shopify://shop_images/Reid_Smith_-_Howl_Jan._2025-35.jpg",
+        "image_mobile": "shopify://shop_images/878A5024-2.jpg",
+        "smaller_subtitle": false,
+        "text_color": "yellow",
+        "max_width": 400,
+        "top_margin": 0,
+        "bottom_margin": 0,
+        "top_margin_mobile": 0,
+        "bottom_margin_mobile": 0
+      }
+    },
+    "2e862488-602f-414b-9a65-e7b55e9bdb0c": {
+      "type": "howl-team",
+      "blocks": {
+        "08ed66f6-f213-4aeb-bc9d-827f9c4455e8": {
+          "type": "member",
+          "settings": {
+            "member_name": "Reid Smith",
+            "member_image": "shopify://shop_images/tapered.jpg",
+            "instagram_label": ""
+          }
+        },
+        "40eb363d-87e7-43d5-872c-b18b7b4f652c": {
+          "type": "member",
+          "settings": {
+            "member_name": "Finn Westbury",
+            "member_image": "shopify://shop_images/000023380023.jpg",
+            "instagram_label": "https://www.instagram.com/alwaysfinna/"
+          }
+        },
+        "13f89cfb-65db-4e56-be52-550d7f4e2a58": {
+          "type": "member",
+          "settings": {
+            "member_name": "Kennedi Deck",
+            "member_image": "shopify://shop_images/Kennedit.jpg",
+            "instagram_label": "https://www.instagram.com/kenned1deck/?hl=en"
+          }
+        },
+        "member_KHKPAp": {
+          "type": "member",
+          "settings": {
+            "member_name": "Parker Szumowski ",
+            "member_image": "shopify://shop_images/20240201-966A4891.jpg",
+            "instagram_label": ""
+          }
+        },
+        "7f26091b-3057-4cae-b328-5541fc70f687": {
+          "type": "member",
+          "settings": {
+            "member_name": "Gian Sutter",
+            "member_image": "shopify://shop_images/Screenshot_2023-10-03_at_1.59.17_PM.png",
+            "instagram_label": ""
+          }
+        },
+        "ac94fd79-8699-48c7-bc7e-291a274538df": {
+          "type": "member",
+          "settings": {
+            "member_name": "Danimals",
+            "member_image": "shopify://shop_images/000011160024.jpg",
+            "instagram_label": ""
+          }
+        },
+        "6e35d43b-cf25-480b-b6c9-1d4f2bf89764": {
+          "type": "member",
+          "settings": {
+            "member_name": "Joe Sexton",
+            "member_image": "shopify://shop_images/000067960024.jpg",
+            "instagram_label": ""
+          }
+        },
+        "499c4dbc-f760-4803-b97a-ae8af32aab55": {
+          "type": "member",
+          "settings": {
+            "member_name": "Quin Ellul",
+            "member_image": "shopify://shop_images/reddish.jpg",
+            "instagram_label": ""
+          }
+        },
+        "a3fe242b-28eb-4038-a037-817eb188de3c": {
+          "type": "member",
+          "settings": {
+            "member_name": "Justin Phipps",
+            "member_image": "shopify://shop_images/Screenshot_2023-10-02_at_10.40.51_PM.png",
+            "instagram_label": ""
+          }
+        },
+        "6d412065-ae5b-46d8-89d7-743609332fde": {
+          "type": "member",
+          "settings": {
+            "member_name": "Jed Anderson",
+            "member_image": "shopify://shop_images/000025930030.jpg",
+            "instagram_label": "https://www.instagram.com/latexmansion/"
+          }
+        },
+        "d6a4d58a-ca9c-48e5-8e6f-d874e48c0388": {
+          "type": "member",
+          "settings": {
+            "member_name": "Darrell Mathes",
+            "member_image": "shopify://shop_images/image-grid-img.jpg",
+            "instagram_label": ""
+          }
+        },
+        "2e10d89c-4957-4fef-8ab8-795085b2fe9e": {
+          "type": "member",
+          "settings": {
+            "member_name": "Mike Liddle",
+            "member_image": "shopify://shop_images/Mike_CM-1848.jpg",
+            "instagram_label": ""
+          }
+        },
+        "c1873748-15f3-438e-ae2a-ca4a8b10f9b2": {
+          "type": "member",
+          "settings": {
+            "member_name": "Benny Urban",
+            "member_image": "shopify://shop_images/000025930019_f0eaeb2d-7726-47f8-aeae-01c57e590433.jpg",
+            "instagram_label": ""
+          }
+        },
+        "e4e43f30-c895-4181-866c-3f238fb4a6b0": {
+          "type": "member",
+          "settings": {
+            "member_name": "Danyale Patterson",
+            "member_image": "shopify://shop_images/Screen_Shot_2022-10-31_at_3.07.22_PM.png",
+            "instagram_label": ""
+          }
+        },
+        "15728778-df45-40f8-8d98-bf65402ff9a9": {
+          "type": "member",
+          "settings": {
+            "member_name": "Noah Peterson",
+            "member_image": "shopify://shop_images/Screenshot_2023-10-02_at_10.09.05_PM.png",
+            "instagram_label": ""
+          }
+        },
+        "6e107962-8925-4103-b9ba-d55a395561a3": {
+          "type": "member",
+          "settings": {
+            "member_name": "Jacob Krugmire",
+            "member_image": "shopify://shop_images/000020300016.jpg",
+            "instagram_label": ""
+          }
+        },
+        "654c3ef6-7c31-4673-8cab-17b218c4e917": {
+          "type": "member",
+          "settings": {
+            "member_name": "Aito Ito",
+            "member_image": "shopify://shop_images/Aito_Green_Look_Howl.jpg",
+            "instagram_label": "https://www.instagram.com/aito_ito/"
+          }
+        },
+        "b9cdbbc1-8a29-43e7-b2ba-2f6d1699f95c": {
+          "type": "member",
+          "settings": {
+            "member_name": "Ben Bilodeau",
+            "member_image": "shopify://shop_images/000084830019.jpg",
+            "instagram_label": ""
+          }
+        },
+        "ef15bf27-4272-442e-be2c-a7322827c47d": {
+          "type": "member",
+          "settings": {
+            "member_name": "Lucas Baume",
+            "member_image": "shopify://shop_images/Screenshot_2023-10-02_at_10.28.36_PM.png",
+            "instagram_label": "https://www.instagram.com/yungdoli/tagged/?hl=en&img_index=1"
+          }
+        },
+        "c12460bf-d992-4491-b95f-297dd0be8284": {
+          "type": "member",
+          "settings": {
+            "member_name": "Brett Kulas",
+            "member_image": "shopify://shop_images/Brett_Fleece_Gloves_Snow_Bank_Howl_x_Public.jpg",
+            "instagram_label": ""
+          }
+        },
+        "539a2f08-9fb4-4d5b-8991-fd8404d1bbe4": {
+          "type": "member",
+          "settings": {
+            "member_name": "Peter Croasdale",
+            "member_image": "shopify://shop_images/IMG_38B92AF0AD0E-1.jpg",
+            "instagram_label": ""
+          }
+        },
+        "5303c9d0-a2b9-4f12-b16a-d22d77089bad": {
+          "type": "member",
+          "settings": {
+            "member_name": "Denver Orr",
+            "member_image": "shopify://shop_images/Screenshot_2023-10-02_at_10.09.13_PM.png",
+            "instagram_label": ""
+          }
+        },
+        "64adfa12-7c8f-4310-99f8-9de77da2c2a6": {
+          "type": "member",
+          "settings": {
+            "member_name": "Ryoki OGawa",
+            "member_image": "shopify://shop_images/Screenshot_2023-10-03_at_2.06.36_PM.png",
+            "instagram_label": ""
+          }
+        },
+        "597a123b-991e-492e-8224-aa7d777e1088": {
+          "type": "member",
+          "settings": {
+            "member_name": "Kohei Heikudo",
+            "member_image": "shopify://shop_images/Screenshot_2023-10-03_at_2.03.53_PM.png",
+            "instagram_label": ""
+          }
+        },
+        "9525545a-a05c-4a46-9d09-05ed7d7482d2": {
+          "type": "member",
+          "settings": {
+            "member_name": "Yuto Yamada",
+            "member_image": "shopify://shop_images/Screenshot_2023-10-03_at_2.11.29_PM_87f478f4-ceb3-4363-b894-8792a3c58fe1.png",
+            "instagram_label": ""
+          }
+        },
+        "0c8a96d0-e690-40de-a76f-aadb4df2f34b": {
+          "type": "member",
+          "settings": {
+            "member_name": "Ojo Forever",
+            "member_image": "shopify://shop_images/000004440017_2233dd7e-d1a6-4186-8ab4-bd3a0180211c.jpg",
+            "instagram_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "08ed66f6-f213-4aeb-bc9d-827f9c4455e8",
+        "40eb363d-87e7-43d5-872c-b18b7b4f652c",
+        "13f89cfb-65db-4e56-be52-550d7f4e2a58",
+        "member_KHKPAp",
+        "7f26091b-3057-4cae-b328-5541fc70f687",
+        "ac94fd79-8699-48c7-bc7e-291a274538df",
+        "6e35d43b-cf25-480b-b6c9-1d4f2bf89764",
+        "499c4dbc-f760-4803-b97a-ae8af32aab55",
+        "a3fe242b-28eb-4038-a037-817eb188de3c",
+        "6d412065-ae5b-46d8-89d7-743609332fde",
+        "d6a4d58a-ca9c-48e5-8e6f-d874e48c0388",
+        "2e10d89c-4957-4fef-8ab8-795085b2fe9e",
+        "c1873748-15f3-438e-ae2a-ca4a8b10f9b2",
+        "e4e43f30-c895-4181-866c-3f238fb4a6b0",
+        "15728778-df45-40f8-8d98-bf65402ff9a9",
+        "6e107962-8925-4103-b9ba-d55a395561a3",
+        "654c3ef6-7c31-4673-8cab-17b218c4e917",
+        "b9cdbbc1-8a29-43e7-b2ba-2f6d1699f95c",
+        "ef15bf27-4272-442e-be2c-a7322827c47d",
+        "c12460bf-d992-4491-b95f-297dd0be8284",
+        "539a2f08-9fb4-4d5b-8991-fd8404d1bbe4",
+        "5303c9d0-a2b9-4f12-b16a-d22d77089bad",
+        "64adfa12-7c8f-4310-99f8-9de77da2c2a6",
+        "597a123b-991e-492e-8224-aa7d777e1088",
+        "9525545a-a05c-4a46-9d09-05ed7d7482d2",
+        "0c8a96d0-e690-40de-a76f-aadb4df2f34b"
+      ],
+      "settings": {
+        "section_title": "HOWL TEAM",
+        "top_margin": 100,
+        "bottom_margin": 100,
+        "top_margin_mobile": 60,
+        "bottom_margin_mobile": 60
+      }
+    }
+  },
+  "order": [
+    "howl-hero",
+    "2e862488-602f-414b-9a65-e7b55e9bdb0c"
+  ]
+}

@@ -1,0 +1,22 @@
+<section class="howl-video {% if full_width %}full-width{% endif %}" data-component="video">
+  <div class="howl-condensed-wrapper">
+    <div class="video__inner">
+      <div class="video__wrapper">
+      	{% if link != blank %}<a href="{{ link }}">{% endif %}
+				{%- if video_url != blank -%}
+					{%- render 'howl-video-element',
+					  video_url: video_url,
+					  video_class: 'objfit' -%}
+				{%- endif -%}
+				{% if link != blank %}</a>{% endif %}
+      </div>
+    </div>
+
+    {% if link_label != blank %}
+    	<div class="video__meta">
+	    	<h3 class="link">{% if link != blank %}<a href="{{ link }}">{% endif %}{{ link_label }} →{% if link != blank %}</a>{% endif %}</h3>
+    	</div>
+    {% endif %}
+  </div>
+</section>
+

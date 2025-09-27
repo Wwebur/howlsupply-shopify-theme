@@ -1,0 +1,118 @@
+<div data-section-id="{{ section.id }}" data-section-type="slideshow-section">
+  <div class="hero slideshow-{{ section.id }}" id="Hero">
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% if block.settings.hero_slide  == blank %}
+          <div class="placeholder-background hero__slide hero__slide--{{ block.id }}" {{ block.shopify_attributes }}>
+            {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'icon icon--placeholder' }}
+          </div>
+        {% else %}
+        <div class="hero__slide hero__slide--{{ block.id }}" {{ block.shopify_attributes }}>
+          {% assign img_url = block.settings.hero_slide | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+          <img class="hero__image hero__image--{{ block.id }} lazyload{% unless forloop.first == true %} lazypreload{% endunless %}"
+            {% if forloop.first == true %}
+              src="{{ block.settings.hero_slide | img_url: '300x' }}"
+            {% endif %}
+            data-src="{{ img_url }}"
+            data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048, 4472]"
+            data-aspectratio="{{ block.settings.hero_slide.aspect_ratio }}"
+            data-sizes="auto"
+            data-parent-fit="cover"
+            alt="{{ block.settings.hero_slide.alt | escape }}">
+          <div class="text_section">
+            {% if block.settings.hero_title != blank %}
+              <h1><a href="{{ block.settings.hero_link }}">{{ block.settings.hero_title }}</a></h1>
+            {% endif %}
+          </div>
+          <noscript>
+            {% if forloop.first == true %}
+              <div class="hero__image-no-js hero__image--{{ block.id }}" data-image="{{ block.id }}" style="background-image: url('{{ block.settings.hero_slide | img_url: "2048x2048" }}');"></div>
+            {% endif %}
+          </noscript>
+        </div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <div class="hero__slide" {{ block.shopify_attributes }}>
+        {% assign img_url = 'hero_slide_1.jpg' | asset_img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+        <img class="hero__image hero__image--{{ block.id }} lazyload"
+          data-src="{{ img_url }}"
+          data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+          data-sizes="auto"
+          data-parent-fit="cover">
+         <div class="hero__text-wrapper">
+    <h1>{{ block.settings.blog_title }}</h1>
+  </div>
+        <noscript>
+          <div class="hero__image-no-js hero__image--{{ block.id }}" data-image="{{ block.id }}" style="background-image: url('{{ "hero_slide_1.jpg" | asset_img_url: "2048x2048" }}')"></div>
+        </noscript>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if settings.enable_banner_text and settings.banner_text != blank %}
+    <div id="homepage-banner--text"><p>{{ settings.banner_text }}</p><img src="{{ 'banner-close.svg' | asset_url }}" class="banner-close--trigger"></div>
+  {% endif %}
+
+</div>
+
+{% schema %}
+  {
+    "name": {
+      "de": "Slideshow",
+      "en": "Slideshow",
+      "ja": "スライドショー",
+      "pt-BR": "Apresentação de slides",
+      "es": "Diapositivas",
+      "it": "Presentazione",
+      "fr": "Diaporama"
+    },
+    "max_blocks": 6,
+    "settings": [
+      {
+        "type": "header",
+        "content": "Banner Text Options"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": {
+          "de": "Foto",
+          "en": "Image",
+          "ja": "画像",
+          "pt-BR": "Imagem",
+          "es": "Imagen",
+          "it": "Immagine",
+          "fr": "Image"
+        },
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "hero_slide",
+            "label": {
+              "de": "Foto",
+              "en": "Image",
+              "ja": "画像",
+              "pt-BR": "Imagem",
+              "es": "Imagen",
+              "it": "Immagine",
+              "fr": "Image"
+            }
+          },
+          {
+            "type": "text",
+            "id": "hero_title",
+            "label": "Hero Title"
+          },
+          {
+            "type": "url",
+            "id": "hero_link",
+            "label": "Hero link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

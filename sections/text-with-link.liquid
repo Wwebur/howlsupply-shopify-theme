@@ -1,0 +1,95 @@
+<div class="text-with-link text-with-link--{{ section.id }}">
+  <div class="howl-wrapper text-center">
+    {% if section.settings.text != blank %}
+      <h2 class="h1 times-title title-big text {% if section.settings.full_width %}full-width{% endif %}">{{ section.settings.text }}</h2>
+    {% endif %}
+
+    {% if section.settings.link_label != blank and section.settings.link_url != blank %}
+      <h3 class="link"><a href="{{ section.settings.link_url }}">{{ section.settings.link_label }} →</a></h3>
+    {% endif %}
+  </div>
+</div>
+
+{%- render 'section-margin-css',
+  top_margin: section.settings.top_margin,
+  bottom_margin: section.settings.bottom_margin,
+  top_margin_mobile: section.settings.top_margin_mobile,
+  bottom_margin_mobile: section.settings.bottom_margin_mobile -%}
+
+
+{% schema %}
+  {
+    "name": "Text with Link",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full Width"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "link_label",
+        "label": "Link Label"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link Url"
+      },
+      {
+        "type": "header",
+        "content": "Settings"
+      },
+      {
+        "type": "range",
+        "id": "top_margin",
+        "label": "Top Margin",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 5
+      },
+      {
+        "type": "range",
+        "id": "bottom_margin",
+        "label": "Bottom Margin",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 5
+      },
+      {
+        "type": "range",
+        "id": "top_margin_mobile",
+        "label": "Top Margin (Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 5
+      },
+      {
+        "type": "range",
+        "id": "bottom_margin_mobile",
+        "label": "Bottom Margin (Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 5
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text with Link"
+      }
+    ]
+  }
+{% endschema %}

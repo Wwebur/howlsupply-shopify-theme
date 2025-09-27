@@ -1,0 +1,78 @@
+<div id="product-sizeguide--technical-apparel" class="product-sizeguide--item">
+	
+	<div id="product-sizeguide__info">
+		<div id="product-sizeguide__info-left">
+			<img src="{{ 'size-guide-technical-apparel.svg' | asset_url }}">
+		</div>
+		<div id="product-sizeguide__info-right">
+			{% if product.featured_image %}
+				<img src="{{ product.featured_image | img_url: '1500x' }}">
+			{% else %}
+				<img src="{{ 'img-technical-apparel.jpeg' | asset_img_url: 'master' }}">
+			{% endif %}
+		</div>
+	</div>
+
+	{% assign size_fit_description = settings.ta_size_fit_description %}
+
+	{% assign size_fit_image1 = settings.ta_size_fit_image1 %}
+	{% assign size_fit_image1_description = settings.ta_size_fit_image1_description %}
+	
+	{% assign size_fit_image2 = settings.ta_size_fit_image2 %}
+	{% assign size_fit_image2_description = settings.ta_size_fit_image2_description %}
+
+	{% assign measure_description = settings.ta_measure_description %}
+	{% assign measure_image = settings.ta_measure_image | img_url: 'master' %}
+
+	<div id="product-sizeguide__accordions">
+		<div class="accordion-group">
+			<div class="accordion-trigger">
+				<h3>Size & Fit</h3>
+				<img src="{{ 'accordion-arrow.svg' | asset_url }}" class="icon-arrow">
+			</div>
+			<div class="accordion-content">
+				<div class="accordion-content__wrapper">
+					<div class="accordion-content__left">
+						<div class="left-content">
+							{{ size_fit_description }}
+						</div>
+					</div>
+					<div class="accordion-content__right">
+						<div class="size-fit__grid">
+							<div class="size-fit__grid-item">
+								<img src="{{ size_fit_image1 | img_url: 'master' }}">
+								<div class="description">{{ size_fit_image1_description }}</div>
+							</div>
+							<div class="size-fit__grid-item">
+								<img src="{{ size_fit_image2 | img_url: 'master' }}">
+								<div class="description">{{ size_fit_image2_description }}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="accordion-group">
+			<div class="accordion-trigger">
+				<h3>How to Measure</h3>
+				<img src="{{ 'accordion-arrow.svg' | asset_url }}" class="icon-arrow">
+			</div>
+			<div class="accordion-content">
+				<div class="accordion-content__wrapper">
+					<div class="accordion-content__left">
+						<div class="left-content">
+							{{ measure_description }}
+						</div>
+					</div>
+					<div class="accordion-content__right">
+						<div class="media-wrapper">
+							<img src="{{ measure_image }}">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "howl-hero": {
+      "type": "howl-hero",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "link": "",
+        "image": "shopify://shop_images/nikwax-hero.jpg",
+        "image_mobile": "shopify://shop_images/nikwax-hero-mobile.jpg",
+        "smaller_subtitle": false,
+        "text_color": "black",
+        "max_width": 615,
+        "top_margin": 0,
+        "bottom_margin": 0,
+        "top_margin_mobile": 0,
+        "bottom_margin_mobile": 0
+      }
+    },
+    "fe3e7a3a-62d8-4c33-a863-38b1636e6850": {
+      "type": "howl-text",
+      "settings": {
+        "content": "<div style=\"text-align:center\">HOWL SUPPLY Glove Care and Maintenance Guidlines</div><br>\nHOWL SUPPLY builds several collections of gloves and mittens to serve specific applications in the most demanding environments on the planet. Taking care of your quality gloves will extend their life and performance.<br><br>Always seek to air dry your gloves after use in the field, and FOR BEST RESULTS follow the instructions below:<hr style=\"margin-top:60px;margin-bottom:60px\"><div style=\"text-align:center\">Handwash Your Gloves:</div><br><ol style=\"margin-left:30px\">\n<li>When possible, wipe gloves clean with a damp cloth, then allow to dry.</li>\n<li style=\"margin-top:30px\">If necessary, use a mild soap recommended for washing wool and/or delicate products.<ul style=\"margin-top:30px;margin-left:20px;list-style:disc\"><li>Cotton or synthetic washing materials and those containing bleach or Sodium Perborate are not suitable. - Do not use any fabric conditioner. - Do not use strong washing materials as they may damage the leather’s performance properties.</li></ul>\n</li>\n<li style=\"margin-top:30px\">Produce a good lather in lukewarm water using mild soap.</li>\n<li style=\"margin-top:30px\">Immerse the gloves and wash gently while wearing.</li>\n<li style=\"margin-top:30px\">Remove gloves and rinse thoroughly in clean water.</li>\n<li style=\"margin-top:30px\">To best prolong your glove’s lifespan wash them before they become too soiled!</li>\n</ol><hr style=\"margin-top:60px;margin-bottom:60px\"><div style=\"text-align:center\">Dry Your Gloves:</div><br><ol style=\"margin-left:30px\">\n<li>Squeeze out all excess water from the fingers toward the cuff and pull gently into shape.</li>\n<li style=\"margin-top:30px\">Put the gloves on your hand to restore shape and fit.</li>\n<li style=\"margin-top:30px\">Hang to dry at room temperature away from direct sunlight or heat.</li>\n<li style=\"margin-top:30px\">Use a suede brush to restore the nap on suede portion of gloves.</li>\n<li style=\"margin-top:30px\">DO NOT TUMBLE DRY OR PLACE ON A HEAT SOURCE</li>\n</ol><hr style=\"margin-top:60px;margin-bottom:60px\"><div style=\"text-align:center\">Restore the Waterproofing on Your Glove Shell:</div><br>HOWL SUPPLY believes our responsibility is not only to deliver the best performing gear, but to do so while minimizing adverse environmental effects. For example, Perfluorinated compounds (PFCs) are under increasing scrutiny as an element of durable water repellent (DWR) coatings and treatments in technical apparel. Because Nikwax is committed to providing PFC-free, high performance aftercare products Black Diamond highly recommends maintaining your gloves per the below instructions.<br><div id=\"black-box\" style=\"margin-top:50px;padding:80px 110px;background:#000;color:#fff\">All Leather Insulated Gloves & Mittens Natural leather combines abrasion resistance and breathability. Regular care will keep them performing to support your activities. • Remove surface dirt with a rag, using lukewarm water if needed. Air dry. • To restore water resistance, use Nikwax Waterproofing Wax for Leather. Place a small amount of the cream (dime sized) on the glove and rub in evenly paying special attention to the seams. After ten minutes remove any excess with a damp cloth.</div><style type=\"text/css\">@media (max-width: 767px) { #black-box { padding: 40px !important } }</style>",
+        "top_margin": 100,
+        "bottom_margin": 100,
+        "top_margin_mobile": 75,
+        "bottom_margin_mobile": 75
+      }
+    }
+  },
+  "order": [
+    "howl-hero",
+    "fe3e7a3a-62d8-4c33-a863-38b1636e6850"
+  ]
+}

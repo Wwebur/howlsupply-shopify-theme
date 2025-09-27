@@ -1,0 +1,58 @@
+<section class="howl-image-grid" data-component="image-grid">
+  <div class="howl__container">
+    <div class="image-grid__inner">
+      
+      <div class="image-grid__wrapper">
+        <div class="image-grid__left">
+          <div class="media-wrapper">
+            {%- if first_image != blank -%}
+              {%- render 'srcset-image',
+                image: first_image,
+                fallback_width: 815,
+                class_modifier: 'howl__media objfit',
+                loading: 'lazy'
+              -%}
+            {%- endif -%}
+          </div>
+        </div>
+        <div class="image-grid__right">
+          <div class="media-wrapper">
+            {%- if second_image != blank -%}
+              {%- render 'srcset-image',
+                image: second_image,
+                fallback_width: 815,
+                class_modifier: 'howl__media objfit',
+                loading: 'lazy'
+              -%}
+            {%- endif -%}
+          </div>
+        </div>
+                <div class="image-grid__right">
+          <div class="media-wrapper">
+            {%- if third != blank -%}
+              {%- render 'srcset-image',
+                image: third_image,
+                fallback_width: 815,
+                class_modifier: 'howl__media objfit',
+                loading: 'lazy'
+              -%}
+            {%- endif -%}
+          </div>
+        </div>
+                <div class="image-grid__right">
+          <div class="media-wrapper">
+            {%- if fourth_image != blank -%}
+              {%- render 'srcset-image',
+                image: fourth_image,
+                fallback_width: 815,
+                class_modifier: 'howl__media objfit',
+                loading: 'lazy'
+              -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

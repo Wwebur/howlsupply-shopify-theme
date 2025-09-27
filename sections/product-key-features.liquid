@@ -1,0 +1,42 @@
+{%- if product.metafields.howl.product_key_features != blank -%}
+
+<section class="howl-product-key-features" data-component="text">
+  <div class="howl__container">
+  	<div class="howl-product-key-features__wrapper">
+  		<div class="howl-product-key-features__left">
+  			<div class="left-top__content">
+  				<h2 class="section-title"><span>Key Features</span></h2>
+  			</div>
+  			<div class="left-bottom__content">
+  				<div class="key-features">
+  					{{ product.metafields.howl.product_key_features }}
+  				</div>
+  			</div>
+  		</div>
+  		<div class="howl-product-key-features__right">
+  			<div class="media-wrapper">
+  				{% if product.metafields.howl.product_key_features_image != blank %}
+  					
+  					{% assign product_media = product.metafields.howl.product_key_features_image | file_url %}
+
+  					{% if product_media contains ".mp4" %}
+							{%- render 'howl-video-element',
+							  video_url: product_media,
+							  video_class: 'objfit' -%}
+		      	{% else %}
+		      		{%- render 'srcset-image',
+			          image: product_media,
+			          fallback_width: 815,
+			          class_modifier: 'howl-hero__media objfit',
+			          loading: 'lazy'
+			        -%}
+		       	{% endif %}
+
+  				{% endif %}
+  			</div>
+  		</div>
+  	</div>
+  </div>
+</section>
+
+{%- endif -%}

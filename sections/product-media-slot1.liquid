@@ -1,0 +1,28 @@
+{%- if product.metafields.howl.product_media_slot1 != blank -%}
+
+{% assign product_media = product.metafields.howl.product_media_slot1 | file_url %}
+
+<section class="howl-video" data-component="video">
+  <div class="howl__container">
+    <div class="video__inner">
+      
+      <div class="video__wrapper">
+      	{% if product_media contains ".mp4" %}
+					{%- render 'howl-video-element',
+					  video_url: product_media,
+					  video_class: 'objfit' -%}
+      	{% else %}
+      		{%- render 'srcset-image',
+	          image: product_media,
+	          fallback_width: 815,
+	          class_modifier: 'howl-hero__media objfit',
+	          loading: 'lazy'
+	        -%}
+       	{% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{%- endif -%}

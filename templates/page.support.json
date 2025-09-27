@@ -1,0 +1,136 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "howl-support": {
+      "type": "howl-support",
+      "blocks": {
+        "ec318b8e-f17c-4d48-8838-70d53d1bc503": {
+          "type": "category",
+          "settings": {
+            "category_label": "Returns & Exchanges"
+          }
+        },
+        "55b3a91a-2890-4864-b653-2d843183bcb2": {
+          "type": "item",
+          "settings": {
+            "question": "How do I make a return or exchange?",
+            "answer": "A: To start a return or exchange please use our Return Portal:\n<br>\nhttps://www.howlsupply.com/apps/redo/returns-portal\n<br>\nWe want you to be completely satisfied with your purchase. If you are looking to make a return or exchange, or if your product has arrived damaged or defective, please follow these guidelines within 30 days of receiving your order:<br><br>*1) Fill out the “Request” form found in the Contact section to request a Return Authorization (RA) number for your return/exchange. Make sure to provide your 4 digit order number and specify the details of the return/exchange you wish to make. This includes: reason for return, style, size, and color, and a photo of your receipt.<br><br>2) Once you have your RA number, carefully package the product in its original condition and packaging that it arrived in.<br><br>3) Ship the item to the provided address. Kindly note that return shipping expenses are your responsibility, and we do not provide return/exchange shipping labels.<br><br>4) Upon receipt of the returned/exchanged product, we will review and process the exchange/return accordingly, which may result in an accepted refund or replacement, subject to availability and policy*.<br><br>*Sale items (if applicable) Only regular priced items may be refunded, unfortunately sale items cannot be refunded."
+          }
+        },
+        "5a40410e-0089-4d4e-90f3-ba26628765a7": {
+          "type": "item",
+          "settings": {
+            "question": "Where is my refund?",
+            "answer": "If you have been granted a refund, please allow 3-5 business days for the refund to process in your account. If you do not receive after 5 business days, please contact your bank. If you have done this and still have not received your refund, please contact us at info@howlsupply.com<br><br>*Please note that we do not refund shipping costs."
+          }
+        },
+        "a474d9cf-c57a-4dab-a2e3-56e90a6de1cd": {
+          "type": "category",
+          "settings": {
+            "category_label": "Shipping"
+          }
+        },
+        "b8efdb6f-a016-4ac0-932a-7e27b0f985a9": {
+          "type": "item",
+          "settings": {
+            "question": "How long does economy shipping take?",
+            "answer": "While this is not a guarantee, Economy shipping typically takes between 2-6 business day for your order to arrive. We ship from our warehouse in Salt Lake City, Utah."
+          }
+        },
+        "6c2fda85-570d-400d-ad80-76752a033d5e": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "question": "How long does expedited shipping take?",
+            "answer": "Expedited orders will ship out same day if placed by 9am PST.<br><br>Expedited options do not include weekends. Ex: An overnight order that ships on Friday will arrive the following Monday)"
+          }
+        },
+        "0154dcb9-a1f1-4c65-b82f-1c5199bbfddd": {
+          "type": "item",
+          "settings": {
+            "question": "Where does my order ship from?",
+            "answer": "We ship from Salt Lake City, Utah. Please allow two to three business days for your order to process."
+          }
+        },
+        "33fed89d-5b25-4eb2-bd65-ce007b92e400": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "question": "Can I ship to an APO/FPO address?",
+            "answer": "Yes, you can ship to an APO/FPO. However, economy shipping is the only option that can deliver to these locations.<br><br>Please be aware of extended delivery times to APO/FPO addresses."
+          }
+        },
+        "1814e899-9e8e-4a2c-af20-74ebecd830d8": {
+          "type": "category",
+          "settings": {
+            "category_label": "Warranty"
+          }
+        },
+        "77ee0735-37a2-4833-be09-725f52516f1b": {
+          "type": "item",
+          "settings": {
+            "question": "What is your warranty policy?",
+            "answer": "We offer a 2 Year Practical Warranty from the date of purchase on eligible items against manufacturing defects."
+          }
+        },
+        "b9673c31-9b4b-4523-824c-871ea269b6ed": {
+          "type": "item",
+          "settings": {
+            "question": "How do I submit a warranty request?",
+            "answer": "1) Please fill out our “Request” form found in the Contact section at the bottom of this page.<br><br>2) Make sure to include your 4 digit order number, proof of purchase, a brief explanation why this should fall under our 2 year Practical Warranty policy, plus some photos reflecting your warranty claim."
+          }
+        },
+        "cad5f366-3e6c-4e89-b354-c06d7a65545c": {
+          "type": "item",
+          "settings": {
+            "question": "What is a Practical warranty?",
+            "answer": "This means that while we do our best to provide our customers with only the highest quality products, sometimes there are manufacturing defects or issues with the product before any use has occurred. We do not however consider abuse or neglect that leads to rips, tears, or stains, as falling under our warranty policy.  "
+          }
+        },
+        "8dbff0ff-642b-4b24-a62d-3ffd794b34ec": {
+          "type": "category",
+          "settings": {
+            "category_label": "Contact"
+          }
+        },
+        "6896b68d-e563-4e93-92d2-0e69931f32ae": {
+          "type": "contactform",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ec318b8e-f17c-4d48-8838-70d53d1bc503",
+        "55b3a91a-2890-4864-b653-2d843183bcb2",
+        "5a40410e-0089-4d4e-90f3-ba26628765a7",
+        "a474d9cf-c57a-4dab-a2e3-56e90a6de1cd",
+        "b8efdb6f-a016-4ac0-932a-7e27b0f985a9",
+        "6c2fda85-570d-400d-ad80-76752a033d5e",
+        "0154dcb9-a1f1-4c65-b82f-1c5199bbfddd",
+        "33fed89d-5b25-4eb2-bd65-ce007b92e400",
+        "1814e899-9e8e-4a2c-af20-74ebecd830d8",
+        "77ee0735-37a2-4833-be09-725f52516f1b",
+        "b9673c31-9b4b-4523-824c-871ea269b6ed",
+        "cad5f366-3e6c-4e89-b354-c06d7a65545c",
+        "8dbff0ff-642b-4b24-a62d-3ffd794b34ec",
+        "6896b68d-e563-4e93-92d2-0e69931f32ae"
+      ],
+      "settings": {
+        "top_margin": 0,
+        "bottom_margin": 0,
+        "top_margin_mobile": 0,
+        "bottom_margin_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "howl-support"
+  ]
+}

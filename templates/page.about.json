@@ -1,0 +1,82 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "howl-hero": {
+      "type": "howl-hero",
+      "settings": {
+        "subtitle": "About Howl",
+        "title": "Stronger Than The Alternative Methods",
+        "button_label": "",
+        "link": "",
+        "image": "shopify://shop_images/878A5562_216fe6e9-f171-4655-8e09-9e38b6e00bbd.jpg",
+        "image_mobile": "shopify://shop_images/878A5562_216fe6e9-f171-4655-8e09-9e38b6e00bbd.jpg",
+        "smaller_subtitle": false,
+        "text_color": "white",
+        "max_width": 615,
+        "top_margin": 0,
+        "bottom_margin": 0,
+        "top_margin_mobile": 0,
+        "bottom_margin_mobile": 0
+      }
+    },
+    "c24933d1-2dbf-47ea-8951-d82b53be0746": {
+      "type": "howl-text",
+      "settings": {
+        "content": "Winter accessories by snowboarders for snowboarders. Founded in 2012 by professional snowboarders Darrell Mathes and Nima Jalali, HOWL creates pro level quality gloves and accessories for everyone.",
+        "top_margin": 100,
+        "bottom_margin": 100,
+        "top_margin_mobile": 60,
+        "bottom_margin_mobile": 60
+      }
+    },
+    "5b33cbee-c2ba-464f-97e8-1edf5c9d4f48": {
+      "type": "howl-image-grid",
+      "settings": {
+        "first_image": "shopify://shop_images/000032050012.jpg",
+        "second_image": "shopify://shop_images/878A6487_03d2a15b-df10-4299-9663-fc3427a2cd00.jpg",
+        "top_margin": 100,
+        "bottom_margin": 100,
+        "top_margin_mobile": 60,
+        "bottom_margin_mobile": 60
+      }
+    },
+    "bacf7831-9277-4a6a-926f-6260a96cc20c": {
+      "type": "howl-text",
+      "settings": {
+        "content": "All of our products are inspired by our team of riders, blending durability and function with unique design. For ten years HOWL has delivered product built to withstand all conditions and environments, carefully designed with on-trend colors, fabrics and materials. Rider owned, rider driven, HOWL gives back to the winter sports community by donating gear and a portion of our sales to The Dillon Ojo Foundation. HOWL. Stronger than the alternative methods.",
+        "top_margin": 100,
+        "bottom_margin": 100,
+        "top_margin_mobile": 60,
+        "bottom_margin_mobile": 60
+      }
+    },
+    "b7f76623-b57f-4c33-957e-9ea468a01c6b": {
+      "type": "howl-video",
+      "settings": {
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/7fda98a09e3949568755d8d630dd5ada.mp4",
+        "link_label": "",
+        "link": "",
+        "full_width": false,
+        "top_margin": 100,
+        "bottom_margin": 100,
+        "top_margin_mobile": 60,
+        "bottom_margin_mobile": 60
+      }
+    }
+  },
+  "order": [
+    "howl-hero",
+    "c24933d1-2dbf-47ea-8951-d82b53be0746",
+    "5b33cbee-c2ba-464f-97e8-1edf5c9d4f48",
+    "bacf7831-9277-4a6a-926f-6260a96cc20c",
+    "b7f76623-b57f-4c33-957e-9ea468a01c6b"
+  ]
+}

@@ -1,0 +1,124 @@
+{% if settings.enable_banner_text and settings.banner_text != blank %}
+  <div id="banner-text"><p>{{ settings.banner_text }}</p></div>
+{% endif %}
+
+<header id="site-header" class="entry-header" role="banner">
+  <div id="site-header--container">
+    <div class="container-fluid">
+      <div id="site-header--wrapper" class="ss--wrapper">
+        <div id="header-bar">
+          <div id="header-bar--left">
+            <div class="mobile-triggers visible-xs">
+              <div class="menu-icon mobile-menu--trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav class="primary-menu-wrapper" aria-label="Desktop Main Navigation Left" role="navigation">
+              <div class="ss-nav--container hidden-xs">
+                <ul class="menu ss-nav ss-nav--left">
+                  <li class="menu-item shop"><a href="#" class="nav-item">Shop</a></li>
+                </ul>
+              </div>
+              <span id="shop-close--trigger">{% include 'menu-close' %}</span>
+            </nav>
+
+            {% include 'breadcrumbs' %}
+          </div>
+
+          <div id="header-bar--center">
+            <a href="/">{% include 'howl-logo' %}</a>
+          </div>
+
+          <div id="header-bar--right">
+            <nav class="primary-menu-wrapper" aria-label="Desktop Main Navigation Right" role="navigation">
+              <div class="ss-nav--container">
+                <ul class="menu ss-nav ss-nav--right">
+                  <li class="menu-item search hidden-xs"><a href="#" class="nav-item search-bar--trigger">Search</a></li>
+                  <li class="menu-item account visible-xs"><a href="/account" class="nav-item"><svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.3725 15.07C13.3725 11.7182 10.6553 9.00098 7.30347 9.00098C3.95164 9.00098 1.23444 11.7182 1.23444 15.07" stroke="black" stroke-width="1.25"/><circle cx="7.30319" cy="4.50039" r="3.87539" stroke="black" stroke-width="1.25"/></svg></a></li>
+                  <li class="menu-item cart cart--trigger"><svg width="13" height="17" viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="visible-xs"><path d="M9.25217 5.30025V3.56507C9.25217 2.14856 8.10386 1.00024 6.68734 1.00024C5.27083 1.00024 4.12251 2.14856 4.12251 3.56507V5.30025" stroke="black" stroke-width="1.25"/><rect x="0.997513" y="5.41821" width="11.3775" height="10.0268" stroke="black" stroke-width="1.25"/></svg>
+                  <span class="cart-label hidden-xs">Cart(<span id="cartCount">{{ cart.item_count }}</span>)</span></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+   
+{% schema %}
+  {
+    "name": {
+      "de": "Titel",
+      "en": "Header",
+      "ja": "ヘッダー",
+      "pt-BR": "Cabeçalho",
+      "es": "Encabezado",
+      "it": "Header",
+      "fr": "En-tête"
+    },
+    "class": "header-section",
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "de": "Logo",
+          "en": "Logo",
+          "ja": "ロゴ",
+          "pt-BR": "Logotipo",
+          "es": "Logotipo",
+          "it": "Logo",
+          "fr": "Logo"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": {
+          "de": "Logo-Foto",
+          "en": "Logo image",
+          "ja": "ロゴ画像",
+          "pt-BR": "Imagem do logotipo",
+          "es": "Imagen del logotipo",
+          "it": "Immagine del logo",
+          "fr": "Image du logo"
+        },
+        "info": {
+          "de": "Maximal 450 x 200 Pixel",
+          "en": "450 x 200px max",
+          "ja": "最大450 x 200ピクセル",
+          "pt-BR": "450 x 200 px máx.",
+          "es": "450 x 200px máx.",
+          "it": "450 x 200 px max",
+          "fr": "450 x 250 px max"
+        }
+      },
+      {
+        "type": "text",
+        "id": "logo_width",
+        "label": {
+          "de": "Benutzerdefinierte Logobreite (Pixel)",
+          "en": "Custom logo width (in pixels)",
+          "ja": "ロゴの幅をカスタムする（ピクセルで）",
+          "pt-BR": "Largura do logotipo personalizado (em pixels)",
+          "es": "Ancho del logotipo personalizado (en píxeles)",
+          "it": "Larghezza logo personalizzato (in pixel)",
+          "fr": "Largeur personnalisée du logo (en pixels)"
+        },
+        "default": {
+          "de": "180",
+          "en": "180",
+          "ja": "180",
+          "pt-BR": "180",
+          "es": "180",
+          "it": "180",
+          "fr": "180"
+        }
+      }
+    ]
+  }
+{% endschema %}

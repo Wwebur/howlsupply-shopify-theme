@@ -1,0 +1,32 @@
+<div class="klaviyo-newsletter-section" data-section-id="{{ section.id }}" data-section-type="newsletter-section">
+  {% if section.settings.section_title != blank %}
+    <h2 class="section-title">{{ section.settings.section_title }}</h2>
+  {% endif %}
+  
+  {% include 'howl-newsletter', form_id: 'klaviyo_footer_form' %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Newsletter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "text",
+        "id": "placeholder_text",
+        "label": "Placeholder Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Klaviyo Newsletter",
+        "category": "Promotional"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div id="product-images--slider">   
+    {% for image in product.images %}
+	<div class="item" data-image-id="{{ image.id }}">
+		<img src="{{ image | img_url: 'master' }}" >
+	</div>
+    {% endfor %}
+</div>
+
+<!--<div id="product-images--nav" class="hidden-xs hidden-sm">
+	{% for image in product.images %}
+	<div class="item" data-image-id="{{ image.id }}">
+		<img id="{{ product.id }}" class="" src="{{ image | img_url: '300x300' }}" >
+	</div>
+    {% endfor %}	
+</div> -->
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js'></script>
+
+<script>
+	var $product_image_slider_obj;
+	
+	$product_image_slider_obj = $('#product-images--slider').slick({
+  		slidesToShow: 1,
+  		slidesToScroll: 6,
+  		arrows: false,
+  		dots: true,
+		autoplay: false,
+		infinite: false,
+		prevArrow: '<img class="slick-prev" src="https://cdn.shopify.com/s/files/1/1260/5185/files/slick-prev.svg?v=1603596785">',
+		nextArrow: '<img class="slick-next" src="https://cdn.shopify.com/s/files/1/1260/5185/files/slick-next.svg?v=1603596785">'
+	});
+
+	function update_product_slider_image($image_id) {
+		var $slide_index = $('#product-images--slider').find('.slick-slide[data-image-id="' + $image_id + '"]').data('slickIndex');
+		$product_image_slider_obj.slick('slickGoTo',$slide_index);
+	}
+
+	$(document).on('click','#product-images--nav .item',function(){
+		update_product_slider_image($(this).data('imageId'));
+	});
+  
+</script>

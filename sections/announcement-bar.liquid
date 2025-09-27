@@ -1,0 +1,147 @@
+{% if section.settings.show_announcement %}
+  {% if section.settings.home_page_only == false or template.name == 'index' %}
+    <style>
+      .announcement-bar {
+        background-color: {{ section.settings.color_bg }};
+      }
+
+      .announcement-bar--link:hover {
+        {% assign brightness = section.settings.color_bg | color_brightness %}
+
+        {% if brightness <= 192 %}
+          {% assign lightenAmount = 255 | minus: brightness | divided_by: 255 | times: 16 %}
+          background-color: {{ section.settings.color_bg | color_lighten: lightenAmount }};
+        {% else %}
+          {% assign darkenAmount = 255 | divided_by: brightness | times: 8 %}
+          background-color: {{ section.settings.color_bg | color_darken: darkenAmount }};
+        {% endif %}
+      }
+
+      .announcement-bar__message {
+        color: {{ section.settings.color_text }};
+      }
+    </style>
+
+    {% if section.settings.link == blank %}
+      <div class="announcement-bar">
+    {% else %}
+      <a href="{{ section.settings.link }}" class="announcement-bar announcement-bar--link">
+    {% endif %}
+
+      <p class="announcement-bar__message">{{ section.settings.text | escape }}</p>
+
+    {% if section.settings.link == blank %}
+      </div>
+    {% else %}
+      </a>
+    {% endif %}
+
+  {% endif %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": {
+      "de": "Ankündigungsleiste",
+      "en": "Announcement bar",
+      "ja": "告知バー",
+      "pt-BR": "Barra de anúncio",
+      "es": "Barra de anuncios",
+      "it": "Barra degli annunci",
+      "fr": "Barre d'annonces"
+    },
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_announcement",
+        "label": {
+          "de": "Ankündigung anzeigen",
+          "en": "Show announcement",
+          "ja": "告知を表示する",
+          "pt-BR": "Exibir anúncio",
+          "es": "Mostrar anuncio",
+          "it": "Mostra annuncio",
+          "fr": "Afficher l'annonce"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "home_page_only",
+        "label": {
+          "de": "Nur Startseite",
+          "en": "Home page only",
+          "ja": "ホームページのみ",
+          "pt-BR": "Apenas página inicial",
+          "es": "Solo página de inicio",
+          "it": "Solo home page",
+          "fr": "Page d'accueil uniquement"
+        },
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": {
+          "de": "Ankündigungstext",
+          "en": "Announcement text",
+          "ja": "告知テキスト",
+          "pt-BR": "Texto do anúncio",
+          "es": "Texto del anuncio",
+          "it": "Testo annuncio",
+          "fr": "Texte d'annonce"
+        },
+        "default": {
+          "de": "Hier etwas ankündigen",
+          "en": "Announce something here",
+          "ja": "ここで告知してください",
+          "pt-BR": "Anuncie algo aqui",
+          "es": "Anuncia algo aquí",
+          "it": "Annuncia qualcosa qui",
+          "fr": "Annoncez quelque chose ici"
+        }
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": {
+          "de": "Ankündigungslink",
+          "en": "Announcement link",
+          "ja": "告知リンク",
+          "pt-BR": "Link de anúncio",
+          "es": "Enlace de anuncio",
+          "it": "Link annuncio",
+          "fr": "Lien d'annonce"
+        }
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": {
+          "de": "Balkenfarbe",
+          "en": "Bar color",
+          "ja": "バーの色",
+          "pt-BR": "Cor da barra",
+          "es": "Color de la barra",
+          "it": "Colore della barra",
+          "fr": "Couleur de la barre"
+        },
+        "default": "#dbc18b"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": {
+          "de": "Textfarbe",
+          "en": "Text color",
+          "ja": "文字の色",
+          "pt-BR": "Cor do texto",
+          "es": "Color de texto",
+          "it": "Colore del testo",
+          "fr": "Couleur du texte"
+        },
+        "default": "#fff"
+      }
+    ]
+  }
+{% endschema %}

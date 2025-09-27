@@ -1,0 +1,104 @@
+<div class="collection-list collection-list--{{ section.id }}">
+  <div class="howl-wrapper">
+    {% if section.settings.section_title != blank %}
+      <h2 class="section-title text-center"><span>{{ section.settings.section_title | escape }}</span></h2>
+    {% endif %}
+
+    <div class="collection-list__grid">
+      {% for block in section.blocks %}
+        {%- assign collection = collections[block.settings.collection] -%}
+        <div class="collection-block">
+          <div class="collection-media">
+            {% if collection.image != blank %}
+              <a href="{{ collection.url }}"><img src="{{ collection.image | img_url: 'master' }}" class="objfit"></a>
+            {% endif %}
+          </div>
+          <div class="collection-meta">
+            {% if collection.title != blank %}
+              <h3><a href="{{ collection.url }}">Shop {{ collection.title }} →</a></h3>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+{%- render 'section-margin-css',
+  top_margin: section.settings.top_margin,
+  bottom_margin: section.settings.bottom_margin,
+  top_margin_mobile: section.settings.top_margin_mobile,
+  bottom_margin_mobile: section.settings.bottom_margin_mobile -%}
+
+{% schema %}
+  {
+    "name": "Collection list",
+    "max_blocks": 2,
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "header",
+        "content": "Settings"
+      },
+      {
+        "type": "range",
+        "id": "top_margin",
+        "label": "Top Margin",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 5
+      },
+      {
+        "type": "range",
+        "id": "bottom_margin",
+        "label": "Bottom Margin",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 5
+      },
+      {
+        "type": "range",
+        "id": "top_margin_mobile",
+        "label": "Top Margin (Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 5
+      },
+      {
+        "type": "range",
+        "id": "bottom_margin_mobile",
+        "label": "Bottom Margin (Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 5
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection list"
+      }
+    ]
+  }
+{% endschema %}

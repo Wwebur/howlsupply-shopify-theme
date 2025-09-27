@@ -1,0 +1,109 @@
+{%- if section.settings.show_product_recommendations -%}
+
+{% capture product_recommendations_header %}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="section-title text-center"><span>{{ section.settings.heading }}</span></h2>
+  {% endif %}
+{% endcapture %}
+
+<section class="howl-product-grid" data-component="product-grid">
+  <div class="howl__container">
+    <div class="product-grid__inner">
+      
+      {% if product.metafields.howl.youmaylike_products != blank or recommendations.performed %}
+        {{ product_recommendations_header }}
+      {% endif %}
+
+      <div class="product-grid__wrapper">
+        {% if product.metafields.howl.youmaylike_products != blank %}
+            {% for ymlproduct in product.metafields.howl.youmaylike_products.value %}
+              {% render 'featured-product-grid-item' product: ymlproduct %}
+            {% endfor %}
+        {% else %}
+
+        {%- if recommendations.performed -%}
+          
+          {%- if recommendations.products_count > 0 -%}
+            
+              {{ product_recommendations_header }}
+              <div class="product__grid product-recommendations-slider g-flex">
+                {%- for product in recommendations.products -%}
+                  {% assign product_box_class = '' %}
+                  {% if forloop.index == 4 %}
+                    {% assign product_box_class = 'd-block d-lg-none d-xl-block' %}
+                  {% endif %}
+                  {% render 'featured-product-grid-item' product: product %}
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
+
+        {%- endif -%}
+
+      {% endif %}
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>
+
+<link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js'></script>
+
+<script>
+
+  !function(a){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=a();else if("function"==typeof define&&define.amd)define([],a);else{var b;b="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this,b.enquire=a()}}(function(){return function a(b,c,d){function e(g,h){if(!c[g]){if(!b[g]){var i="function"==typeof require&&require;if(!h&&i)return i(g,!0);if(f)return f(g,!0);var j=new Error("Cannot find module '"+g+"'");throw j.code="MODULE_NOT_FOUND",j}var k=c[g]={exports:{}};b[g][0].call(k.exports,function(a){var c=b[g][1][a];return e(c?c:a)},k,k.exports,a,b,c,d)}return c[g].exports}for(var f="function"==typeof require&&require,g=0;g<d.length;g++)e(d[g]);return e}({1:[function(a,b,c){function d(a,b){this.query=a,this.isUnconditional=b,this.handlers=[],this.mql=window.matchMedia(a);var c=this;this.listener=function(a){c.mql=a.currentTarget||a,c.assess()},this.mql.addListener(this.listener)}var e=a(3),f=a(4).each;d.prototype={constuctor:d,addHandler:function(a){var b=new e(a);this.handlers.push(b),this.matches()&&b.on()},removeHandler:function(a){var b=this.handlers;f(b,function(c,d){if(c.equals(a))return c.destroy(),!b.splice(d,1)})},matches:function(){return this.mql.matches||this.isUnconditional},clear:function(){f(this.handlers,function(a){a.destroy()}),this.mql.removeListener(this.listener),this.handlers.length=0},assess:function(){var a=this.matches()?"on":"off";f(this.handlers,function(b){b[a]()})}},b.exports=d},{3:3,4:4}],2:[function(a,b,c){function d(){if(!window.matchMedia)throw new Error("matchMedia not present, legacy browsers require a polyfill");this.queries={},this.browserIsIncapable=!window.matchMedia("only all").matches}var e=a(1),f=a(4),g=f.each,h=f.isFunction,i=f.isArray;d.prototype={constructor:d,register:function(a,b,c){var d=this.queries,f=c&&this.browserIsIncapable;return d[a]||(d[a]=new e(a,f)),h(b)&&(b={match:b}),i(b)||(b=[b]),g(b,function(b){h(b)&&(b={match:b}),d[a].addHandler(b)}),this},unregister:function(a,b){var c=this.queries[a];return c&&(b?c.removeHandler(b):(c.clear(),delete this.queries[a])),this}},b.exports=d},{1:1,4:4}],3:[function(a,b,c){function d(a){this.options=a,!a.deferSetup&&this.setup()}d.prototype={constructor:d,setup:function(){this.options.setup&&this.options.setup(),this.initialised=!0},on:function(){!this.initialised&&this.setup(),this.options.match&&this.options.match()},off:function(){this.options.unmatch&&this.options.unmatch()},destroy:function(){this.options.destroy?this.options.destroy():this.off()},equals:function(a){return this.options===a||this.options.match===a}},b.exports=d},{}],4:[function(a,b,c){function d(a,b){var c=0,d=a.length;for(c;c<d&&b(a[c],c)!==!1;c++);}function e(a){return"[object Array]"===Object.prototype.toString.apply(a)}function f(a){return"function"==typeof a}b.exports={isFunction:f,isArray:e,each:d}},{}],5:[function(a,b,c){var d=a(2);b.exports=new d},{2:2}]},{},[5])(5)});
+
+    $slider = $('.howl-product-grid .product-grid__wrapper');
+    
+    SliderSettings = {
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: true,
+      autoplay: false,
+      infinite: true,
+      prevArrow: '<button class="slick-prev"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.29008 2.4249L9.78608 0.972899L16.8261 8.0349L9.78608 15.0749L8.29008 13.6229L12.8661 9.0689H0.282083V6.9789H12.8881L8.29008 2.4249Z" fill="black"/></svg></button>',
+      nextArrow: '<button class="slick-next"><svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.29008 2.4249L9.78608 0.972899L16.8261 8.0349L9.78608 15.0749L8.29008 13.6229L12.8661 9.0689H0.282083V6.9789H12.8881L8.29008 2.4249Z" fill="black"/></svg></button>',
+
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            centerMode: true,
+            centerPadding: '20%'
+          }
+        }
+      ]
+    }
+
+    if ( !$slider.hasClass('slick-initialized') ) {
+      $slider.slick(SliderSettings);
+    }
+  
+</script>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product recommendations",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_product_recommendations",
+      "label": "Show dynamic recommendations",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "You might also like"
+    }
+  ]
+}
+{% endschema %}

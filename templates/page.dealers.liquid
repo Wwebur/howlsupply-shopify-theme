@@ -1,0 +1,34 @@
+<!-- /templates/page.liquid -->
+
+<div class="page-width page-container">
+  <header>
+    <div id="dealers-list">
+      <div class="dealer_row">
+        <div class="dealer_left">
+          <h1>Search</h1>
+          <h4>ZIP CODE</h4>
+          <div class="search-wrapper">
+            <input class="search">
+            <span class="icon icon-search" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="dealer_right">
+          <h1><span class="alpha">A to Z</span></h1>
+          {% section 'dealer-list' %}
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var options = {
+      valueNames: [ 'dealer-zipcode' ]
+    };
+
+    var dealersList = new List('dealers-list', options);
+  });
+</script>

@@ -1,0 +1,26 @@
+<section class="howl-product-shopping-categories" data-component="text">
+  <div class="howl__container">
+  	<div class="howl-product-shopping-categories__wrapper">
+  		<h2 class="section-title text-center"><span>Continue Shopping Categories</span></h2>
+
+  		<ul class="menu shopping-categories__nav">
+        {% for link in linklists['howl-menu-2023'].links %}
+
+        	{% if link.title == 'Shop All' %}
+        		{% capture shop_all_link %}
+							<li class="menu-item"><a href="{{ link.url }}" class="nav-item {% if link.active %}site-nav--active{% endif %}" title="">{{ link.title }}</a></li>
+        		{% endcapture %}
+        		{% continue %}
+        	{% endif %}
+
+        	{% if link.title == 'Best Sellers' or link.url == product.collections[1].url or link.url == product.collections[2].url %}
+        		{% continue %}
+        	{% endif %}
+
+          <li class="menu-item"><a href="{{ link.url }}" class="nav-item {% if link.active %}site-nav--active{% endif %}" title="">{{ link.title }}</a></li>
+        {% endfor %}
+        {{ shop_all_link }}
+      </ul>
+  	</div>
+  </div>
+</section>

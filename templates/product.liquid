@@ -1,0 +1,41 @@
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+{% section 'product-template' %}
+{% section 'product-recommendations' %}
+{% section 'product-media-slot1' %}
+{% section 'product-text' %}
+{% section 'product-key-features' %}
+{% section 'product-media-slot2' %}
+{% section 'product-shopping-categories' %}
+
+{% comment %}
+    Get the text and link for the back button
+
+{% assign back_url = '/' %}
+{% assign back_text = 'products.product.back' | t %}
+{% if collection %}
+  {% assign back_url = collection.url %}
+  {% assign back_text = collection.title %}
+{% endif %}
+
+<div class="back-button grid">
+  <div class="grid__item"></div>
+    <a href="{{ back_url }}" class="btn back-button__link">
+      <img src="https://cdn.shopify.com/s/files/1/1260/5185/files/slick-prev.svg?v=1603596785">
+      <span>{{ back_text }}</span>
+    </a>
+  </div>
+</div>
+{% endcomment %}
+
+<script>
+  // Override default values of theme.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  window.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }}
+  }
+</script>

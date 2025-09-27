@@ -1,0 +1,18 @@
+{%- assign top_margin = top_margin | default: 0 -%}
+{%- assign bottom_margin = bottom_margin | default: 0 -%}
+{%- assign top_margin_mobile = top_margin_mobile | default: 0 -%}
+{%- assign bottom_margin_mobile = bottom_margin_mobile | default: 0 -%}
+
+<style type="text/css">
+  #shopify-section-{{ section.id }} {
+    margin-top: calc(({{ top_margin }} / 16 * 1rem));
+    margin-bottom: calc(({{ bottom_margin }} / 16 * 1rem));
+  }
+
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: calc(({{ top_margin_mobile }} / 16 * 1rem));
+      margin-bottom: calc(({{ bottom_margin_mobile }} / 16 * 1rem));
+    }
+  }
+</style>

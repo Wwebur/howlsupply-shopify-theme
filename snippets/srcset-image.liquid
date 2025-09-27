@@ -1,0 +1,65 @@
+{% comment %}
+  Add img { height: auto } to global CSS in order to avoid having to override heights later.
+  Params:
+  image: (Object) Shopify image object
+  class_modifier: (String) Class name
+  fallback_width: (Number) Fallback width in px
+  loading: (String) Set to lazy if lazyloaded
+  sizes: (String) Comma seperated list of media queries. eg.  50%, (min-width: 48em) 100%
+  attributes: (Optional) Any additional attributes
+  eg.
+  {% render 'srcset-image' with image: image, fallback_width: 160, class_modifier: '', sizes: "(min-width: 48em) 20em, 10em", loading: "lazy" %}
+{% endcomment %}
+
+
+{% comment %} Added file_reference condition for shopify metafields file type {% endcomment %}
+
+{%- if image.id or image.src or image.type == 'file_reference' -%}
+  {%- assign fallback_width_x = fallback_width | append: 'x' -%}
+  {%- assign multipliers = "0.25,0.5,0.75,0.85,1,1.1,1.25,1.5,1.75,2" | split: ',' -%}
+  {%- capture srcset -%}
+    {%- for multiplier in multipliers -%}
+      {%- assign width = fallback_width | times: multiplier | round -%}
+      {%- if image.width >= width -%}{% assign param = width | append: 'x' %}, {{ image | img_url: param }} {{ width }}w{%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+
+
+  {%- if image_mobile.id or image_mobile.src or image_mobile.type == 'file_reference' -%}
+
+    {%- assign mobile_fallback_width_x = image_mobile_fallback_width | append: 'x' -%}
+    {%- assign multipliers = "0.25,0.5,0.75,0.85,1,1.1,1.25,1.5,1.75,2" | split: ',' -%}
+
+    {%- capture mobile_srcset -%}
+      {%- for multiplier in multipliers -%}
+        {%- assign mobile_width = image_mobile_fallback_width | times: multiplier | round -%}
+        {%- if image_mobile.width >= mobile_width -%}{% assign param = mobile_width | append: 'x' %}, {{ image_mobile | img_url: param }} {{ mobile_width }}w{%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+
+  {%- endif -%}
+
+  {%- if image_mobile.id or image_mobile.src or image_mobile.type == 'file_reference' -%}
+    {% assign class_modifier = class_modifier | append: ' img-switch-on-mobile' %}
+  {%- endif -%}
+
+  <img class="{{ class_modifier }}"
+    src="{{ image | img_url: fallback_width_x }}" alt="{{ image.alt }}"
+    {% if loading %}loading="{{ loading }}"{% endif %}
+    srcset="{{ srcset | remove_first: ', ' }}"
+    width="{{ fallback_width }}"
+    height="{{ fallback_width | divided_by: image.aspect_ratio | round }}"
+    sizes="{{ sizes | default: '100vw' }}"
+    {%- if image_mobile.id or image_mobile.src or image_mobile.type == 'file_reference' -%}
+    data-mobile-src="{{ image_mobile | img_url: mobile_fallback_width_x }}"
+    data-mobile-srcset="{{ mobile_srcset | remove_first: ', ' }}"
+    data-mobile-width="{{ image_mobile_fallback_width }}"
+    data-mobile-height="{{ image_mobile_fallback_width | divided_by: image_mobile.aspect_ratio | round }}" {%- endif -%}
+    {{ attributes }}>
+{%- else -%}
+  <img class="{{ class_modifier }}"
+    src="{{ image }}" alt="{{ alt | default: '' }}"
+    {% if loading %}loading="{{ loading }}"{% endif %}
+    {{ attributes }}>
+{%- endif -%}

@@ -1,0 +1,38 @@
+<div id="product-sizeguide">
+	<div class="howl-wrapper">
+		<div id="product-sizeguide__header">
+			<h2>Size Guide</h2>
+			<a href="#" id="product-sizeguide__close">Close</a>
+		</div>
+
+		<div id="product-sizeguide__content">
+			{% render 'product-sizeguide-jackets' %}
+			{% render 'product-sizeguide-technical-apparel' %}
+			{% render 'product-sizeguide-pants' %}
+			{% render 'product-sizeguide-gloves' %}
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		$(document).on('click','.accordion-group .accordion-trigger',function(e){
+			e.preventDefault();
+			$(this).toggleClass('open');
+			$(this).parent().find('.accordion-content').slideToggle();
+		});
+
+		$(document).on('click','#product-sizeguide__close',function(e){
+			$('#product-sizeguide').fadeOut('fast');
+		});
+
+		$(document).on('click','.size-guide--trigger', function(e){
+			var $target = $('#' + $(this).data('target'));
+			$('#product-sizeguide').find($target).show().siblings().hide();
+			$('#product-sizeguide').fadeIn('fast');
+		});
+	});
+
+</script>

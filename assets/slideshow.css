@@ -1,0 +1,231 @@
+
+.demo {
+  margin: 150px auto;
+  width: 450px;
+  color: #ddd;
+  line-height: 24px;
+}
+
+.demo-tl {
+  padding: 20px 0;
+  color: #eee;
+}
+
+.tips { color: #f60; }
+
+/* index - main - focus */
+
+.slideshowx {
+  position: relative;
+  height: 264px;
+  width: 424px;
+  overflow: hidden;
+  border: 1px solid #C5C5C5;
+}
+
+.slideshowx .box {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slideshowx .list {
+  overflow: hidden;
+  width: 9999px;
+}
+
+.slideshowx .list li {
+  float: left;
+  position: relative;
+  width: 424px;
+}
+
+.slideshowx .list li a { display: block; }
+
+.slideshowx .list img { _vertical-align: top; }
+
+.slideshowx .btn {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  z-index: 3;
+  width: 150px;
+  height: 10px;
+  font: 0/0 Arial;
+}
+
+.slideshowx .btn li {
+  display: inline-block;
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  background: url(../images/slide-btn.png) no-repeat -35px 0;
+  cursor: pointer;
+*display: inline;
+*zoom: 1;
+}
+
+.slideshowx .btn .selected {
+  width: 35px;
+  background-position: 0 0;
+}
+
+.slideshowx .plus,  .slideshowx .minus {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -17px;
+  width: 55px;
+  height: 35px;
+  line-height: 35px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.slideshowx .plus {
+  right: 0;
+  left: auto;
+}
+
+.slideshowy {
+  position: relative;
+  height: 264px;
+  width: 424px;
+  overflow: hidden;
+  border: 1px solid #C5C5C5;
+}
+
+.slideshowy .box {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.slideshowy .list {/*height:999em;*/ }
+
+.slideshowy .list li { width: 424px; }
+
+.slideshowy .list li a { display: block; }
+
+.slideshowy .list img { _vertical-align: top; }
+
+.slideshowy .btn {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  z-index: 3;
+  width: 150px;
+  height: 10px;
+  font: 0/0 Arial;
+}
+
+.slideshowy .btn li {
+  display: inline-block;
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  background: url(../images/slide-btn.png) no-repeat -35px 0;
+  cursor: pointer;
+*display: inline;
+*zoom: 1;
+}
+
+.slideshowy .btn .selected {
+  width: 35px;
+  background-position: 0 0;
+}
+
+.slideshowy .plus,  .slideshowy .minus {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -17px;
+  width: 55px;
+  height: 35px;
+  line-height: 35px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.slideshowy .plus {
+  right: 0;
+  left: auto;
+}
+
+.slideshowfade {
+  position: relative;
+  height: 264px;
+  width: 424px;
+  overflow: hidden;
+  border: 1px solid #C5C5C5;
+}
+
+.slideshowfade .box {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.slideshowfade .list {/*height:999em;*/ }
+
+.slideshowfade .list li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 424px;
+}
+
+.slideshowfade .list li a { display: block; }
+
+.slideshowfade .list img { _vertical-align: top; }
+
+.slideshowfade .btn {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  z-index: 3;
+  width: 150px;
+  height: 10px;
+  font: 0/0 Arial;
+}
+
+.slideshowfade .btn li {
+  display: inline-block;
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  background: url(../images/slide-btn.png) no-repeat -35px 0;
+  cursor: pointer;
+*display: inline;
+*zoom: 1;
+}
+
+.slideshowfade .btn .selected {
+  width: 35px;
+  background-position: 0 0;
+}
+
+.slideshowfade .plus,  .slideshowfade .minus {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 9;
+  margin-top: -17px;
+  width: 55px;
+  height: 35px;
+  line-height: 35px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.slideshowfade .plus {
+  right: 0;
+  left: auto;
+}

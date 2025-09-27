@@ -1,0 +1,62 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__wrapper">
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        <div class="footer-column">
+          {% if block.settings.title != blank %}
+            <h3>{{ block.settings.title }}</h3>
+          {% endif %}
+
+          {% if block.settings.menu != blank %}
+            <ul class="menu vertical">
+              {% render 'howl-menu', menu_name: block.settings.menu %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endif %}
+    <div class="footer-column newsletter">
+      <div class="footer-column__wrapper">
+        {% if section.settings.newsletter_title != blank %}
+          <h3>{{ section.settings.newsletter_title }}</h3>
+        {% endif %}
+        {% render 'howl-newsletter', form_id: 'klaviyo_footer_form', caller: 'footer' %}
+      </div>
+    </div>
+  </div>
+
+  <p class="copyright">&copy; HOWL SUPPLY {{ 'now' | date: "%Y" }}</p>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "class": "footer-section",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "text",
+        "id": "newsletter_title",
+        "label": "Newsletter Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

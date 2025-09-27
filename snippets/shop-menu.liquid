@@ -1,0 +1,41 @@
+<div id="shop-menu">
+	<div id="shop-menu--wrapper">
+		<div id="shop-nav">
+			<nav class="secondary-menu-wrapper" aria-label="Shop Menu" role="navigation">
+	            <ul class="menu vertical shop-nav">
+	              {% for link in linklists['howl-menu-2023'].links %}
+	                <li class="menu-item"><a href="{{ link.url }}" class="nav-item {% if link.active %}site-nav--active{% endif %}" title="">{{ link.title }}</a></li>
+	              {% endfor %}
+	            </ul>
+	        </nav>
+	    </div>
+
+	    <div id="connect-signup--wrapper">
+		    <div id="connect-nav">
+		    	<div class="nav-title">Connect</div>
+		    	<ul class="menu">
+		    		<li><a href="https://www.facebook.com/HOWLSUPPLYCO/" target="_blank" title="HOWL SUPPLY on Facebook"><span class="icon icon-facebook" aria-hidden="true"></span><span class="visually-hidden">Facebook</span></a></li>
+
+		    		<li><a href="https://www.tiktok.com/@howl.supply" target="_blank" title="HOWL SUPPLY on Tiktok"><span class="icon icon-tiktok" aria-hidden="true"></span><span class="visually-hidden">Tiktok</span></a></li>
+
+		    		<li><a href="https://www.instagram.com/howl.supply/" target="_blank" title="HOWL SUPPLY on Instagram"><span class="icon icon-instagram" aria-hidden="true"></span><span class="visually-hidden">Instagram</span></a></li>
+
+		    		<li><a href="https://www.youtube.com/channel/UCIU7KNOlEeovvefb5oBeRHw" target="_blank" title="HOWL SUPPLY on Youtube"><span class="icon icon-youtube" aria-hidden="true"></span><span class="visually-hidden">Youtube</span></a></li>
+		    	</ul>
+		    </div>
+
+		    <div id="nav-signup">
+		    	<div class="nav-title">Mailing List</div>
+		    	{% include 'howl-newsletter', form_id: 'klaviyo_nav_form' %}
+		    </div>
+		</div>
+
+	    <div id="utility-nav">
+	    	<ul class="menu">
+		      {% for link in linklists['sidemenu'].links %}
+		        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+		      {% endfor %}
+		    </ul>
+	    </div>
+	</div>
+</div>

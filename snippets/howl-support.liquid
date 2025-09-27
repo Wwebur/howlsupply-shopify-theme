@@ -1,0 +1,276 @@
+<section class="howl-support" data-component="support">
+  <div class="howl-support__container">
+    
+    <div class="howl-wrapper">
+
+    <div class="howl-support__header">
+      <div class="howl-support__title">
+        <div class="howl-support__title-wrapper">
+          <div class="howl-support__title-left">
+            Support <span class="content-title"></span>
+          </div>
+          <div class="howl-support__title-right">
+            <a href="#" class="support-back-link hidden-xs">Back to Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="howl-support__menu" class="hidden-xs">
+      {% if blocks.size > 0 %}
+        <ul class="menu vertical">
+          {% for block in blocks %}
+            {% if block.type == 'category' %}
+              <li><a href="#{{ block.settings.category_label | handleize }}">{{ block.settings.category_label }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+
+    <div class="howl-support__inner">
+
+      <div class="howl-support__left hidden-xs">
+        <div id="support-menus">
+        {% if blocks.size > 0 %}
+          {% assign list_started = 0 %}
+          
+          {% for block in blocks %}
+            
+            {% if block.type == 'category' %}
+
+              {% if list_started == 0 %}
+                <ul class="support-menu" data-menu-name="{{ block.settings.category_label | handleize }}-menu">
+                  <li class="menu-title">{{ block.settings.category_label }}</li>
+              {% endif %}
+
+              {% if list_started == 1 %}
+                </ul><ul class="support-menu" data-menu-name="{{ block.settings.category_label | handleize }}-menu">
+                  <li class="menu-title">{{ block.settings.category_label }}</li>
+                {% assign list_started = 0 %}
+              {% endif %}
+
+            {% endif %}
+
+            {% if block.type == 'item' %}
+              
+              {% if list_started == 0 %}
+                {% assign list_started = 1 %}
+              {% endif %}
+
+              <li {% if forloop.index == 2 %}class="active"{% endif %}><a href="#supportquestion-{{ forloop.index }}">{{ block.settings.question }}</a></li>
+
+            {% endif %}
+
+          {% endfor %}
+          </ul>
+        {% endif %}
+        </div>
+      </div>
+
+      <div class="howl-support__right">
+    
+      {% if blocks.size > 0 %}
+        {% assign list_started = 0 %}
+
+        <div id="support__sections">
+          {% for block in blocks %}
+            
+            {% if block.type == 'category' %}
+
+              {% if list_started == 0 %}
+                <div class="support-section" id="{{ block.settings.category_label | handleize }}">
+              {% endif %}
+
+              {% if list_started == 1 %}
+                </div></div><div class="support-section" id="{{ block.settings.category_label | handleize }}">
+                {% assign list_started = 0 %}
+              {% endif %}
+
+            {% endif %}
+
+            {% if block.type == 'item' %}
+
+              {% if list_started == 0 %}
+                <div class="support-section-content">
+                {% assign list_started = 1 %}
+              {% endif %}
+
+              <div id="supportquestion-{{ forloop.index }}" class="content-wrap">
+                <h2 class="question">{{ block.settings.question }}</h2>
+                <p class="answer">{{ block.settings.answer }}</p>
+              </div>
+
+            {% endif %}
+
+            {% if block.type == 'contactform' %}
+              <div class="content-wrap">
+                <h2 class="wholesale-title">Whole Sale Inquiries:</h2>
+                <h2 class="wholesale-email"><a href="info@howlsupply.com">info@howlsupply.com</a>
+
+                <div class="contact-form__wrapper">
+                  <h3>Submit a Request</h3>
+
+                  {% form 'contact' %}
+
+                    {% if form.posted_successfully? %}
+                      <p class="note form-success">
+                        {{ 'contact.form.post_success' | t }}
+                      </p>
+                    {% endif %}
+
+                    {{ form.errors | default_errors }}
+
+                    <label for="ContactFormName" class="label--hidden">{{ 'contact.form.name' | t }}</label>
+                    <input type="text" id="ContactFormName" name="contact[name]" placeholder="{{ 'contact.form.name' | t }}" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" class="input-full">
+
+                    <label for="ContactFormEmail" class="label--hidden">{{ 'contact.form.email' | t }}</label>
+                    <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="input-full">
+
+                    <label for="ContactFormPhone" class="label--hidden">{{ 'contact.form.phone' | t }}</label>
+                    <input type="tel" id="ContactFormPhone" name="contact[phone]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" class="input-full">
+
+                    <label for="ContactFormMessage" class="label--hidden">{{ 'contact.form.message' | t }}</label>
+                    <textarea id="ContactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" class="input-full">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+                    <input type="submit" class="btn" value="{{ 'contact.form.send' | t }}">
+
+                  {% endform %}
+                </div>
+              </div>
+            {% endif %}
+
+
+          {% endfor %}
+        </div>
+
+      {% endif %}
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+</section>
+
+
+<script type="text/javascript">
+
+  
+
+  $(document).ready(function(){
+
+    $('a[href*="#"]:not([href="#"])').click(function(e) {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
+  
+        var hash_target = $(this.hash);
+    
+        if(hash_target.length) {
+          offsetTop = hash_target.offset().top - topHeight + 1;
+
+          $('html, body').stop().animate({ 
+            scrollTop: offsetTop
+          }, 400);
+        }
+      }
+    });
+
+
+    // Coming from different page
+
+    var hash = window.location.hash;
+
+    if ( hash == '' || hash == '#' || hash == undefined) {
+      return false;
+    }
+
+    var hash_target = $(hash);
+
+    if(hash_target.length) {
+      offsetTop = hash_target.offset().top - topHeight + 1;
+    
+      $('html, body').stop().animate({ 
+        scrollTop: offsetTop
+      }, 400);
+
+      $('#howl-support__menu').fadeOut();
+      $('body').addClass('menu-hidden');
+    }
+
+  });
+
+
+
+  var lastId,
+  supportMenu = $("#support-menus"),
+  topHeight = 205,
+
+  // All list items
+  menuItems = supportMenu.find("a"),
+  // Anchors corresponding to menu items
+  scrollItems = menuItems.map(function(){
+    var item = $($(this).attr("href"));
+    if (item.length) { return item; }
+  });
+
+  // Bind click handler to menu items
+  // so we can get a fancy scroll animation
+  menuItems.click(function(e){
+    var href = $(this).attr("href"),
+    offsetTop = href === "#" ? 0 : $(href).offset().top - topHeight + 1;
+    
+    $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+    }, 400);
+    e.preventDefault();
+  });
+
+
+  // Bind to scroll
+  $(window).scroll(function(){
+     // Get container scroll position
+     var fromTop = $(this).scrollTop() + topHeight;
+     
+     // Get id of current scroll item
+     var cur = scrollItems.map(function(){
+       if ($(this).offset().top < fromTop)
+         return this;
+     });
+     // Get the id of the current element
+     cur = cur[cur.length-1];
+     var id = cur && cur.length ? cur[0].id : "";
+     
+     if (lastId !== id) {
+         lastId = id;
+         // Set/remove active class
+         menuItems
+           .parent().removeClass("active")
+           .end().filter("[href=#"+id+"]").parent().addClass("active");
+     }                   
+  });
+
+  $(document).on('click','#howl-support__menu a',function(e){
+    e.preventDefault();
+    
+    var href = $(this).attr("href"),
+    offsetTop = href === "#" ? 0 : $(href).offset().top - topHeight + 1;
+    
+    $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+    }, 400);
+    
+    $('#howl-support__menu').fadeOut();
+    $('body').addClass('menu-hidden');
+
+  });
+
+
+  $(document).on('click','.support-back-link', function(e){
+    e.preventDefault();
+    $('#howl-support__menu').fadeIn();
+    $('body').removeClass('menu-hidden');
+  });
+
+</script>

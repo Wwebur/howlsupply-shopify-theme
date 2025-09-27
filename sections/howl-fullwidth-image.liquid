@@ -1,0 +1,95 @@
+{%- render 'howl-fullwidth-image',
+  section_title: section.settings.section_title,
+  image: section.settings.image,
+  image_mobile: section.settings.image_mobile,
+  content: section.settings.content,
+  link: section.settings.link
+-%}
+
+{%- render 'section-margin-css',
+  top_margin: section.settings.top_margin,
+  bottom_margin: section.settings.bottom_margin,
+  top_margin_mobile: section.settings.top_margin_mobile,
+  bottom_margin_mobile: section.settings.bottom_margin_mobile -%}
+
+{% schema %}
+{
+  "name": "FullWidth Image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image - Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image - Mobile"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+    {
+      "type": "range",
+      "id": "top_margin",
+      "label": "Top Margin",
+      "default": 0,
+      "min": 0,
+      "max": 200,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "bottom_margin",
+      "label": "Bottom Margin",
+      "default": 0,
+      "min": 0,
+      "max": 200,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "top_margin_mobile",
+      "label": "Top Margin (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 200,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "bottom_margin_mobile",
+      "label": "Bottom Margin (Mobile)",
+      "default": 0,
+      "min": 0,
+      "max": 200,
+      "step": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "FullWidth Image"
+    }
+  ]
+}
+{% endschema %}

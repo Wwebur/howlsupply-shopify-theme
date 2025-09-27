@@ -1,0 +1,5 @@
+{% if linklists[menu_name].links != blank %}
+	{% for link in linklists[menu_name].links %}
+		<li class="menu-item {{ link.title | handleize }}"><a href="{{ link.url }}" class="nav-item {% if link.active %}site-nav--active{% endif %}" title="">{{ link.title }}</a></li>
+	{% endfor %}
+{% endif %}

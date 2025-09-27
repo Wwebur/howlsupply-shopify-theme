@@ -1,0 +1,1783 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "color_body_bg": "#ffffff",
+    "color_body_headings": "#231f20",
+    "color_body_text": "#231f20",
+    "color_body_links": "#231f20",
+    "color_button_bg": "#f2f2f2",
+    "color_button_text": "#231f20",
+    "color_sale_badge": "#f26241",
+    "color_borders": "#231f20",
+    "color_nav_bg": "#ffe816",
+    "color_nav_text": "#231f20",
+    "color_action_bar_bg": "#231f20",
+    "color_action_bar_text": "#231f20",
+    "color_action_bar_text_active": "#ffe816",
+    "color_drawer_bg": "#ffe816",
+    "color_drawer_text": "#231f20",
+    "color_footer_bg": "#f2f2f2",
+    "color_footer_text": "#231f20",
+    "type_header_family": "quantico_n7",
+    "type_header_base_size": "24px",
+    "type_button_base_size": "16px",
+    "type_header_transform": true,
+    "type_header_spacing": "0.1em",
+    "type_base_family": "open_sans_n4",
+    "type_base_size": "16px",
+    "cart_type": "drawer",
+    "cart_notes_enable": false,
+    "share_image": "",
+    "social_facebook_link": "https://www.facebook.com/HOWLSUPPLYCO/",
+    "social_twitter_link": "",
+    "social_pinterest_link": "https://www.pinterest.com/howlsupply/",
+    "social_instagram_link": "https://www.instagram.com/howl.supply/",
+    "social_snapchat_link": "",
+    "social_google_plus_link": "",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "social_fancy_link": "",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "favicon": "",
+    "enable_banner_text": false,
+    "banner_text": "",
+    "free_shipping_threshold": 100,
+    "jackets_size_fit_description": "These conversions are rough estimates. The fit may differ based on the style or individual preferences.",
+    "jackets_size_fit_image1": "shopify://shop_images/jackets-size-fit-img1.jpg",
+    "jackets_size_fit_image1_description": "REGULAR<br><br>",
+    "jackets_size_fit_image2": "shopify://shop_images/jackets-size-fit-img2.jpg",
+    "jackets_size_fit_image2_description": "BOXY<br><br>",
+    "jackets_size_fit_image3": "shopify://shop_images/jackets-size-fit-img3.jpg",
+    "jackets_size_fit_image3_description": "RELAXED<br><br>",
+    "jackets_measure_description": "Shoulders: Place the measuring tape at the corner of one shoulder and pull across to the other shoulder.<br><br>Chest: Position a tape measure beneath your arms and record the circumference around the fullest part of your chest.<br><br>Waist: Determine the measurement around your natural waist, which is the narrowest point of your midsection.<br><br>Hips: Measure around the fullest area of your hips to obtain the hip measurement.<br><br>Body Inseam/Inside Leg: Start at the top of your inner thigh and extend the tape measure down your leg until it reaches the bottom of your ankle. If you prefer longer trousers, continue measuring down to the lower part of your foot.<br><br>Garment Inseam: To gauge the inseam for pants that fit well, measure from the crotch seam to the bottom of the leg. For outerwear pants, ensure that the cuffs do not bunch up in the front to avoid any interference with buckles or connection points.",
+    "jackets_measure_image": "shopify://shop_images/ta-measure-img.jpg",
+    "ta_size_fit_description": "These conversions are rough estimates. The fit may differ based on the style or individual preferences.",
+    "ta_size_fit_image1": "shopify://shop_images/ta-size-fit-img1.jpg",
+    "ta_size_fit_image1_description": "REGULAR<br><br>",
+    "ta_size_fit_image2": "shopify://shop_images/ta-size-fit-img2.jpg",
+    "ta_size_fit_image2_description": "RELAXED<br><br>",
+    "ta_measure_description": "Shoulders: Place the measuring tape at the corner of one shoulder and pull across to the other shoulder.<br><br>Chest: Position a tape measure beneath your arms and record the circumference around the fullest part of your chest.<br><br>Waist: Determine the measurement around your natural waist, which is the narrowest point of your midsection.<br><br>Hips: Measure around the fullest area of your hips to obtain the hip measurement.<br><br>Body Inseam/Inside Leg: Start at the top of your inner thigh and extend the tape measure down your leg until it reaches the bottom of your ankle. If you prefer longer trousers, continue measuring down to the lower part of your foot.<br><br>Garment Inseam: To gauge the inseam for pants that fit well, measure from the crotch seam to the bottom of the leg. For outerwear pants, ensure that the cuffs do not bunch up in the front to avoid any interference with buckles or connection points.",
+    "ta_measure_image": "shopify://shop_images/ta-measure-img.jpg",
+    "pants_size_fit_description": "These conversions are rough estimates. The fit may differ based on the style or individual preferences.",
+    "pants_size_fit_image1": "shopify://shop_images/pants-size-fit-img1.jpg",
+    "pants_size_fit_image1_description": "REGULAR<br><br>",
+    "pants_size_fit_image2": "shopify://shop_images/pants-size-fit-img2.jpg",
+    "pants_size_fit_image2_description": "BOXY<br><br>",
+    "pants_size_fit_image3": "shopify://shop_images/pants-size-fit-img3.jpg",
+    "pants_size_fit_image3_description": "RELAXED<br><br>",
+    "pants_measure_description": "Shoulders: Place the measuring tape at the corner of one shoulder and pull across to the other shoulder.<br><br>Chest: Position a tape measure beneath your arms and record the circumference around the fullest part of your chest.<br><br>Waist: Determine the measurement around your natural waist, which is the narrowest point of your midsection.<br><br>Hips: Measure around the fullest area of your hips to obtain the hip measurement.<br><br>Body Inseam/Inside Leg: Start at the top of your inner thigh and extend the tape measure down your leg until it reaches the bottom of your ankle. If you prefer longer trousers, continue measuring down to the lower part of your foot.<br><br>Garment Inseam: To gauge the inseam for pants that fit well, measure from the crotch seam to the bottom of the leg. For outerwear pants, ensure that the cuffs do not bunch up in the front to avoid any interference with buckles or connection points.",
+    "pants_measure_image": "shopify://shop_images/ta-measure-img.jpg",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#f4f4f4",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#f26241",
+    "checkout_button_color": "#1b100e",
+    "checkout_error_color": "#b01919",
+    "checkout_logo": "",
+    "checkout_use_body_background_image": false,
+    "checkout_use_header_image": false,
+    "checkout_use_sidebar_background_image": false,
+    "color_drawer_inputs": "#ffffff",
+    "favicon_enable": false,
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": false,
+          "home_page_only": false,
+          "text": "Announce something here",
+          "color_bg": "#f6602f",
+          "color_text": "#ffffff"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify://shop_images/Screen_Shot_2021-08-18_at_5.11.04_PM.png",
+          "logo_width": "180"
+        }
+      },
+      "slideshow": {
+        "type": "slideshow",
+        "blocks": {
+          "d1269fe0-22b4-41b5-b170-b70548941fa3": {
+            "type": "image",
+            "settings": {
+              "hero_slide": "shopify://shop_images/Screen_Shot_2022-10-07_at_4.05.54_PM.png",
+              "hero_title": "",
+              "hero_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "d1269fe0-22b4-41b5-b170-b70548941fa3"
+        ],
+        "settings": {}
+      },
+      "rich-text": {
+        "type": "rich-text",
+        "disabled": true,
+        "settings": {
+          "home_page_full_width": false,
+          "section_title": "Talk about your brand",
+          "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+          "text_size": "medium"
+        }
+      },
+      "newsletter-signup": {
+        "type": "newsletter-signup",
+        "disabled": true,
+        "settings": {
+          "heading": "Subscribe to our newsletter",
+          "subheading": "<p>A short sentence describing what someone will receive by subscribing</p>"
+        }
+      },
+      "sidebar-menu": {
+        "type": "sidebar-menu",
+        "settings": {
+          "sidebar_top_link_list": "new-menu",
+          "sidebar_bottom_link_list": "sidemenu"
+        }
+      },
+      "action-bar": {
+        "type": "action-bar",
+        "settings": {
+          "action_bar_link_list": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "3eed84fa-3131-40c4-a6ab-981f20632a8e": {
+            "type": "column",
+            "settings": {
+              "title": "Follow Us",
+              "menu": "footer-follow-us"
+            }
+          },
+          "391a2af9-f97b-415b-bcee-0f90d9b35c57": {
+            "type": "column",
+            "settings": {
+              "title": "Learn",
+              "menu": "footer-learn"
+            }
+          },
+          "bf6be5d5-f243-480e-b637-7338533e5409": {
+            "type": "column",
+            "settings": {
+              "title": "Shop",
+              "menu": "footer-shop"
+            }
+          },
+          "9540dd9d-e6c6-413d-8e34-541fa997dbcd": {
+            "type": "column",
+            "settings": {
+              "title": "Support",
+              "menu": "footer-support"
+            }
+          }
+        },
+        "block_order": [
+          "3eed84fa-3131-40c4-a6ab-981f20632a8e",
+          "391a2af9-f97b-415b-bcee-0f90d9b35c57",
+          "bf6be5d5-f243-480e-b637-7338533e5409",
+          "9540dd9d-e6c6-413d-8e34-541fa997dbcd"
+        ],
+        "settings": {
+          "newsletter_title": "Sign up & save 10%"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "product_image_type": "landscape",
+          "product_image_size": "large",
+          "product_image_spacing": true,
+          "vendor_enable": false,
+          "collection_sort_enable": false,
+          "collection_tags_enable": false,
+          "pagination_type": "numbers"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "custom_css": [],
+        "settings": {
+          "skip_first_product_image": false,
+          "product_image_type": "portrait",
+          "show_vendor": false,
+          "show_quantity_selector": false,
+          "social_sharing_products": false,
+          "enable_payment_button": false,
+          "product_form_width": "small"
+        }
+      },
+      "1533704616254": {
+        "type": "collection-list",
+        "blocks": {
+          "1533704616254-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "outerwear"
+            }
+          },
+          "1533704616254-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "facemasks"
+            }
+          }
+        },
+        "block_order": [
+          "1533704616254-1",
+          "1533704616254-0"
+        ],
+        "settings": {
+          "section_title": "Shop Headwear",
+          "top_margin": 100,
+          "bottom_margin": 100,
+          "top_margin_mobile": 75,
+          "bottom_margin_mobile": 75
+        }
+      },
+      "1533709311751": {
+        "type": "custom-html",
+        "disabled": true,
+        "settings": {
+          "code": "<div class=\"sliding_banner\"><div id=\"scroll_news\" class=\"scroll_news\">\n<a href=\"https://www.instagram.com/howl.supply/\">FOLLOW @HOWL.SUPPLY</a> / STRONGER THAN ALTERNATE METHODS</div></div>"
+        }
+      },
+      "custom-html": {
+        "type": "custom-html",
+        "settings": {
+          "code": ""
+        }
+      },
+      "1537782892745": {
+        "type": "featured-video",
+        "disabled": true,
+        "settings": {
+          "heading": "",
+          "video_url": "https://vimeo.com/758810685"
+        }
+      },
+      "16032425287693b341": {
+        "type": "section-newsletter",
+        "disabled": true,
+        "settings": {
+          "section_title": "Subscribe to our Newsletter",
+          "placeholder_text": ""
+        }
+      },
+      "pro-team": {
+        "type": "pro-team",
+        "blocks": {
+          "b8dc8fea-1fcc-4344-a710-f74d59933020": {
+            "type": "member",
+            "settings": {
+              "member_name": "Kennedi Deck",
+              "instagram_label": "@kennedideck",
+              "instagram_link": "https://www.instagram.com",
+              "thumbnail_image": "shopify://shop_images/Will_smith.jpg"
+            }
+          },
+          "2c01ca3c-dbdd-40b2-bf86-98a7c325fae8": {
+            "type": "member",
+            "settings": {
+              "member_name": "Ben Bilodeau",
+              "instagram_label": "@benbilodeau",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "23b9aa41-0721-4bc7-8ab9-4b7972b363e1": {
+            "type": "member",
+            "settings": {
+              "member_name": "Jonas Harris",
+              "instagram_label": "@jonasharris",
+              "instagram_link": "https:/www.instagram.com"
+            }
+          },
+          "d7ccd02a-138d-4938-a421-ba4618019134": {
+            "type": "member",
+            "settings": {
+              "member_name": "Joey Peterson",
+              "instagram_label": "@joeypeterson",
+              "instagram_link": "https://www.instagram.com",
+              "thumbnail_image": "shopify://shop_images/Parker_Szumowski.jpg"
+            }
+          },
+          "9d194b39-cb84-4980-9290-88656b0750ba": {
+            "type": "member",
+            "settings": {
+              "member_name": "Trevor Otterson",
+              "instagram_label": "@trevorotterson",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "a3bf3bc3-a058-4264-8f97-36790303fbf5": {
+            "type": "member",
+            "settings": {
+              "member_name": "Mike Liddle",
+              "instagram_label": "@mikeliddle",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "c9f540d1-93d3-4e84-9584-4293b10c57c5": {
+            "type": "member",
+            "settings": {
+              "member_name": "Robby Meehan",
+              "instagram_label": "@robbymeehan",
+              "instagram_link": "https://www.instgram.com"
+            }
+          },
+          "fdb922c9-8fb1-49d3-828b-0c417a9650d2": {
+            "type": "member",
+            "settings": {
+              "member_name": "Kas Lemmens",
+              "instagram_label": "@kaslemmens",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "4b487ed9-bc34-4bcf-8ea2-d3244dbbacf1": {
+            "type": "member",
+            "settings": {
+              "member_name": "Justin Keniston",
+              "instagram_label": "@justinkeniston",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "0c7a10d0-b165-43eb-bd6f-d4ddb2b7bdfc": {
+            "type": "member",
+            "settings": {
+              "member_name": "Will Smith",
+              "instagram_label": "@willsmith",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "3bd073cb-ca7b-4e7c-8032-4d36434cc589": {
+            "type": "member",
+            "settings": {
+              "member_name": "Johnny Brady",
+              "instagram_label": "@johnnybrady",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "3889dc62-b8ca-4269-abf3-499e024a6d77": {
+            "type": "member",
+            "settings": {
+              "member_name": "Nejc Freeman",
+              "instagram_label": "@nejcfreeman",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "ef2ed626-62f1-46e7-afc5-83bdf850ba76": {
+            "type": "member",
+            "settings": {
+              "member_name": "Parker Szumowski",
+              "instagram_label": "@parkerszumowski",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "a8e56d49-cd8b-4730-b7ad-ad0dfc5faa42": {
+            "type": "member",
+            "settings": {
+              "member_name": "Lucas Baume",
+              "instagram_label": "@lucasbaume",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "58e27a7f-edb5-44a1-9e72-f85a3958296a": {
+            "type": "member",
+            "settings": {
+              "member_name": "Curtis Woodmen",
+              "instagram_label": "@curtiswoodmen",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "1c076571-6324-46d7-94df-2a479761d1cc": {
+            "type": "member",
+            "settings": {
+              "member_name": "Alex Mailhot",
+              "instagram_label": "@alexmailhot",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "5c486e52-7209-40de-a91d-daba667fa195": {
+            "type": "member",
+            "settings": {
+              "member_name": "Sebastien Picard",
+              "instagram_label": "@sebastienpicard",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "3a36284d-ef8e-4f80-b458-412646fd705b": {
+            "type": "member",
+            "settings": {
+              "member_name": "Jacob Krugmire",
+              "instagram_label": "@jacobkrugmire",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "991b59ab-906c-4b0a-9d27-b6bec9bc7fa4": {
+            "type": "member",
+            "settings": {
+              "member_name": "Chandler Hunt",
+              "instagram_label": "@chandlerhunt",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "a093801d-8c43-4620-aa56-bc4efd465e04": {
+            "type": "member",
+            "settings": {
+              "member_name": "Riley Nickerson",
+              "instagram_label": "@rileynickerson",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "c0419320-9909-4949-9ab5-3c91edfe1f88": {
+            "type": "member",
+            "settings": {
+              "member_name": "Mike Liddle",
+              "instagram_label": "@mikeliddle",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "bbaacab5-b421-4ef9-a3ff-73b9513a8228": {
+            "type": "member",
+            "settings": {
+              "member_name": "Tommy O’Reilly",
+              "instagram_label": "@tommyoreilly",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "889c085d-c160-442f-857f-a081ba529f12": {
+            "type": "member",
+            "settings": {
+              "member_name": "JJ Westbury",
+              "instagram_label": "@jjwestbury",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "1ce11f42-bdd9-4dd0-bc27-99a13e6731e7": {
+            "type": "member",
+            "settings": {
+              "member_name": "Fin Westbury",
+              "instagram_label": "@finwestbury",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "09e67309-3030-4a80-9271-84c3ea2e26f9": {
+            "type": "member",
+            "settings": {
+              "member_name": "Cooper Whittier",
+              "instagram_label": "@cooperwhittier",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "fdd6f323-429d-406d-9d80-db3cf1a4d98d": {
+            "type": "member",
+            "settings": {
+              "member_name": "Drayden Gardner",
+              "instagram_label": "@draydengardner",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "608595ef-fe3a-4639-8829-4a5ba11a88c1": {
+            "type": "member",
+            "settings": {
+              "member_name": "Danyale Patterson",
+              "instagram_label": "@danyalepatterson",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "9f1ae54f-b20d-4e9e-81e0-5c9b9f096141": {
+            "type": "member",
+            "settings": {
+              "member_name": "Nora Beck",
+              "instagram_label": "@norabeck",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "11e12635-2b21-4887-94e2-d75272f57d4d": {
+            "type": "member",
+            "settings": {
+              "member_name": "Jacque Lammert",
+              "instagram_label": "@jacquelammert",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "ff623fc4-d22e-47b8-a2a8-3fe91307ba4d": {
+            "type": "member",
+            "settings": {
+              "member_name": "Mike Bogs",
+              "instagram_label": "@mikebogs",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "019247cc-9323-45f0-a71d-4739c7cd6969": {
+            "type": "member",
+            "settings": {
+              "member_name": "Craig Cameron",
+              "instagram_label": "@craigcameron",
+              "instagram_link": "https://www.instagram.com"
+            }
+          }
+        },
+        "block_order": [
+          "b8dc8fea-1fcc-4344-a710-f74d59933020",
+          "2c01ca3c-dbdd-40b2-bf86-98a7c325fae8",
+          "23b9aa41-0721-4bc7-8ab9-4b7972b363e1",
+          "d7ccd02a-138d-4938-a421-ba4618019134",
+          "9d194b39-cb84-4980-9290-88656b0750ba",
+          "a3bf3bc3-a058-4264-8f97-36790303fbf5",
+          "c9f540d1-93d3-4e84-9584-4293b10c57c5",
+          "fdb922c9-8fb1-49d3-828b-0c417a9650d2",
+          "4b487ed9-bc34-4bcf-8ea2-d3244dbbacf1",
+          "0c7a10d0-b165-43eb-bd6f-d4ddb2b7bdfc",
+          "3bd073cb-ca7b-4e7c-8032-4d36434cc589",
+          "3889dc62-b8ca-4269-abf3-499e024a6d77",
+          "ef2ed626-62f1-46e7-afc5-83bdf850ba76",
+          "a8e56d49-cd8b-4730-b7ad-ad0dfc5faa42",
+          "58e27a7f-edb5-44a1-9e72-f85a3958296a",
+          "1c076571-6324-46d7-94df-2a479761d1cc",
+          "5c486e52-7209-40de-a91d-daba667fa195",
+          "3a36284d-ef8e-4f80-b458-412646fd705b",
+          "991b59ab-906c-4b0a-9d27-b6bec9bc7fa4",
+          "a093801d-8c43-4620-aa56-bc4efd465e04",
+          "c0419320-9909-4949-9ab5-3c91edfe1f88",
+          "bbaacab5-b421-4ef9-a3ff-73b9513a8228",
+          "889c085d-c160-442f-857f-a081ba529f12",
+          "1ce11f42-bdd9-4dd0-bc27-99a13e6731e7",
+          "09e67309-3030-4a80-9271-84c3ea2e26f9",
+          "fdd6f323-429d-406d-9d80-db3cf1a4d98d",
+          "608595ef-fe3a-4639-8829-4a5ba11a88c1",
+          "9f1ae54f-b20d-4e9e-81e0-5c9b9f096141",
+          "11e12635-2b21-4887-94e2-d75272f57d4d",
+          "ff623fc4-d22e-47b8-a2a8-3fe91307ba4d",
+          "019247cc-9323-45f0-a71d-4739c7cd6969"
+        ],
+        "settings": {
+          "team_title": "Pro Team"
+        }
+      },
+      "am-team": {
+        "type": "am-team",
+        "blocks": {
+          "7ec3bf5d-539b-42fd-9d86-d4f273143dbb": {
+            "type": "member",
+            "settings": {
+              "member_name": "Sean Pettit",
+              "instagram_label": "@seanpettit",
+              "instagram_link": "https://www.instagram.com",
+              "thumbnail_image": "shopify://shop_images/Fin_Westbury.jpg"
+            }
+          },
+          "c8cb1a25-4d61-4484-a7e7-c0b36c410c08": {
+            "type": "member",
+            "settings": {
+              "member_name": "Jed Anderson",
+              "instagram_label": "@jedanderson",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "8884b8b8-d69d-4c98-8d4d-370570e7b046": {
+            "type": "member",
+            "settings": {
+              "member_name": "Joe Sexton",
+              "instagram_label": "@joesexton",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "a2c47619-2c0b-412a-a712-e3dd95cd0899": {
+            "type": "member",
+            "settings": {
+              "member_name": "Danimals",
+              "instagram_label": "@danimals",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "1709b693-9072-445f-95b6-66dd88512f6e": {
+            "type": "member",
+            "settings": {
+              "member_name": "Keegan Valaika",
+              "instagram_label": "@keeganvalaika",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "24baeab8-2cde-43c7-b6a3-f6fb746e153e": {
+            "type": "member",
+            "settings": {
+              "member_name": "Jake Kuzyk",
+              "instagram_label": "@jakekuzyk",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "d5a0715a-56a8-4609-810b-bb19cf1003e5": {
+            "type": "member",
+            "settings": {
+              "member_name": "Derrek Lever",
+              "instagram_label": "@derreklever",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "7bf31e46-fbce-431a-be3b-be05a0d253e5": {
+            "type": "member",
+            "settings": {
+              "member_name": "Justin Fronius",
+              "instagram_label": "@justinfronius",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "315fa5b1-608c-4d02-a848-388630245d9e": {
+            "type": "member",
+            "settings": {
+              "member_name": "Benny Urban",
+              "instagram_label": "@bennyurban",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "a6098ce4-216d-4b69-a639-b8832607e209": {
+            "type": "member",
+            "settings": {
+              "member_name": "Darrell Mathes",
+              "instagram_label": "@darrellmathes",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "51fd3e10-4110-42c5-ae56-e8e02d242b74": {
+            "type": "member",
+            "settings": {
+              "member_name": "Brandon Cocard",
+              "instagram_label": "@brandoncocard",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "f62bdeaa-ebc0-4ca7-bda4-049768a32eff": {
+            "type": "member",
+            "settings": {
+              "member_name": "Dillon Ojo (dillonojo.org)",
+              "instagram_label": "@dillonojo",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "f08fed01-d946-43a9-be3c-9af82f17b1c8": {
+            "type": "member",
+            "settings": {
+              "member_name": "Cole Navin",
+              "instagram_label": "@colenavin",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "7762f3ab-b76d-4e7b-9685-40158cdc6b1c": {
+            "type": "member",
+            "settings": {
+              "member_name": "Spencer Schubert",
+              "instagram_label": "@spencerschubert",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "f3cff40e-81ce-44da-8ad4-adc27e694dc3": {
+            "type": "member",
+            "settings": {
+              "member_name": "Jody Wachniak",
+              "instagram_label": "@jodywachniak",
+              "instagram_link": "https://www.instagram.com"
+            }
+          },
+          "8caf5c3e-02ec-4f0d-ba5e-ab4f2562207e": {
+            "type": "member",
+            "settings": {
+              "member_name": "Tommy Gesme",
+              "instagram_label": "@tommygesme",
+              "instagram_link": "https://www.instagram.com"
+            }
+          }
+        },
+        "block_order": [
+          "7ec3bf5d-539b-42fd-9d86-d4f273143dbb",
+          "c8cb1a25-4d61-4484-a7e7-c0b36c410c08",
+          "8884b8b8-d69d-4c98-8d4d-370570e7b046",
+          "a2c47619-2c0b-412a-a712-e3dd95cd0899",
+          "1709b693-9072-445f-95b6-66dd88512f6e",
+          "24baeab8-2cde-43c7-b6a3-f6fb746e153e",
+          "d5a0715a-56a8-4609-810b-bb19cf1003e5",
+          "7bf31e46-fbce-431a-be3b-be05a0d253e5",
+          "315fa5b1-608c-4d02-a848-388630245d9e",
+          "a6098ce4-216d-4b69-a639-b8832607e209",
+          "51fd3e10-4110-42c5-ae56-e8e02d242b74",
+          "f62bdeaa-ebc0-4ca7-bda4-049768a32eff",
+          "f08fed01-d946-43a9-be3c-9af82f17b1c8",
+          "7762f3ab-b76d-4e7b-9685-40158cdc6b1c",
+          "f3cff40e-81ce-44da-8ad4-adc27e694dc3",
+          "8caf5c3e-02ec-4f0d-ba5e-ab4f2562207e"
+        ],
+        "settings": {
+          "team_title": "Am Team"
+        }
+      },
+      "dealer-list": {
+        "type": "dealer-list",
+        "blocks": {
+          "2227902c-e579-463b-9592-ea2aec5ae661": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "ACTIVE RIDE SHOP",
+              "dealer_website": "https://www.activerideshop.com",
+              "dealer_address_line1": "12087 Landon Dr,",
+              "dealer_address_line2": "Mira Loma, CA",
+              "dealer_zip_code": "91752"
+            }
+          },
+          "e67bd02a-00ad-4fcb-acb5-aba472a3f55b": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "AMBOARD SHOP",
+              "dealer_website": "https://www.amboardshop.com",
+              "dealer_address_line1": "2437 Cougar Trial, South Lake,",
+              "dealer_address_line2": "Tahoe, CA",
+              "dealer_zip_code": "96150"
+            }
+          },
+          "6f53f19c-ff4b-4f43-87f9-64019c96f59d": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "AMBLER SKATE & SNOWBOARD",
+              "dealer_website": "https://www.activerideshop.com",
+              "dealer_address_line1": "12087 Landon Dr,",
+              "dealer_address_line2": "Mira Loma, CA",
+              "dealer_zip_code": "91752"
+            }
+          },
+          "a004892f-1f6d-4133-8969-c27aa0034806": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "ALWAYS BOARD",
+              "dealer_website": "https://www.amlerskateshop.com",
+              "dealer_address_line1": "33 E Butler Ave,",
+              "dealer_address_line2": "Ambler, PA",
+              "dealer_zip_code": "19002"
+            }
+          },
+          "916384f3-3cd9-4d24-932f-85686de21711": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "BIG HIT SNOWBOARD SHOP",
+              "dealer_website": "https://www.facebook.com/bighitbreck",
+              "dealer_address_line1": "100 N Main #210,",
+              "dealer_address_line2": "Breckenridge, CO",
+              "dealer_zip_code": "80424"
+            }
+          },
+          "5d00eaad-22bf-418e-a692-8de47f8a7d23": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "BLAUERS",
+              "dealer_website": "https://www.blauersnowboards.com",
+              "dealer_address_line1": "32170 Hilltop Blvd.",
+              "dealer_address_line2": "Running Springs, CA",
+              "dealer_zip_code": "92315"
+            }
+          },
+          "ebac9059-3061-4375-ad32-5754b03242a9": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "BOARDERS WAREHOUSE",
+              "dealer_address_line1": "818-700-0801<br>9400 Lurline Ave, #D",
+              "dealer_address_line2": "Chatsworth, CA",
+              "dealer_zip_code": "91211"
+            }
+          },
+          "6ca6916c-0710-4ca0-8876-8dce2bbb324e": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "BUTTERBOX",
+              "dealer_website": "https://www.facebook.com/Butterbox",
+              "dealer_address_line1": "3001 N Village Dr #3055,",
+              "dealer_address_line2": "Truckee, CA",
+              "dealer_zip_code": "96160"
+            }
+          },
+          "50801fb8-eaa9-44b6-b231-3f764adf8d39": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "CASUALTIES",
+              "dealer_website": "https://www.ridewithcasualties.com",
+              "dealer_address_line1": "503 N 3rd St,",
+              "dealer_address_line2": "Marquette, MI",
+              "dealer_zip_code": "49855"
+            }
+          },
+          "36e886b5-47c5-4efc-aad4-a4195516771d": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "CIVIL EAST GREENWICH",
+              "dealer_website": "https://www.wearecivil.com",
+              "dealer_address_line1": "86 Main St, East",
+              "dealer_address_line2": "Greenwich, RI",
+              "dealer_zip_code": "02818"
+            }
+          },
+          "5caf2694-7c04-41d5-abd9-fbebded99ce5": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "DARKSIDE SNOWBOARDS",
+              "dealer_website": "https://www.darksidesnowboards.com",
+              "dealer_address_line1": "1842 Killington rd.",
+              "dealer_address_line2": "Killington, VT",
+              "dealer_zip_code": "05751"
+            }
+          },
+          "e0b3db2b-572f-4476-bab1-1eccda5e73e4": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "DOUG’S HOOD RIVER",
+              "dealer_website": "https://www.dougshoodriver.com",
+              "dealer_address_line1": "101 Oak St,",
+              "dealer_address_line2": "Hood River, OR",
+              "dealer_zip_code": "97031"
+            }
+          },
+          "2438bb23-a7bc-4913-91e0-3c05b3d800e8": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "EAST 4TH SKATE",
+              "dealer_website": "https://www.east4th.com",
+              "dealer_address_line1": "2120 E 4th St,",
+              "dealer_address_line2": "Long Beach, CA",
+              "dealer_zip_code": "90814"
+            }
+          },
+          "ba9b4303-b48b-488c-bb4c-c4e01bcaea5c": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "EASTERN BOARDER",
+              "dealer_website": "https://www.easternboarder.com",
+              "dealer_address_line1": "358 Shrewsbury St.",
+              "dealer_address_line2": "Worcester, MA",
+              "dealer_zip_code": "01604"
+            }
+          },
+          "557a2664-ebb8-4cf6-8d8f-888cd72fa352": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "EDGE OF THE WORLD",
+              "dealer_website": "https://www.edgeoworld.com/zoo",
+              "dealer_address_line1": "618 S Higgins Ave,",
+              "dealer_address_line2": "Missoula, Mt",
+              "dealer_zip_code": "59801"
+            }
+          },
+          "a03ca69c-16e0-48c5-9839-bfb7f874ffde": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "ETERNAL",
+              "dealer_website": "https://www.eternalsnow.com",
+              "dealer_address_line1": "33 E Freeport Blvd,",
+              "dealer_address_line2": "Sparks, NV",
+              "dealer_zip_code": "89431"
+            }
+          },
+          "b8714005-57be-4ae2-ac37-c18cdd5aad19": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "FLIPSIDE BOARDSHOP",
+              "dealer_website": "https://www.flipsideboardshop.com",
+              "dealer_address_line1": "4920 Soco Rd,",
+              "dealer_address_line2": "Helena, Mt",
+              "dealer_zip_code": "59601"
+            }
+          },
+          "58d737d6-1a12-4487-8864-d6d04281a3e7": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "GETBOARDS",
+              "dealer_website": "https://www.getboards.com",
+              "dealer_address_line1": "40905 Big Bear Blvd",
+              "dealer_address_line2": "Big Bear Lake, CA",
+              "dealer_zip_code": "92315"
+            }
+          },
+          "ad7dd6f3-352b-4483-bfbe-321f3503eab2": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "HANGER 94",
+              "dealer_website": "https://www.hanger94.com",
+              "dealer_address_line1": "5270 Jackson Dr,",
+              "dealer_address_line2": "La Mesa, CA",
+              "dealer_zip_code": "91942"
+            }
+          },
+          "bf0270d4-98e9-45f7-bc32-067e1f07c718": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "LAHOUT’S COUNTRY CLOTHING AND SKI SHOP",
+              "dealer_website": "https://www.lahouts.com",
+              "dealer_address_line1": "127 Main St,",
+              "dealer_address_line2": "Lincoln, NH",
+              "dealer_zip_code": "03251"
+            }
+          },
+          "30246e6d-84ea-4d05-9c54-2303096a66a4": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "MARTINI SKATE AND SNOW",
+              "dealer_website": "https://www.martiniskateandsnow.com",
+              "dealer_address_line1": "8266 Golden Link Blvd",
+              "dealer_address_line2": "Northfield, OH",
+              "dealer_zip_code": "44067"
+            }
+          },
+          "ddf2542b-716a-4c29-ae01-599f19264e5e": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "MAVEN",
+              "dealer_website": "https://www.mavenvt.com",
+              "dealer_address_line1": "128 Church St,",
+              "dealer_address_line2": "Burlington, VT",
+              "dealer_zip_code": "05401"
+            }
+          },
+          "28457d41-a121-463d-9813-c627c9b1e9f3": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "MILOSPORT OREM",
+              "dealer_website": "https://www.milosport.com",
+              "dealer_address_line1": "359 E University Pkwy,",
+              "dealer_address_line2": "Orem, UT",
+              "dealer_zip_code": "84058"
+            }
+          },
+          "a0a11298-42de-456a-ab79-09940835a182": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "MT. HOOD MEADOWS",
+              "dealer_website": "https://www.skihood.com",
+              "dealer_address_line1": "Mt Hood Meadows Dr,",
+              "dealer_address_line2": "Mt Hood, OR",
+              "dealer_zip_code": "97041"
+            }
+          },
+          "9d13763e-a72e-43fa-a8ea-3f7a2ade1134": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "PEOPLE SKATE AND SNOW",
+              "dealer_website": "http://www.peopleskateandsnowboard.com/",
+              "dealer_address_line1": "3375 Orchard Lake Rd,",
+              "dealer_address_line2": "Keego Harbor, MI",
+              "dealer_zip_code": "48320"
+            }
+          },
+          "744a6e9a-983b-415a-94ed-733c247885a6": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "PINEWSKI’S BOARD SHOPS",
+              "dealer_website": "http://www.pinewski.com/",
+              "dealer_address_line1": "546 W Main St,",
+              "dealer_address_line2": "Anoka, MN",
+              "dealer_zip_code": "55303"
+            }
+          },
+          "eb442c9d-38c5-431b-8a4a-de28f568d134": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "RHYTHM",
+              "dealer_website": "http://www.facebook.com/rhythmsk8",
+              "dealer_address_line1": "418 Shelden Ave,",
+              "dealer_address_line2": "Houghton, MI",
+              "dealer_zip_code": "49931"
+            }
+          },
+          "14d2d35a-d652-4def-8040-d0e461f43fc6": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "RIDE FOUR EVER",
+              "dealer_website": "http://www.ridefourever.com/",
+              "dealer_address_line1": "8875 Rosehill Rd,",
+              "dealer_address_line2": "Lenexa, KS",
+              "dealer_zip_code": "66215"
+            }
+          },
+          "98293a86-e404-4889-ae79-740dded0d762": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "SATELLITE BOARDSHOP",
+              "dealer_website": "http://www.satelliteboardshop.com/",
+              "dealer_address_line1": "2835 Pearl St,",
+              "dealer_address_line2": "Boulder, CO",
+              "dealer_zip_code": "80301"
+            }
+          },
+          "6894e4e3-df09-4c19-8a81-e8d1d09533b4": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "SAVVY SKATE & SNOW",
+              "dealer_website": "http://www.savvyskates.com/",
+              "dealer_address_line1": "321 S 1st St,",
+              "dealer_address_line2": "Bismarck, ND",
+              "dealer_zip_code": "58504"
+            }
+          },
+          "8f819e19-2833-4940-8350-2c437f9a59e8": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "SNOW TRAILS WINTER RESORT",
+              "dealer_website": "http://www.snowtrails.com/",
+              "dealer_address_line1": "3100 Possum Run Rd,",
+              "dealer_address_line2": "Mansfield, OH",
+              "dealer_zip_code": "44903"
+            }
+          },
+          "5fbba9a3-d56f-4479-8482-97d42c1d6c62": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "SNOWBOARD SHACK",
+              "dealer_website": "http://www.thesnowboardshack.com/",
+              "dealer_address_line1": "27 Main St,",
+              "dealer_address_line2": "North Woodstock, NH",
+              "dealer_zip_code": "03262"
+            }
+          },
+          "6285e19a-80ee-4f70-a0bf-6bd997e4b216": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "STEVEN’S PASS SNOWBOARD SHOP",
+              "dealer_website": "http://www.stevenspasssnowboardshop.com/",
+              "dealer_address_line1": "375 W 4th Ave,",
+              "dealer_address_line2": "Gold Bar, WA",
+              "dealer_zip_code": "98251"
+            }
+          },
+          "13435c27-3330-41d0-8b90-9b44673b4b65": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "TACTICS BOARDSHOP",
+              "dealer_website": "http://www.tactics.com/",
+              "dealer_address_line1": "375 W 4th Ave,",
+              "dealer_address_line2": "Eugene, OR",
+              "dealer_zip_code": "97401"
+            }
+          },
+          "0e0b2b32-9983-44bd-ac14-50a584b055b4": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "THE EDGE",
+              "dealer_website": "http://www.edgeski.com/",
+              "dealer_address_line1": "9009 Portage Rd,",
+              "dealer_address_line2": "Portage, MI",
+              "dealer_zip_code": "49002"
+            }
+          },
+          "cc5399e9-5532-4d7c-8bf9-f49f8414c81e": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "THE YOUTH SHELTER",
+              "dealer_website": "http://www.theyouthsheltersupply.com/",
+              "dealer_address_line1": "305 5th Ave S #100,",
+              "dealer_address_line2": "St Cloud, MN",
+              "dealer_zip_code": "56301"
+            }
+          },
+          "da1d5487-7b96-4cec-b957-bcfcb22537f3": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "THE GARDEN",
+              "dealer_website": "http://www.gardenma.com/",
+              "dealer_address_line1": "148 North St,",
+              "dealer_address_line2": "Pittsfield, MA",
+              "dealer_zip_code": "01201"
+            }
+          },
+          "59247d49-4892-4ae2-9cc5-a00a85eae289": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "THEORY SKATE AND SNOW",
+              "dealer_website": "http://www.theoryskateboarding.com/",
+              "dealer_address_line1": "246 Memorial Ave,",
+              "dealer_address_line2": "West Springfield, MA",
+              "dealer_zip_code": "01089"
+            }
+          },
+          "4520b382-89aa-4d08-9b9f-6249296319fc": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "THE LUMBERYARD SKATE & SNOW",
+              "dealer_website": "http://www.facebook.com/BreckenridgeLumberYard",
+              "dealer_address_line1": "400 S Main St,",
+              "dealer_address_line2": "Breckenridge, CO",
+              "dealer_zip_code": "80424"
+            }
+          },
+          "93cd0fc6-e0da-4773-a0c7-f8886a538ae9": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "VALSURF",
+              "dealer_website": "http://www.valsurf.com/",
+              "dealer_address_line1": "4810 N Whitsett Ave.,",
+              "dealer_address_line2": "Valley Village, CA",
+              "dealer_zip_code": "91607"
+            }
+          },
+          "56c2ae9b-3740-4307-82b6-6bd053a038a7": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "WAVE RAVE",
+              "dealer_website": "http://www.waveravesnowboardshop.com/",
+              "dealer_address_line1": "3203 Main St,",
+              "dealer_address_line2": "Mammoth Lakes, CA",
+              "dealer_zip_code": "93546"
+            }
+          },
+          "71b36e1f-c7ad-4cd5-8a4c-3a6adbc4d02b": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "WIND WAVES & WHEELS",
+              "dealer_website": "http://www.w3mi.com/",
+              "dealer_address_line1": "3624 29th St SE,",
+              "dealer_address_line2": "Grand Rapids, MI",
+              "dealer_zip_code": "49512"
+            }
+          },
+          "44d9cd41-37b6-4062-a840-39fc5c7cc13a": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "XTREME BOARDSHOP",
+              "dealer_website": "http://www.xbusa.com/",
+              "dealer_address_line1": "300 Lakewood Center Mall,",
+              "dealer_address_line2": "Lakewood CA",
+              "dealer_zip_code": "90712"
+            }
+          },
+          "f7d75a8f-cb23-4f15-b9ca-e2779a235ed7": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "ZOMBIE BOARDSHOP",
+              "dealer_website": "http://www.zombieboardshop.com/",
+              "dealer_address_line1": "15100 Buck Hill Rd,",
+              "dealer_address_line2": "Burnsville, MN",
+              "dealer_zip_code": "55306"
+            }
+          },
+          "b002f107-202b-4a81-8f9d-e24fdd249b35": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "ZUMIEZ",
+              "dealer_website": "http://www.zumiez.com/",
+              "dealer_address_line1": "1346 Railroad St.",
+              "dealer_address_line2": "Corona, CA",
+              "dealer_zip_code": "92882"
+            }
+          },
+          "3b056820-eda4-4946-a350-b2f1bbb0a2a4": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "7B Board Shop",
+              "dealer_website": "http://www.facebook.com/pages/7B-Board-Sports/139010616541",
+              "dealer_address_line1": "210 N Second Ave,",
+              "dealer_address_line2": "Sandpoint, ID",
+              "dealer_zip_code": "83864"
+            }
+          },
+          "61fd449e-4680-4468-aa55-532f1d9a7030": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "MILOSPORT",
+              "dealer_website": "http://www.milosport.com/",
+              "dealer_address_line1": "3119 E 3300 S,",
+              "dealer_address_line2": "Salt Lake City, UT",
+              "dealer_zip_code": "84109"
+            }
+          },
+          "c3dd6409-08c9-40cb-8e9c-0fdbc08268af": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "evo Seattle",
+              "dealer_website": "https://www.evo.com/locations/seattle",
+              "dealer_address_line1": "3500 Stone Way N",
+              "dealer_address_line2": "Seattle, WA",
+              "dealer_zip_code": "98103"
+            }
+          },
+          "3cf3e58c-a130-4be5-8d2a-e6a1dd47f51b": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "evo Portland",
+              "dealer_website": "https://www.evo.com/locations/portland",
+              "dealer_address_line1": "200 SE MLK Jr Blvd",
+              "dealer_address_line2": "Portland, OR",
+              "dealer_zip_code": "97214"
+            }
+          },
+          "86a62c51-d4b3-4c2e-9cc3-619fd101204c": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "evo Denver",
+              "dealer_website": "https://www.evo.com/locations/denver",
+              "dealer_address_line1": "860 Broadway",
+              "dealer_address_line2": "Denver, Co",
+              "dealer_zip_code": "80203"
+            }
+          },
+          "c4b023dc-f0c1-4f9a-b2da-594f24e9de95": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "evo Whistler",
+              "dealer_website": "https://www.evo.com/locations/whistler/evo",
+              "dealer_address_line1": "4309 Village Stroll",
+              "dealer_address_line2": "Whistler, B.C.",
+              "dealer_zip_code": "V8E 1E4"
+            }
+          },
+          "318e5736-095c-47d2-8d73-fc6b60c03f14": {
+            "type": "dealer",
+            "settings": {
+              "dealer_name": "evo.com",
+              "dealer_website": "https://www.evo.com/shop/howl",
+              "dealer_address_line1": "",
+              "dealer_address_line2": "",
+              "dealer_zip_code": ""
+            }
+          }
+        },
+        "block_order": [
+          "2227902c-e579-463b-9592-ea2aec5ae661",
+          "e67bd02a-00ad-4fcb-acb5-aba472a3f55b",
+          "6f53f19c-ff4b-4f43-87f9-64019c96f59d",
+          "a004892f-1f6d-4133-8969-c27aa0034806",
+          "916384f3-3cd9-4d24-932f-85686de21711",
+          "5d00eaad-22bf-418e-a692-8de47f8a7d23",
+          "ebac9059-3061-4375-ad32-5754b03242a9",
+          "6ca6916c-0710-4ca0-8876-8dce2bbb324e",
+          "50801fb8-eaa9-44b6-b231-3f764adf8d39",
+          "36e886b5-47c5-4efc-aad4-a4195516771d",
+          "5caf2694-7c04-41d5-abd9-fbebded99ce5",
+          "e0b3db2b-572f-4476-bab1-1eccda5e73e4",
+          "2438bb23-a7bc-4913-91e0-3c05b3d800e8",
+          "ba9b4303-b48b-488c-bb4c-c4e01bcaea5c",
+          "557a2664-ebb8-4cf6-8d8f-888cd72fa352",
+          "a03ca69c-16e0-48c5-9839-bfb7f874ffde",
+          "b8714005-57be-4ae2-ac37-c18cdd5aad19",
+          "58d737d6-1a12-4487-8864-d6d04281a3e7",
+          "ad7dd6f3-352b-4483-bfbe-321f3503eab2",
+          "bf0270d4-98e9-45f7-bc32-067e1f07c718",
+          "30246e6d-84ea-4d05-9c54-2303096a66a4",
+          "ddf2542b-716a-4c29-ae01-599f19264e5e",
+          "28457d41-a121-463d-9813-c627c9b1e9f3",
+          "a0a11298-42de-456a-ab79-09940835a182",
+          "9d13763e-a72e-43fa-a8ea-3f7a2ade1134",
+          "744a6e9a-983b-415a-94ed-733c247885a6",
+          "eb442c9d-38c5-431b-8a4a-de28f568d134",
+          "14d2d35a-d652-4def-8040-d0e461f43fc6",
+          "98293a86-e404-4889-ae79-740dded0d762",
+          "6894e4e3-df09-4c19-8a81-e8d1d09533b4",
+          "8f819e19-2833-4940-8350-2c437f9a59e8",
+          "5fbba9a3-d56f-4479-8482-97d42c1d6c62",
+          "6285e19a-80ee-4f70-a0bf-6bd997e4b216",
+          "13435c27-3330-41d0-8b90-9b44673b4b65",
+          "0e0b2b32-9983-44bd-ac14-50a584b055b4",
+          "cc5399e9-5532-4d7c-8bf9-f49f8414c81e",
+          "da1d5487-7b96-4cec-b957-bcfcb22537f3",
+          "59247d49-4892-4ae2-9cc5-a00a85eae289",
+          "4520b382-89aa-4d08-9b9f-6249296319fc",
+          "93cd0fc6-e0da-4773-a0c7-f8886a538ae9",
+          "56c2ae9b-3740-4307-82b6-6bd053a038a7",
+          "71b36e1f-c7ad-4cd5-8a4c-3a6adbc4d02b",
+          "44d9cd41-37b6-4062-a840-39fc5c7cc13a",
+          "f7d75a8f-cb23-4f15-b9ca-e2779a235ed7",
+          "b002f107-202b-4a81-8f9d-e24fdd249b35",
+          "3b056820-eda4-4946-a350-b2f1bbb0a2a4",
+          "61fd449e-4680-4468-aa55-532f1d9a7030",
+          "c3dd6409-08c9-40cb-8e9c-0fdbc08268af",
+          "3cf3e58c-a130-4be5-8d2a-e6a1dd47f51b",
+          "86a62c51-d4b3-4c2e-9cc3-619fd101204c",
+          "c4b023dc-f0c1-4f9a-b2da-594f24e9de95",
+          "318e5736-095c-47d2-8d73-fc6b60c03f14"
+        ],
+        "settings": {}
+      },
+      "249878fc-6b61-4760-a892-32a22a8e1801": {
+        "type": "howl-hero",
+        "settings": {
+          "subtitle": "Free Shipping over $100",
+          "title": "FW 25-26 Collection",
+          "button_label": "Shop now",
+          "link": "shopify://collections/all",
+          "image": "shopify://shop_images/cover3.jpg",
+          "image_mobile": "shopify://shop_images/2024-HOWL-STUDIO-PDX-5455.jpg",
+          "smaller_subtitle": true,
+          "text_color": "yellow",
+          "max_width": 630,
+          "top_margin": 0,
+          "bottom_margin": 0,
+          "top_margin_mobile": 0,
+          "bottom_margin_mobile": 0
+        }
+      },
+      "7a254e53-c8eb-423b-aab9-84dee99c3ce4": {
+        "type": "howl-product-grid",
+        "blocks": {
+          "810fdee9-ef88-4904-a972-37f9cc5712dc": {
+            "type": "product",
+            "settings": {
+              "product": "burglar-facemask-copy"
+            }
+          },
+          "product_VRibgr": {
+            "type": "product",
+            "settings": {
+              "product": "shell-jacket-copy"
+            }
+          },
+          "product_p6CAd8": {
+            "type": "product",
+            "settings": {
+              "product": "down-mitt-copy"
+            }
+          },
+          "product_JP987i": {
+            "type": "product",
+            "settings": {
+              "product": "nowhere-pant-copy"
+            }
+          },
+          "3579bc89-8bee-4d5b-8014-b62fdebf1514": {
+            "type": "product",
+            "settings": {
+              "product": "fairbanks-mitt-copy"
+            }
+          },
+          "product_fdX8Xw": {
+            "type": "product",
+            "settings": {
+              "product": "no-flap-beanie-copy"
+            }
+          },
+          "291cd3ac-5e1c-4014-b40f-7607c709f1c4": {
+            "type": "product",
+            "settings": {
+              "product": "public-pant-black-copy"
+            }
+          },
+          "product_gzFwVD": {
+            "type": "product",
+            "settings": {
+              "product": "puffy-jacket-copy"
+            }
+          },
+          "product_3g84V6": {
+            "type": "product",
+            "settings": {
+              "product": "sexton-mitt-copy"
+            }
+          },
+          "product_WcxV3x": {
+            "type": "product",
+            "settings": {
+              "product": "team-mitt-copy-2"
+            }
+          }
+        },
+        "block_order": [
+          "810fdee9-ef88-4904-a972-37f9cc5712dc",
+          "product_VRibgr",
+          "product_p6CAd8",
+          "product_JP987i",
+          "3579bc89-8bee-4d5b-8014-b62fdebf1514",
+          "product_fdX8Xw",
+          "291cd3ac-5e1c-4014-b40f-7607c709f1c4",
+          "product_gzFwVD",
+          "product_3g84V6",
+          "product_WcxV3x"
+        ],
+        "settings": {
+          "section_title": "Featured Products",
+          "top_margin": 100,
+          "bottom_margin": 130,
+          "top_margin_mobile": 0,
+          "bottom_margin_mobile": 0
+        }
+      },
+      "13c2089f-cda3-43e7-8aa2-980eb00e047b": {
+        "type": "howl-video",
+        "settings": {
+          "video_url": "https://cdn.shopify.com/videos/c/o/v/4ed4dba2d3d541c28d75c3bf509df493.mp4",
+          "link_label": "Welcome Reid to HOWL",
+          "link": "shopify://products/team-mitts",
+          "full_width": false,
+          "top_margin": 165,
+          "bottom_margin": 100,
+          "top_margin_mobile": 60,
+          "bottom_margin_mobile": 60
+        }
+      },
+      "a8786c6b-abe5-496b-942d-60e0e0ffbc0b": {
+        "type": "howl-fullwidth-image",
+        "settings": {
+          "image": "shopify://shop_images/sfsf.jpg",
+          "image_mobile": "shopify://shop_images/2024-HOWL-STUDIO-PDX-5953_78cd8c5e-e2c1-499d-aa29-355f8c0c9872.jpg",
+          "section_title": "New in Outerwear",
+          "content": "Heritage  Collection",
+          "link": "shopify://collections/outerwear",
+          "top_margin": 105,
+          "bottom_margin": 100,
+          "top_margin_mobile": 60,
+          "bottom_margin_mobile": 60
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You Might Also Like"
+        }
+      },
+      "41116a48-73cb-4225-8f49-1b53f6788723": {
+        "type": "text-with-link",
+        "settings": {
+          "full_width": false,
+          "text": "Winter accessories by snowboarders\nfor snowboarders.",
+          "link_label": "About Us",
+          "link_url": "shopify://pages/about",
+          "top_margin": 0,
+          "bottom_margin": 0,
+          "top_margin_mobile": 0,
+          "bottom_margin_mobile": 0
+        }
+      },
+      "644dd11e-a2fc-4b88-9090-3dc532f3ddde": {
+        "type": "text-with-link",
+        "settings": {
+          "full_width": true,
+          "text": "Stronger Than The Alternative Methods",
+          "link_label": "",
+          "link_url": "",
+          "top_margin": 160,
+          "bottom_margin": 140,
+          "top_margin_mobile": 0,
+          "bottom_margin_mobile": 0
+        }
+      },
+      "product-media-slot1": {
+        "type": "product-media-slot1",
+        "settings": {}
+      },
+      "product-text": {
+        "type": "product-text",
+        "settings": {}
+      },
+      "product-key-features": {
+        "type": "product-key-features",
+        "settings": {}
+      },
+      "product-media-slot2": {
+        "type": "product-media-slot2",
+        "settings": {}
+      },
+      "product-shopping-categories": {
+        "type": "product-shopping-categories",
+        "settings": {}
+      }
+    },
+    "content_for_index": [
+      "249878fc-6b61-4760-a892-32a22a8e1801",
+      "1533704616254",
+      "7a254e53-c8eb-423b-aab9-84dee99c3ce4",
+      "41116a48-73cb-4225-8f49-1b53f6788723",
+      "13c2089f-cda3-43e7-8aa2-980eb00e047b",
+      "a8786c6b-abe5-496b-942d-60e0e0ffbc0b",
+      "644dd11e-a2fc-4b88-9090-3dc532f3ddde",
+      "1537782892745",
+      "newsletter-signup",
+      "16032425287693b341",
+      "1533709311751"
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "4252583770683550135": {
+        "type": "shopify://apps/redo-free-return-automation/blocks/redo_app_embed/c613644b-6df4-4d11-b336-43a5c06745a1",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Black & white": {
+      "cart_type": "drawer",
+      "cart_notes_enable": false,
+      "checkout_accent_color": "#1a1a1a",
+      "checkout_body_background_color": "#fff",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_button_color": "#1a1a1a",
+      "checkout_error_color": "#de2a2a",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_input_background_color_mode": "white",
+      "checkout_logo": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_use_body_background_image": false,
+      "checkout_use_header_image": false,
+      "checkout_use_sidebar_background_image": false,
+      "color_action_bar_bg": "#1a1a1a",
+      "color_action_bar_text": "#ffffff",
+      "color_action_bar_text_active": "#ffffff",
+      "color_body_bg": "#ffffff",
+      "color_body_headings": "#1a1a1a",
+      "color_body_links": "#1a1a1a",
+      "color_body_text": "#666666",
+      "color_borders": "#eeeeee",
+      "color_button_bg": "#1a1a1a",
+      "color_button_text": "#fff",
+      "color_drawer_bg": "#ffffff",
+      "color_drawer_inputs": "#ffffff",
+      "color_drawer_text": "#1a1a1a",
+      "color_footer_bg": "#f9f9f9",
+      "color_footer_text": "#5c5c5c",
+      "color_nav_bg": "#ffffff",
+      "color_nav_text": "#1a1a1a",
+      "color_sale_badge": "#dac08e",
+      "favicon_enable": false,
+      "share_facebook": true,
+      "share_pinterest": true,
+      "share_twitter": true,
+      "type_base_family": "open_sans_n4",
+      "type_base_size": "15px",
+      "type_button_base_size": "16px",
+      "type_header_base_size": "25px",
+      "type_header_family": "karla_n7",
+      "type_header_spacing": "0.05em",
+      "type_header_transform": false,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "show_announcement": true,
+            "color_bg": "#dbc18b"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_width": "180"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slider-0": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slider-0"
+          ],
+          "settings": {}
+        },
+        "rich-text": {
+          "type": "rich-text",
+          "settings": {}
+        },
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "home_featured_products": "frontpage",
+            "product_image_type": "portrait",
+            "product_image_size": "medium",
+            "product_image_spacing": false
+          }
+        },
+        "newsletter-signup": {
+          "type": "newsletter-signup",
+          "settings": {}
+        },
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "sidebar_top_link_list": "main-menu",
+            "sidebar_bottom_link_list": "footer"
+          }
+        },
+        "action-bar": {
+          "type": "action-bar",
+          "settings": {
+            "action_bar_link_list": "main-menu"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "footer_link_list": "footer"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {}
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "product_image_type": "portrait",
+            "product_image_size": "medium",
+            "product_image_spacing": false
+          }
+        }
+      },
+      "content_for_index": [
+        "rich-text",
+        "featured-collection",
+        "newsletter-signup"
+      ]
+    },
+    "Vibrant": {
+      "cart_type": "drawer",
+      "cart_notes_enable": false,
+      "checkout_accent_color": "#f26241",
+      "checkout_body_background_color": "#fff",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_button_color": "#1b100e",
+      "checkout_error_color": "#b01919",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_input_background_color_mode": "white",
+      "checkout_logo": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_sidebar_background_color": "#f4f4f4",
+      "checkout_use_body_background_image": false,
+      "checkout_use_header_image": false,
+      "checkout_use_sidebar_background_image": false,
+      "color_action_bar_bg": "#1b100e",
+      "color_action_bar_text": "#fff",
+      "color_action_bar_text_active": "#f26241",
+      "color_body_bg": "#ffffff",
+      "color_body_headings": "#1b100e",
+      "color_body_links": "#f26241",
+      "color_body_text": "#1b100e",
+      "color_borders": "#eceff1",
+      "color_button_bg": "#1b100e",
+      "color_button_text": "#fff",
+      "color_drawer_bg": "#f6f6f6",
+      "color_drawer_inputs": "#ffffff",
+      "color_drawer_text": "#3e3e3e",
+      "color_footer_bg": "#f4f4f4",
+      "color_footer_text": "#4a4a4a",
+      "color_nav_bg": "#f26241",
+      "color_nav_text": "#ffffff",
+      "color_sale_badge": "#f26241",
+      "favicon_enable": false,
+      "share_facebook": true,
+      "share_pinterest": true,
+      "share_twitter": true,
+      "type_base_family": "open_sans_n4",
+      "type_base_size": "16px",
+      "type_button_base_size": "16px",
+      "type_header_base_size": "24px",
+      "type_header_family": "quantico_n7",
+      "type_header_spacing": "0.1em",
+      "type_header_transform": true,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "show_announcement": true,
+            "color_bg": "#f6602f"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_width": "180"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slider-0": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slider-0"
+          ],
+          "settings": {}
+        },
+        "rich-text": {
+          "type": "rich-text",
+          "settings": {}
+        },
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "home_featured_products": "frontpage",
+            "product_image_type": "landscape",
+            "product_image_size": "large",
+            "product_image_spacing": true
+          }
+        },
+        "newsletter-signup": {
+          "type": "newsletter-signup",
+          "settings": {}
+        },
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "sidebar_top_link_list": "main-menu",
+            "sidebar_bottom_link_list": "footer"
+          }
+        },
+        "action-bar": {
+          "type": "action-bar",
+          "settings": {
+            "action_bar_link_list": "main-menu"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "footer_link_list": "footer"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "product_image_type": "landscape",
+            "product_image_size": "large",
+            "product_image_spacing": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "rich-text",
+        "featured-collection",
+        "newsletter-signup"
+      ]
+    }
+  }
+}
