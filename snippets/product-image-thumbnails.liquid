@@ -1,0 +1,100 @@
+<div class="product-image-thumbnails">
+  {% if product.images.size > 1 %}
+    {% for image in product.images limit: 4 %}
+      <div class="thumbnail-item {% if forloop.first %}active{% endif %}" data-image-id="{{ image.id }}" data-image-url="{{ image | img_url: '600x600' }}">
+        <img src="{{ image | img_url: '150x150' }}" alt="{{ image.alt | escape }}" loading="lazy">
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>
+
+<style>
+.product-image-thumbnails {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbnail-item:hover {
+  border-color: #ddd;
+  transform: scale(1.05);
+}
+
+.thumbnail-item.active {
+  border-color: #000;
+  border-width: 1px;
+}
+
+.thumbnail-item.active::after {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .thumbnail-item {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .product-image-thumbnails {
+    gap: 6px;
+    margin: 8px 0px;
+  }
+}
+</style>
+
+<script>
+// Simple and direct approach
+document.addEventListener('DOMContentLoaded', function() {
+  // Use event delegation for better performance
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.thumbnail-item')) {
+      const thumbnail = e.target.closest('.thumbnail-item');
+      const productItem = thumbnail.closest('.product-item');
+      
+      if (productItem) {
+        const newImageUrl = thumbnail.getAttribute('data-image-url');
+        const mainImage = productItem.querySelector('.product-item__image');
+        
+        if (newImageUrl && mainImage) {
+          // Remove active from all thumbnails in this product
+          const allThumbnails = productItem.querySelectorAll('.thumbnail-item');
+          allThumbnails.forEach(thumb => thumb.classList.remove('active'));
+          
+          // Add active to clicked thumbnail
+          thumbnail.classList.add('active');
+          
+          // Update the image
+          mainImage.src = newImageUrl;
+          mainImage.setAttribute('data-src', newImageUrl);
+          
+          // Force reload
+          const originalSrc = mainImage.src;
+          mainImage.src = '';
+          mainImage.src = newImageUrl;
+        }
+      }
+    }
+  });
+});
+</script>

@@ -41,9 +41,14 @@
     {% if product.images.size > 0 %}
       <div class="product__photo grid__item {{ grid_item_width }} product-img-box">
         <div class="product_featured_img-slider">
-          
-                  <div class="featured_img">
-                    {% include 'product-image-grid' with variant %} 
+  
+          <div class="featured_img">
+            <div class="product-image-mobile">
+              {% include 'product-image-slider' with variant %}
+            </div>
+            <div class="product-image-desktop">
+              {% include 'product-image-grid' with variant %}
+            </div>
 
           {% comment %}
           {% for image in product.images %}
@@ -60,11 +65,11 @@
                 id="{{ product.id }}"   
                 class="product__photo--variant lazyload"
                 src="{{ image | img_url: '1024x' }}"
-               {% comment %} data-src="{{ img_url }}"{% endcomment %}
-                data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048, 4472]"
+                data-src="{{ img_url }}"
+                {% comment %} data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048, 4472]"
                 data-aspectratio="{{ image.aspect_ratio }}"
                 data-sizes="auto"
-                alt="{{ image.alt | escape }}">
+                alt="{{ image.alt | escape }}"> {% endcomment %}
               
             </div>
           {% endfor %}
@@ -111,37 +116,50 @@
 
           {% if product.available and product.variants.size > 1 %}
             {% for option in product.options %}
-              <div class="product__details-item option">
-                <div class="product__details-item__left">
-                  <h2 class="option-name">{{ option }}</h2>
-                  {% if option == 'Color' %}<span class="color-name"></span>{% endif %}
+              {% if option == 'Color' %}
+                <div class="product__details-item color-container">
+                  <div class="product__details-item__left">
+                    {% if option == 'Color' %}<h2 class="option-name">{{ option }}</h2>{% endif %}
+                    {% if option == 'Color' %}<span class="color-name"></span>{% endif %}
+                  </div>
+                  <div class="product__details-item__right">
+                    {% include 'swatch' with option %}
+                  </div>
+                </div>
+              {% endif %}
 
-                  {% assign product_collections = product.collections %}
-                  {% assign size_guide_target = '' %}
+              {% if option == 'Size' %}
+                <div class="product__details-item size-container">
+                  <div class="product__details-item_size-wrapper">
+                    {% if option == 'Size' %}<h5 class="size-name">{{ option }}</h5>{% endif %}
 
-                  {% for collection in product_collections %}
+                    {% assign product_collections = product.collections %}
+                    {% assign size_guide_target = '' %}
 
-                    {% if collection.handle == 'technical-apparel' %}
-                      {% assign size_guide_target = 'product-sizeguide--technical-apparel' %}
-                    {% elsif collection.handle == 'gloves-mittens' %}
-                      {% assign size_guide_target = 'product-sizeguide--gloves' %}
+                    {% for collection in product_collections %}
+
+                      {% if collection.handle == 'technical-apparel' %}
+                        {% assign size_guide_target = 'product-sizeguide--technical-apparel' %}
+                      {% elsif collection.handle == 'gloves-mittens' %}
+                        {% assign size_guide_target = 'product-sizeguide--gloves' %}
+                      {% endif %}
+
+                    {% endfor %}
+
+                    {% if product.tags contains 'sizeguide-pants' %}
+                      {% assign size_guide_target = 'product-sizeguide--pants' %}
+                    {% elsif product.tags contains 'sizeguide-jackets' %}
+                      {% assign size_guide_target = 'product-sizeguide--jackets' %}
                     {% endif %}
 
-                  {% endfor %}
 
-                  {% if product.tags contains 'sizeguide-pants' %}
-                    {% assign size_guide_target = 'product-sizeguide--pants' %}
-                  {% elsif product.tags contains 'sizeguide-jackets' %}
-                    {% assign size_guide_target = 'product-sizeguide--jackets' %}
-                  {% endif %}
-
-
-                  {% if option == 'Size' and size_guide_target != '' %}<a href="#" class="size-guide--trigger" data-target="{{ size_guide_target }}">Size Guide</a>{% endif %}
+                    {% if option == 'Size' and size_guide_target != '' %}<div class="separator"></div><a href="#" class="size-guide--trigger" data-target="{{ size_guide_target }}">Size Guide</a>{% endif %}
+                  </div>
+                  <div class="product__details-item__right">
+                    {% include 'swatch' with option %}
+                  </div>
                 </div>
-                <div class="product__details-item__right">
-                  {% include 'swatch' with option %}
-                </div>
-              </div>
+              {% endif %}
             {% endfor %}
           {% endif %}
           

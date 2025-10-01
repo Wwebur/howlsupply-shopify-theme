@@ -1,5 +1,7 @@
+<div id="product-sizeguide-overlay"></div>
+
 <div id="product-sizeguide">
-	<div class="howl-wrapper">
+	<div class="sizeguide-scroll">
 		<div id="product-sizeguide__header">
 			<h2>Size Guide</h2>
 			<a href="#" id="product-sizeguide__close">Close</a>
@@ -18,21 +20,81 @@
 
 	$(document).ready(function(){
 
+		// Accordion functionality
 		$(document).on('click','.accordion-group .accordion-trigger',function(e){
 			e.preventDefault();
 			$(this).toggleClass('open');
 			$(this).parent().find('.accordion-content').slideToggle();
 		});
 
+		// Close modal function
+		function closeSizeGuideModal() {
+			$('#product-sizeguide-overlay').removeClass('show');
+			$('#product-sizeguide').removeClass('show');
+			
+			// Re-enable body scrolling
+			$('body').removeClass('modal-open');
+			
+			// Hide overlay and modal after animation
+			setTimeout(function() {
+				$('#product-sizeguide-overlay').hide();
+				$('#product-sizeguide').hide();
+			}, 300);
+		}
+
+		// Open modal function
+		function openSizeGuideModal(target) {
+			var $target = $('#' + target);
+			
+			// Show the correct size guide content
+			$('#product-sizeguide').find($target).show().siblings().hide();
+			
+			// Disable body scrolling
+			$('body').addClass('modal-open');
+			
+			// Show overlay and modal
+			$('#product-sizeguide-overlay').show();
+			$('#product-sizeguide').show();
+			
+			// Add show classes for animation
+			setTimeout(function() {
+				$('#product-sizeguide-overlay').addClass('show');
+				$('#product-sizeguide').addClass('show');
+			}, 10);
+		}
+
+		// Close button click
 		$(document).on('click','#product-sizeguide__close',function(e){
-			$('#product-sizeguide').fadeOut('fast');
+			e.preventDefault();
+			closeSizeGuideModal();
 		});
 
+		// Size guide trigger click
 		$(document).on('click','.size-guide--trigger', function(e){
-			var $target = $('#' + $(this).data('target'));
-			$('#product-sizeguide').find($target).show().siblings().hide();
-			$('#product-sizeguide').fadeIn('fast');
+			e.preventDefault();
+			var target = $(this).data('target');
+			openSizeGuideModal(target);
 		});
+
+		// Click outside modal to close
+		$(document).on('click','#product-sizeguide-overlay',function(e){
+			if (e.target === this) {
+				closeSizeGuideModal();
+			}
+		});
+
+		// ESC key to close modal
+		$(document).on('keydown', function(e) {
+			if (e.keyCode === 27 && $('#product-sizeguide').hasClass('show')) {
+				closeSizeGuideModal();
+			}
+		});
+
+		// Prevent modal from closing when clicking inside the modal content
+		$(document).on('click','#product-sizeguide',function(e){
+			e.stopPropagation();
+		});
+
 	});
 
 </script>

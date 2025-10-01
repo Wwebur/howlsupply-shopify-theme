@@ -1,3 +1,7 @@
-{% for image in product.images %}
-    <p><img src="{{ image.src | product_img_url: "large" }}"></p>
-{% endfor %}
+<div class="product-image-grid-container">
+    {% for image in product.images %}
+        <figure class="item-image">
+            <img src="{{ image.src | product_img_url: "large" }}" loading="lazy"/>
+        </figure>
+    {% endfor %}
+</div>

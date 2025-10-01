@@ -1,0 +1,324 @@
+{% comment %}
+  Quick Color Admin Panel
+  Add this section to any page for easy color management
+{% endcomment %}
+
+<div class="color-admin-panel">
+  <div class="howl__container">
+    <div class="admin-header">
+      <h2>🎨 Color Management Panel</h2>
+      <p>Manage your product color swatches</p>
+    </div>
+
+    {% if shop.metafields.colors.swatch_colors %}
+      <!-- Admin Colors Active -->
+      <div class="admin-active">
+        <div class="status-badge success">
+          ✅ Admin Management Active
+        </div>
+        
+        <div class="current-colors">
+          <h3>Your Current Colors:</h3>
+          <div class="color-list">
+            {% assign admin_colors = shop.metafields.colors.swatch_colors %}
+            {% for color_pair in admin_colors %}
+              <div class="color-item">
+                <div class="color-preview" style="background-color: {{ color_pair[1] }};"></div>
+                <div class="color-info">
+                  <strong>{{ color_pair[0] | upcase }}</strong>
+                  <small>{{ color_pair[1] }}</small>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="admin-actions">
+          <h3>To Add New Colors:</h3>
+          <ol>
+            <li>Go to <strong>Settings → Metafields</strong></li>
+            <li>Find "Color Swatches" metafield</li>
+            <li>Add new colors to the JSON data</li>
+            <li>Save and refresh this page</li>
+          </ol>
+          
+          <div class="json-example">
+            <h4>Example: Adding "Forest Green"</h4>
+            <pre><code>{
+  "black": "#000000",
+  "white": "#ffffff",
+  "caramel": "#D2691E",
+  "forest-green": "#228B22"
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <!-- Setup Required -->
+      <div class="admin-setup">
+        <div class="status-badge warning">
+          ⚠️ Setup Required
+        </div>
+        
+        <div class="setup-guide">
+          <h3>Enable Admin Color Management</h3>
+          <p>Currently using fallback colors. Set up admin management for easier color control:</p>
+          
+          <div class="setup-box">
+            <div class="setup-step">
+              <h4>Step 1: Create Metafield</h4>
+              <p>Go to <strong>Settings → Metafields → Add definition</strong></p>
+              <div class="metafield-config">
+                <div class="config-item">
+                  <label>Namespace:</label>
+                  <code>colors</code>
+                </div>
+                <div class="config-item">
+                  <label>Key:</label>
+                  <code>swatch_colors</code>
+                </div>
+                <div class="config-item">
+                  <label>Name:</label>
+                  <code>Color Swatches</code>
+                </div>
+                <div class="config-item">
+                  <label>Type:</label>
+                  <code>JSON</code>
+                </div>
+              </div>
+            </div>
+            
+            <div class="setup-step">
+              <h4>Step 2: Add Color Data</h4>
+              <p>Copy and paste this JSON into the metafield value:</p>
+              <div class="json-code">
+                <pre><code>{
+  "black": "#000000",
+  "white": "#ffffff",
+  "caramel": "#D2691E",
+  "brown": "#8B4513",
+  "navy": "#000080",
+  "red": "#FF0000",
+  "blue": "#0000FF",
+  "green": "#008000",
+  "yellow": "#FFFF00",
+  "orange": "#FFA500",
+  "sage": "#9CAF88",
+  "moss": "#8A9A5B",
+  "rust": "#B7410E",
+  "burgundy": "#800020",
+  "charcoal": "#36454F",
+  "choco": "#7B3F00",
+  "honey": "#FFC30B",
+  "berry": "#8B008B",
+  "sand": "#C2B280",
+  "surplus": "#7F8471",
+  "camo": "#78866B",
+  "infrared": "#FF4B00",
+  "salted-rose": "#E8B4B8"
+}</code></pre>
+              </div>
+            </div>
+            
+            <div class="setup-step">
+              <h4>Step 3: Save & Test</h4>
+              <p>Save the metafield and refresh this page. Your colors will now be admin-manageable!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Current Fallback Colors -->
+    <div class="fallback-colors">
+      <h3>Available Fallback Colors:</h3>
+      <p><small>These colors work even without admin setup</small></p>
+      <div class="fallback-grid">
+        {% assign fallback_colors = 'black:#000000,white:#ffffff,red:#FF0000,blue:#0000FF,green:#008000,yellow:#FFFF00,orange:#FFA500,pink:#FFC0CB,purple:#800080,brown:#8B4513,caramel:#D2691E,soft-caramel:#DEB887,tan:#D2B48C,khaki:#F0E68C,rust:#B7410E,burnt-orange:#CC5500,brick:#CB4154,burgundy:#800020,charcoal:#36454F,choco:#7B3F00,honey:#FFC30B,navy:#000080,uniform-blue:#1E3A8A,teal:#008080,olive:#808000,sage:#9CAF88,moss:#8A9A5B,snow-white:#FFFAFA,off-white:#FAF0E6,marshmallow:#F7F3E9,light-grey:#D3D3D3,heather-grey:#B8B8B8,pavement:#696969,silver:#C0C0C0,putty:#BEAE8C,pelican:#A8A8A8,mushroom:#C7B377,rose:#FF007F,salted-rose:#E8B4B8,bubblegum:#FFC1CC,mustard:#FFDB58,gold:#FFD700,infrared:#FF4B00,sand:#C2B280,surplus:#7F8471,camo:#78866B' | split: ',' %}
+        {% for color_data in fallback_colors %}
+          {% assign color_info = color_data | split: ':' %}
+          <div class="fallback-item">
+            <div class="color-preview" style="background-color: {{ color_info[1] }};"></div>
+            <div class="color-name">{{ color_info[0] | upcase }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .color-admin-panel {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 0;
+  }
+  
+  .admin-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .admin-header h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  
+  .status-badge.success {
+    background: #28a745;
+    color: white;
+  }
+  
+  .status-badge.warning {
+    background: #ffc107;
+    color: #212529;
+  }
+  
+  .admin-active, .admin-setup {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .color-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .color-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .color-preview {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .setup-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 20px;
+  }
+  
+  .setup-step {
+    margin-bottom: 30px;
+  }
+  
+  .setup-step h4 {
+    color: #ffc107;
+    margin-bottom: 10px;
+  }
+  
+  .metafield-config {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+  }
+  
+  .config-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .config-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffc107;
+  }
+  
+  .config-item code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: block;
+  }
+  
+  .json-code {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+  }
+  
+  .json-code pre {
+    margin: 0;
+    color: #e8f5e8;
+  }
+  
+  .fallback-colors {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+  }
+  
+  .fallback-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .fallback-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .fallback-item .color-preview {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+  }
+  
+  .color-name {
+    font-size: 12px;
+    font-weight: bold;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Color Manager",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color Management Panel"
+    },
+    {
+      "type": "paragraph",
+      "content": "This section provides an easy interface for managing color swatches in your store."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Color Manager"
+    }
+  ]
+}
+{% endschema %} 

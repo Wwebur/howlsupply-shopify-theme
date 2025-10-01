@@ -45,8 +45,7 @@
   <p><strong>This is case-sensitive!</strong> Do not put in <code>'color'</code> if your product option name is <code>'Color'</code>.</p>
 </div>
 {% else %}
-<div class="swatch clearfix {% if is_color %}color{% endif %}" data-option-index="{{ option_index }}">
-  <div class="header">{{ swatch }}</div>
+<div class="swatch {% if is_color %}color{% endif %}" data-option-index="{{ option_index }}">
   {% assign values = '' %}
   {% for variant in product.variants %}
     {% assign value = variant.options[option_index] %}
@@ -61,8 +60,190 @@
         <input id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% comment %}{% if forloop.first %} checked{% endif %}{% endcomment %} {% unless variant.available %}disabled{% endunless %} />
         {% if is_color %}
 
+        {% comment %} Color management system with admin support {% endcomment %}
+        {% assign color_value = value | downcase %}
+        {% assign swatch_color = '' %}
+        
+        {% comment %} First, try to get colors from Shopify metafields (admin manageable) {% endcomment %}
+        {% if shop.metafields.colors.swatch_colors %}
+          {% assign color_data = shop.metafields.colors.swatch_colors %}
+          {% assign swatch_color = color_data[color_value] %}
+        {% endif %}
+        
+        {% comment %} If not found in metafields, use fallback colors {% endcomment %}
+        {% if swatch_color == blank %}
+          {% case color_value %}
+            {% comment %} Basic Colors {% endcomment %}
+            {% when 'black' %}
+              {% assign swatch_color = '#000000' %}
+            {% when 'white' %}
+              {% assign swatch_color = '#ffffff' %}
+            {% when 'red' %}
+              {% assign swatch_color = '#FF0000' %}
+            {% when 'blue' %}
+              {% assign swatch_color = '#0000FF' %}
+            {% when 'green' %}
+              {% assign swatch_color = '#008000' %}
+            {% when 'yellow' %}
+              {% assign swatch_color = '#FFFF00' %}
+            {% when 'orange' %}
+              {% assign swatch_color = '#FFA500' %}
+            {% when 'pink' %}
+              {% assign swatch_color = '#FFC0CB' %}
+            {% when 'purple' %}
+              {% assign swatch_color = '#800080' %}
+            {% when 'grey' or 'gray' %}
+              {% assign swatch_color = '#808080' %}
+            
+            {% comment %} Brown Tones {% endcomment %}
+            {% when 'brown' %}
+              {% assign swatch_color = '#8B4513' %}
+            {% when 'caramel' %}
+              {% assign swatch_color = '#D2691E' %}
+            {% when 'soft-caramel' %}
+              {% assign swatch_color = '#DEB887' %}
+            {% when 'tan' %}
+              {% assign swatch_color = '#D2B48C' %}
+            {% when 'beige' %}
+              {% assign swatch_color = '#F5F5DC' %}
+            {% when 'khaki' %}
+              {% assign swatch_color = '#F0E68C' %}
+            {% when 'rust' %}
+              {% assign swatch_color = '#B7410E' %}
+            {% when 'burnt-orange' %}
+              {% assign swatch_color = '#CC5500' %}
+            {% when 'brick' %}
+              {% assign swatch_color = '#CB4154' %}
+            {% when 'burgundy' %}
+              {% assign swatch_color = '#800020' %}
+            {% when 'maroon' %}
+              {% assign swatch_color = '#800000' %}
+            {% when 'charcoal' %}
+              {% assign swatch_color = '#36454F' %}
+            {% when 'choco' %}
+              {% assign swatch_color = '#7B3F00' %}
+            {% when 'honey' %}
+              {% assign swatch_color = '#FFC30B' %}
+            {% when 'navy' %}
+              {% assign swatch_color = '#000080' %}
+            {% when 'uniform-blue' %}
+              {% assign swatch_color = '#1E3A8A' %}
+            {% when 'teal' %}
+              {% assign swatch_color = '#008080' %}
+            {% when 'aqua' %}
+              {% assign swatch_color = '#00FFFF' %}
+            
+            {% comment %} Green Tones {% endcomment %}
+            {% when 'olive' %}
+              {% assign swatch_color = '#808000' %}
+            {% when 'sage' %}
+              {% assign swatch_color = '#9CAF88' %}
+            {% when 'moss' %}
+              {% assign swatch_color = '#8A9A5B' %}
+            {% when 'lime' %}
+              {% assign swatch_color = '#00FF00' %}
+            {% when 'forest' %}
+              {% assign swatch_color = '#228B22' %}
+            
+            {% comment %} White/Light Tones {% endcomment %}
+            {% when 'snow-white' %}
+              {% assign swatch_color = '#FFFAFA' %}
+            {% when 'off-white' %}
+              {% assign swatch_color = '#FAF0E6' %}
+            {% when 'techwhite' %}
+              {% assign swatch_color = '#F8F8FF' %}
+            {% when 'marshmallow' %}
+              {% assign swatch_color = '#F7F3E9' %}
+            {% when 'butter' %}
+              {% assign swatch_color = '#FFDB58' %}
+            
+            {% comment %} Grey Tones {% endcomment %}
+            {% when 'light-grey' %}
+              {% assign swatch_color = '#D3D3D3' %}
+            {% when 'heather-grey' %}
+              {% assign swatch_color = '#B8B8B8' %}
+            {% when 'pavement' %}
+              {% assign swatch_color = '#696969' %}
+            {% when 'silver' %}
+              {% assign swatch_color = '#C0C0C0' %}
+            {% when 'putty' %}
+              {% assign swatch_color = '#BEAE8C' %}
+            {% when 'pelican' %}
+              {% assign swatch_color = '#A8A8A8' %}
+            {% when 'mushroom' %}
+              {% assign swatch_color = '#C7B377' %}
+            {% when 'og-mushroom' %}
+              {% assign swatch_color = '#D4C4A8' %}
+            
+            {% comment %} Pink/Rose Tones {% endcomment %}
+            {% when 'rose' %}
+              {% assign swatch_color = '#FF007F' %}
+            {% when 'salted-rose' %}
+              {% assign swatch_color = '#E8B4B8' %}
+            {% when 'bubblegum' %}
+              {% assign swatch_color = '#FFC1CC' %}
+            {% when 'light-purple' %}
+              {% assign swatch_color = '#DDA0DD' %}
+            {% when 'honey' %}
+              {% assign swatch_color = '#FFC30B' %}
+            {% when 'berry' %}
+              {% assign swatch_color = '#8B008B' %}
+            
+            {% comment %} Yellow/Gold Tones {% endcomment %}
+            {% when 'mustard' %}
+              {% assign swatch_color = '#FFDB58' %}
+            {% when 'gold' %}
+              {% assign swatch_color = '#FFD700' %}
+            {% when 'infrared' %}
+              {% assign swatch_color = '#FF4B00' %}
+            
+            {% comment %} Sand/Earth Tones {% endcomment %}
+            {% when 'sand' %}
+              {% assign swatch_color = '#C2B280' %}
+            {% when 'sand-green' %}
+              {% assign swatch_color = '#B5A642' %}
+            {% when 'surplus' %}
+              {% assign swatch_color = '#7F8471' %}
+            
+            {% comment %} Camo/Pattern Colors (approximations) {% endcomment %}
+            {% when 'camo' %}
+              {% assign swatch_color = '#78866B' %}
+            {% when 'camofleur' %}
+              {% assign swatch_color = '#6B8E23' %}
+            {% when 'real-tree' %}
+              {% assign swatch_color = '#8B7355' %}
+            {% when 'burnt-orange-camo' %}
+              {% assign swatch_color = '#A0522D' %}
+            {% when 'tie-dye' %}
+              {% assign swatch_color = '#FF69B4' %}
+            {% when 'leopard' %}
+              {% assign swatch_color = '#FFBF00' %}
+            {% when 'butterfly' %}
+              {% assign swatch_color = '#FF8C00' %}
+            {% when 'persian-rug' %}
+              {% assign swatch_color = '#8B0000' %}
+            {% when 'howl-print' %}
+              {% assign swatch_color = '#4B0082' %}
+            {% when 'public' %}
+              {% assign swatch_color = '#2F4F4F' %}
+            {% when 'cars' %}
+              {% assign swatch_color = '#FF6347' %}
+            {% when 'chainlink' %}
+              {% assign swatch_color = '#708090' %}
+            
+            {% else %}
+              {% comment %} Final fallback: try to use the color name as CSS color {% endcomment %}
+              {% assign swatch_color = color_value %}
+          {% endcase %}
+        {% endif %}
+
         {% assign value3 = values | append: product.id %}
-        <label id="{{ product.id }}"  data-product-id="{{ product.id }}" data-image="{{ variant.image | img_url: '600x600', crop: 'center' }}" for="swatch-{{ option_index }}-{{ value | handle }}" style="background-size: 100%; background-color: {{ value | split: ' ' | last | handle }}; background-image: url({% if downcased_option contains 'option' %} {{ value3 | handle | append: '.' | append: file_extension | asset_img_url: '300x' }}  {% else %} {{ value | handle | append: '.' | append: file_extension | asset_img_url: '300x' }} {% endif %})">
+        {% assign border_color = '#ddd' %}
+        {% if swatch_color == '#ffffff' or swatch_color == 'white' %}
+          {% assign border_color = '#ccc' %}
+        {% endif %}
+        
+        <label id="{{ product.id }}" data-product-id="{{ product.id }}" data-image="{{ variant.image | img_url: '600x600', crop: 'center' }}" for="swatch-{{ option_index }}-{{ value | handle }}" style="background-color: {{ swatch_color }}; border: 2px solid {{ border_color }};">
           <img class="crossed-out" style="opacity: 0.5" src="{{ 'close.svg' | asset_url }}" />
         </label>
         <div class="color-name">{{ value }}</div>

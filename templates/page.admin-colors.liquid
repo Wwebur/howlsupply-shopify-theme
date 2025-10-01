@@ -1,0 +1,156 @@
+{% comment %}
+  Admin Color Management Page Template
+  Use this template for easy color management access
+{% endcomment %}
+
+<div class="admin-page-wrapper">
+  <div class="howl__container">
+    <div class="admin-page-header">
+      <h1 class="admin-page-title">🎨 Color Management Dashboard</h1>
+      <p class="admin-page-subtitle">Manage your product color swatches from this central location</p>
+      <div class="admin-breadcrumb">
+        <a href="/admin" target="_blank">← Back to Admin</a> | 
+        <a href="/" target="_blank">View Store →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% section 'color-manager' %}
+
+<div class="admin-footer">
+  <div class="howl__container">
+    <div class="admin-footer-content">
+      <h3>Quick Links</h3>
+      <div class="admin-links">
+        <a href="/admin/settings/metafields" target="_blank" class="admin-link">
+          ⚙️ Manage Metafields
+        </a>
+        <a href="/admin/products" target="_blank" class="admin-link">
+          📦 View Products
+        </a>
+        <a href="/admin/themes/current/editor" target="_blank" class="admin-link">
+          🎨 Theme Editor
+        </a>
+      </div>
+      
+      <div class="admin-help">
+        <h4>Need Help?</h4>
+        <ul>
+          <li>Colors not showing? Check your metafield setup above</li>
+          <li>Want to add new colors? Edit the JSON in Settings → Metafields</li>
+          <li>Colors not updating? Clear your browser cache and refresh</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .admin-page-wrapper {
+    background: #f8f9fa;
+    padding: 20px 0;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .admin-page-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .admin-page-title {
+    font-size: 42px;
+    color: #343a40;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .admin-page-subtitle {
+    font-size: 18px;
+    color: #6c757d;
+    margin-bottom: 20px;
+  }
+  
+  .admin-breadcrumb {
+    margin-top: 20px;
+  }
+  
+  .admin-breadcrumb a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 10px;
+  }
+  
+  .admin-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  
+  .admin-footer {
+    background: #343a40;
+    color: white;
+    padding: 40px 0;
+    margin-top: 0;
+  }
+  
+  .admin-footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .admin-footer h3, .admin-footer h4 {
+    color: #ffc107;
+    margin-bottom: 15px;
+  }
+  
+  .admin-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .admin-link {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .admin-link:hover {
+    background: #0056b3;
+    color: white;
+  }
+  
+  .admin-help ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .admin-help li {
+    padding: 8px 0;
+    border-bottom: 1px solid #495057;
+  }
+  
+  .admin-help li:last-child {
+    border-bottom: none;
+  }
+  
+  @media (max-width: 768px) {
+    .admin-footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .admin-page-title {
+      font-size: 32px;
+    }
+  }
+</style> 

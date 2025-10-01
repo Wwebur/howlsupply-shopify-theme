@@ -37,26 +37,6 @@
     </a>
   </div>
   <div class="product-item__meta">
-    {% comment %}
-    <div class="product-item__colors">
-      {% if product.options contains 'Color' %}            
-      <!-- swatch ------>
-      {% if product.available and product.variants.size > 1 %}
-      {% render 'swatch' swatch:'Color', product: product  %}
-      {% endif %}
-      <!-- end swatch -->          
-      {% endif %}
-
-      {% if product.options contains 'OPTION' %}            
-      <!-- swatch ------>
-      {% if product.available and product.variants.size > 1 %}
-      {% render 'swatch' swatch:'OPTION', product: product %}
-      {% endif %}
-      <!-- end swatch -->          
-      {% endif %}  
-    </div>
-    {% endcomment %}
-
           <div class="product-item__meta__inner">
 
             {% if vendor_enable %}
