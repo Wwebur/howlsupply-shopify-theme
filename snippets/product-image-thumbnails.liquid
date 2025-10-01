@@ -1,10 +1,87 @@
 <div class="product-image-thumbnails">
   {% if product.images.size > 1 %}
-    {% for image in product.images limit: 4 %}
-      <div class="thumbnail-item {% if forloop.first %}active{% endif %}" data-image-id="{{ image.id }}" data-image-url="{{ image | img_url: '600x600' }}">
-        <img src="{{ image | img_url: '150x150' }}" alt="{{ image.alt | escape }}" loading="lazy">
-      </div>
+    {% comment %} Determine product category based on collection handle {% endcomment %}
+    {% assign is_outerwear = false %}
+    {% assign is_gloves = false %}
+    {% assign is_headwear = false %}
+    
+    {% for collection in product.collections %}
+      {% if collection.handle contains 'outerwear' or collection.handle contains 'jacket' %}
+        {% assign is_outerwear = true %}
+      {% elsif collection.handle contains 'glove' or collection.handle contains 'mitten' or collection.handle == 'bags' %}
+        {% assign is_gloves = true %}
+      {% elsif collection.handle contains 'headwear' or collection.handle contains 'facemask' %}
+        {% assign is_headwear = true %}
+      {% endif %}
     {% endfor %}
+    
+    {% if is_outerwear %}
+      {% comment %} For outerwear: Only show the hero shot (first image) {% endcomment %}
+      {% for image in product.images limit: 1 %}
+        <div class="thumbnail-item {% if forloop.first %}active{% endif %}" data-image-id="{{ image.id }}" data-image-url="{{ image | img_url: '600x600' }}">
+          <img src="{{ image | img_url: '150x150' }}" alt="{{ image.alt | escape }}" width="40" height="40" loading="lazy">
+        </div>
+      {% endfor %}
+      
+    {% elsif is_gloves or is_headwear %}
+      {% comment %} For gloves and headwear: Only show images that match color variants {% endcomment %}
+      {% assign color_option_index = nil %}
+      {% assign color_option_name = '' %}
+      {% for option in product.options %}
+        {% assign option_downcase = option | downcase %}
+        {% if option_downcase == 'color' or option_downcase == 'colour' %}
+          {% assign color_option_index = forloop.index0 %}
+          {% assign color_option_name = option %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      
+      {% if color_option_index != nil %}
+        {% comment %} Debug: Output to HTML comment for inspection {% endcomment %}
+        <!-- Gloves/Headwear Product: {{ product.title }} -->
+        <!-- Color Option Found: {{ color_option_name }} at index {{ color_option_index }} -->
+        <!-- Total Variants: {{ product.variants.size }} -->
+        
+        {% assign shown_colors = '|' %}
+        {% for variant in product.variants %}
+          {% assign color_value = variant.options[color_option_index] %}
+          <!-- Variant {{ forloop.index }}: Color={{ color_value }}, Has Featured Image={{ variant.featured_image | size }}, Already Shown={{ shown_colors }} -->
+          {% unless shown_colors contains color_value %}
+            {% assign shown_colors = shown_colors | append: color_value | append: '|' %}
+            {% if variant.featured_image %}
+              <!-- Creating thumbnail for {{ color_value }} -->
+              <div class="thumbnail-item {% if forloop.first %}active{% endif %}" 
+                   data-image-id="{{ variant.featured_image.id }}" 
+                   data-image-url="{{ variant.featured_image | img_url: '600x600' }}" 
+                   data-variant-id="{{ variant.id }}" 
+                   data-color="{{ color_value }}"
+                   data-product="{{ product.title | escape }}"
+                   data-option-name="{{ color_option_name }}">
+                <img src="{{ variant.featured_image | img_url: '150x150' }}" alt="{{ variant.featured_image.alt | escape }}" width="40" height="40" loading="lazy">
+              </div>
+            {% else %}
+              <!-- No featured image for variant {{ variant.id }} ({{ color_value }}) -->
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+        <!-- Final shown_colors: {{ shown_colors }} -->
+      {% else %}
+        {% comment %} Fallback: show first image if no color option found {% endcomment %}
+        {% for image in product.images limit: 1 %}
+          <div class="thumbnail-item {% if forloop.first %}active{% endif %}" data-image-id="{{ image.id }}" data-image-url="{{ image | img_url: '600x600' }}">
+            <img src="{{ image | img_url: '150x150' }}" alt="{{ image.alt | escape }}" width="40" height="40" loading="lazy">
+          </div>
+        {% endfor %}
+      {% endif %}
+      
+    {% else %}
+      {% comment %} Default behavior: Show first image {% endcomment %}
+      {% for image in product.images limit: 1 %}
+        <div class="thumbnail-item {% if forloop.first %}active{% endif %}" data-image-id="{{ image.id }}" data-image-url="{{ image | img_url: '600x600' }}">
+          <img src="{{ image | img_url: '150x150' }}" alt="{{ image.alt | escape }}" width="40" height="40" loading="lazy">
+        </div>
+      {% endfor %}
+    {% endif %}
   {% endif %}
 </div>
 
