@@ -1,0 +1,192 @@
+{% comment %}
+  Product Variant Images for Product Detail Page
+  Shows actual variant images instead of color circles for all categories
+{% endcomment %}
+
+{% assign color_option_index = nil %}
+
+{% comment %} Find the color option {% endcomment %}
+{% for option in product.options %}
+  {% assign option_downcase = option | downcase %}
+  {% if option_downcase == 'color' or option_downcase == 'colour' %}
+    {% assign color_option_index = forloop.index0 %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if color_option_index != nil %}
+  <div class="product-variant-images" data-option-index="{{ color_option_index }}">
+    {% assign shown_colors = '|' %}
+    {% for variant in product.variants %}
+      {% assign color_value = variant.options[color_option_index] %}
+      {% unless shown_colors contains color_value %}
+        {% assign shown_colors = shown_colors | append: color_value | append: '|' %}
+        {% if variant.featured_image %}
+          <div class="variant-image-item {% if variant.available %}available{% else %}soldout{% endif %}" 
+               data-variant-id="{{ variant.id }}"
+               data-color="{{ color_value }}"
+               data-image-id="{{ variant.featured_image.id }}"
+               data-value="{{ color_value | escape }}">
+            <input type="radio" 
+                   id="variant-image-{{ variant.id }}" 
+                   name="color-variant-image" 
+                   value="{{ color_value | escape }}"
+                   data-variant-id="{{ variant.id }}"
+                   {% unless variant.available %}disabled{% endunless %} />
+            <label for="variant-image-{{ variant.id }}">
+              <img src="{{ variant.featured_image | img_url: '80x80' }}" 
+                   alt="{{ color_value | escape }}"
+                   width="60"
+                   height="60"
+                   loading="lazy">
+              {% unless variant.available %}
+                <img class="crossed-out" src="{{ 'close.svg' | asset_url }}" alt="Sold out" width="30" height="30" />
+              {% endunless %}
+            </label>
+            <div class="variant-color-name">{{ color_value }}</div>
+          </div>
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+<style>
+.product-variant-images {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.variant-image-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.variant-image-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.variant-image-item label {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.variant-image-item label img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.variant-image-item label:hover {
+  border-color: #999;
+  transform: scale(1.05);
+}
+
+.variant-image-item input[type="radio"]:checked + label {
+  border-color: #000;
+  border-width: 3px;
+}
+
+.variant-image-item.soldout label {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.variant-image-item .crossed-out {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  opacity: 0.7 !important;
+  z-index: 2;
+}
+
+.variant-color-name {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 4px;
+  color: #666;
+  max-width: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .variant-image-item label {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .variant-color-name {
+    font-size: 10px;
+    max-width: 50px;
+  }
+  
+  .product-variant-images {
+    gap: 10px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  // Handle variant image selection
+  document.addEventListener('change', function(e) {
+    if (e.target.name === 'color-variant-image') {
+      const selectedValue = e.target.value;
+      const variantImageContainer = e.target.closest('.product-variant-images');
+      
+      if (variantImageContainer) {
+        const optionIndex = variantImageContainer.getAttribute('data-option-index');
+        const form = variantImageContainer.closest('form');
+        
+        if (form) {
+          // Update the hidden select dropdown
+          const selector = form.querySelector('.single-option-selector');
+          if (selector && selector.options) {
+            for (let i = 0; i < selector.options.length; i++) {
+              if (selector.options[i].value === selectedValue) {
+                selector.selectedIndex = i;
+                selector.dispatchEvent(new Event('change', { bubbles: true }));
+                break;
+              }
+            }
+          }
+          
+          // Update color name display
+          const colorNameDisplay = form.querySelector('.color-name');
+          if (colorNameDisplay) {
+            colorNameDisplay.textContent = selectedValue;
+          }
+        }
+      }
+    }
+  });
+  
+  // Auto-select first available variant on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const firstAvailableInput = document.querySelector('.product-variant-images .variant-image-item.available input[type="radio"]');
+    if (firstAvailableInput && !document.querySelector('.product-variant-images input[type="radio"]:checked')) {
+      firstAvailableInput.checked = true;
+      firstAvailableInput.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+})();
+</script>
