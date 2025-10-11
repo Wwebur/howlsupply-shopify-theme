@@ -21,8 +21,18 @@
       {% assign color_value = variant.options[color_option_index] %}
       {% unless shown_colors contains color_value %}
         {% assign shown_colors = shown_colors | append: color_value | append: '|' %}
+        
+        {% comment %} Check if ANY variant with this color is available {% endcomment %}
+        {% assign color_has_stock = false %}
+        {% for check_variant in product.variants %}
+          {% if check_variant.options[color_option_index] == color_value and check_variant.available %}
+            {% assign color_has_stock = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        
         {% if variant.featured_image %}
-          <div class="variant-image-item {% if variant.available %}available{% else %}soldout{% endif %}" 
+          <div class="variant-image-item {% if color_has_stock %}available{% else %}soldout{% endif %}" 
                data-variant-id="{{ variant.id }}"
                data-color="{{ color_value }}"
                data-image-id="{{ variant.featured_image.id }}"
@@ -32,14 +42,14 @@
                    name="color-variant-image" 
                    value="{{ color_value | escape }}"
                    data-variant-id="{{ variant.id }}"
-                   {% unless variant.available %}disabled{% endunless %} />
+                   {% unless color_has_stock %}disabled{% endunless %} />
             <label for="variant-image-{{ variant.id }}">
               <img src="{{ variant.featured_image | img_url: '80x80' }}" 
                    alt="{{ color_value | escape }}"
                    width="60"
                    height="60"
                    loading="lazy">
-              {% unless variant.available %}
+              {% unless color_has_stock %}
                 <img class="crossed-out" src="{{ 'close.svg' | asset_url }}" alt="Sold out" width="30" height="30" />
               {% endunless %}
             </label>
@@ -147,6 +157,55 @@
 
 <script>
 (function() {
+  // Get product data from the page
+  function getProductData() {
+    const productJsonElement = document.querySelector('[id^="ProductJson-"]');
+    if (productJsonElement) {
+      return JSON.parse(productJsonElement.textContent);
+    }
+    return null;
+  }
+  
+  // Filter and show/hide size options based on selected color
+  function filterSizesByColor(selectedColor) {
+    const productData = getProductData();
+    if (!productData) return;
+    
+    // Find color and size option indices
+    let colorIndex = -1;
+    let sizeIndex = -1;
+    
+    productData.options.forEach((option, index) => {
+      const optionLower = option.toLowerCase();
+      if (optionLower === 'color' || optionLower === 'colour') {
+        colorIndex = index;
+      } else if (optionLower === 'size') {
+        sizeIndex = index;
+      }
+    });
+    
+    if (colorIndex === -1 || sizeIndex === -1) return;
+    
+    // Get all sizes available for the selected color
+    const availableSizes = new Set();
+    productData.variants.forEach(variant => {
+      if (variant.options[colorIndex] === selectedColor) {
+        availableSizes.add(variant.options[sizeIndex]);
+      }
+    });
+    
+    // Show/hide size swatches based on availability for this color
+    const sizeSwatches = document.querySelectorAll('.swatch[data-option-index="' + sizeIndex + '"] .swatch-element');
+    sizeSwatches.forEach(swatch => {
+      const sizeValue = swatch.getAttribute('data-value');
+      if (availableSizes.has(sizeValue)) {
+        swatch.style.display = '';
+      } else {
+        swatch.style.display = 'none';
+      }
+    });
+  }
+  
   // Handle variant image selection
   document.addEventListener('change', function(e) {
     if (e.target.name === 'color-variant-image') {
@@ -175,6 +234,9 @@
           if (colorNameDisplay) {
             colorNameDisplay.textContent = selectedValue;
           }
+          
+          // Filter sizes based on selected color
+          filterSizesByColor(selectedValue);
         }
       }
     }
@@ -186,6 +248,12 @@
     if (firstAvailableInput && !document.querySelector('.product-variant-images input[type="radio"]:checked')) {
       firstAvailableInput.checked = true;
       firstAvailableInput.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    
+    // Initial filter on page load if a color is selected
+    const selectedColorInput = document.querySelector('.product-variant-images input[type="radio"]:checked');
+    if (selectedColorInput) {
+      filterSizesByColor(selectedColorInput.value);
     }
   });
 })();
