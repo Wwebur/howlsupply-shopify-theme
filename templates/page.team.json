@@ -54,7 +54,7 @@
             "member_name": "Kennedi Deck",
             "member_image": "shopify://shop_images/Kennedit.jpg",
             "instagram_label": "https://www.instagram.com/kenned1deck/?hl=en",
-            "program": "outerwear_gloves"
+            "program": "gloves"
           }
         },
         "member_KHKPAp": {
@@ -63,7 +63,7 @@
             "member_name": "Parker Szumowski ",
             "member_image": "shopify://shop_images/20240201-966A4891.jpg",
             "instagram_label": "",
-            "program": "outerwear_gloves"
+            "program": "gloves"
           }
         },
         "7f26091b-3057-4cae-b328-5541fc70f687": {
@@ -72,7 +72,7 @@
             "member_name": "Gian Sutter",
             "member_image": "shopify://shop_images/Screenshot_2023-10-03_at_1.59.17_PM.png",
             "instagram_label": "",
-            "program": "outerwear_gloves"
+            "program": "gloves"
           }
         },
         "ac94fd79-8699-48c7-bc7e-291a274538df": {
@@ -81,7 +81,7 @@
             "member_name": "Danimals",
             "member_image": "shopify://shop_images/000011160024.jpg",
             "instagram_label": "",
-            "program": "outerwear_gloves"
+            "program": "gloves"
           }
         },
         "6e35d43b-cf25-480b-b6c9-1d4f2bf89764": {
@@ -90,6 +90,7 @@
             "member_name": "Joe Sexton",
             "member_image": "shopify://shop_images/000067960024.jpg",
             "instagram_label": "",
+            "program": "gloves"
           }
         },
         "499c4dbc-f760-4803-b97a-ae8af32aab55": {
@@ -106,7 +107,8 @@
           "settings": {
             "member_name": "Justin Phipps",
             "member_image": "shopify://shop_images/Screenshot_2023-10-02_at_10.40.51_PM.png",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         },
         "6d412065-ae5b-46d8-89d7-743609332fde": {
@@ -115,7 +117,7 @@
             "member_name": "Jed Anderson",
             "member_image": "shopify://shop_images/000025930030.jpg",
             "instagram_label": "https://www.instagram.com/latexmansion/",
-            "program": "outerwear_gloves"
+            "program": "gloves"
           }
         },
         "d6a4d58a-ca9c-48e5-8e6f-d874e48c0388": {
@@ -123,7 +125,8 @@
           "settings": {
             "member_name": "Darrell Mathes",
             "member_image": "shopify://shop_images/image-grid-img.jpg",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         },
         "2e10d89c-4957-4fef-8ab8-795085b2fe9e": {
@@ -131,7 +134,8 @@
           "settings": {
             "member_name": "Mike Liddle",
             "member_image": "shopify://shop_images/Mike_CM-1848.jpg",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         },
         "c1873748-15f3-438e-ae2a-ca4a8b10f9b2": {
@@ -140,7 +144,7 @@
             "member_name": "Benny Urban",
             "member_image": "shopify://shop_images/000025930019_f0eaeb2d-7726-47f8-aeae-01c57e590433.jpg",
             "instagram_label": "",
-            "program": "outerwear_gloves"
+            "program": "gloves"
           }
         },
         "e4e43f30-c895-4181-866c-3f238fb4a6b0": {
@@ -156,7 +160,8 @@
           "settings": {
             "member_name": "Noah Peterson",
             "member_image": "shopify://shop_images/Screenshot_2023-10-02_at_10.09.05_PM.png",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         },
         "6e107962-8925-4103-b9ba-d55a395561a3": {
@@ -164,7 +169,8 @@
           "settings": {
             "member_name": "Jacob Krugmire",
             "member_image": "shopify://shop_images/000020300016.jpg",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         },
         "654c3ef6-7c31-4673-8cab-17b218c4e917": {
@@ -172,7 +178,8 @@
           "settings": {
             "member_name": "Aito Ito",
             "member_image": "shopify://shop_images/Aito_Green_Look_Howl.jpg",
-            "instagram_label": "https://www.instagram.com/aito_ito/"
+            "instagram_label": "https://www.instagram.com/aito_ito/",
+            "program": "gloves"
           }
         },
         "b9cdbbc1-8a29-43e7-b2ba-2f6d1699f95c": {
@@ -180,7 +187,8 @@
           "settings": {
             "member_name": "Ben Bilodeau",
             "member_image": "shopify://shop_images/000084830019.jpg",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         },
         "ef15bf27-4272-442e-be2c-a7322827c47d": {
@@ -188,7 +196,8 @@
           "settings": {
             "member_name": "Lucas Baume",
             "member_image": "shopify://shop_images/Screenshot_2023-10-02_at_10.28.36_PM.png",
-            "instagram_label": "https://www.instagram.com/yungdoli/tagged/?hl=en&img_index=1"
+            "instagram_label": "https://www.instagram.com/yungdoli/tagged/?hl=en&img_index=1",
+            "program": "gloves"
           }
         },
         "c12460bf-d992-4491-b95f-297dd0be8284": {
@@ -196,7 +205,8 @@
           "settings": {
             "member_name": "Brett Kulas",
             "member_image": "shopify://shop_images/Brett_Fleece_Gloves_Snow_Bank_Howl_x_Public.jpg",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         },
         "539a2f08-9fb4-4d5b-8991-fd8404d1bbe4": {
@@ -204,7 +214,8 @@
           "settings": {
             "member_name": "Peter Croasdale",
             "member_image": "shopify://shop_images/IMG_38B92AF0AD0E-1.jpg",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         },
         "5303c9d0-a2b9-4f12-b16a-d22d77089bad": {
@@ -212,7 +223,8 @@
           "settings": {
             "member_name": "Denver Orr",
             "member_image": "shopify://shop_images/Screenshot_2023-10-02_at_10.09.13_PM.png",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         },
         "64adfa12-7c8f-4310-99f8-9de77da2c2a6": {
@@ -221,7 +233,7 @@
             "member_name": "Ryoki OGawa",
             "member_image": "shopify://shop_images/Screenshot_2023-10-03_at_2.06.36_PM.png",
             "instagram_label": "",
-            "program": "outerwear_gloves"
+            "program": "gloves"
           }
         },
         "597a123b-991e-492e-8224-aa7d777e1088": {
@@ -230,7 +242,7 @@
             "member_name": "Kohei Heikudo",
             "member_image": "shopify://shop_images/Screenshot_2023-10-03_at_2.03.53_PM.png",
             "instagram_label": "",
-            "program": "outerwear_gloves"
+            "program": "gloves"
           }
         },
         "9525545a-a05c-4a46-9d09-05ed7d7482d2": {
@@ -246,7 +258,8 @@
           "settings": {
             "member_name": "Ojo Forever",
             "member_image": "shopify://shop_images/000004440017_2233dd7e-d1a6-4186-8ab4-bd3a0180211c.jpg",
-            "instagram_label": ""
+            "instagram_label": "",
+            "program": "gloves"
           }
         }
       },
