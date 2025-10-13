@@ -83,13 +83,15 @@
             </div>
           </div>
 
-          {% if product.available and product.variants.size > 1 %}
+          {% if product.available and product.variants.size >= 1 %}
             {% for option in product.options %}
-              {% if option == 'Color' %}
+              {% assign option_lower = option | downcase %}
+
+              {% if option_lower == 'color' %}
                 <div class="product__details-item color-container">
                   <div class="product__details-item__left">
-                    {% if option == 'Color' %}<h2 class="option-name">{{ option }}</h2>{% endif %}
-                    {% if option == 'Color' %}<span class="color-name"></span>{% endif %}
+                    <h2 class="option-name">{{ option }}</h2>
+                    <span class="color-name"></span>
                   </div>
                   <div class="product__details-item__right">
                     {% render 'product-variant-images' %}
@@ -97,10 +99,10 @@
                 </div>
               {% endif %}
 
-              {% if option == 'Size' %}
+              {% if option_lower == 'size' %}
                 <div class="product__details-item size-container">
                   <div class="product__details-item_size-wrapper">
-                    {% if option == 'Size' %}<h5 class="size-name">{{ option }}</h5>{% endif %}
+                    <h5 class="size-name">{{ option }}</h5>
 
                     {% assign product_collections = product.collections %}
                     {% assign size_guide_target = '' %}
@@ -122,7 +124,7 @@
                     {% endif %}
 
 
-                    {% if option == 'Size' and size_guide_target != '' %}<div class="separator"></div><a href="#" class="size-guide--trigger" data-target="{{ size_guide_target }}">Size Guide</a>{% endif %}
+                    {% if size_guide_target != '' %}<div class="separator"></div><a href="#" class="size-guide--trigger" data-target="{{ size_guide_target }}">Size Guide</a>{% endif %}
                   </div>
                   <div class="product__details-item__right">
                     {% include 'swatch' with option %}
